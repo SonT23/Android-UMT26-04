@@ -1,0 +1,2 @@
+# Script .sh luôn dùng xuống dòng LF, để chạy được bằng Git Bash trên Windows
+*.sh text eol=lf
