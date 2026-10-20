@@ -1,0 +1,7 @@
+# Rác của hệ điều hành
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Mở nhầm thư mục gốc bằng Android Studio (project nằm trong Source/)
+/.idea/
