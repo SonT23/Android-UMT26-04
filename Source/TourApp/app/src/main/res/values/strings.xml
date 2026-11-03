@@ -1,0 +1,7 @@
+<!-- Chỉ chứa chuỗi chung của app. Chuỗi của từng module đặt trong file riêng để không sửa chung một file:
+     strings_taikhoan.xml (A), strings_khampha.xml (B), strings_dattour.xml (C),
+     strings_quantritour.xml (D), strings_quantridon.xml (E).
+     Mỗi file tạo cả bản tiếng Việt ở values/ và bản tiếng Anh ở values-en/. -->
+<resources>
+    <string name="app_name">Đặt Tour</string>
+</resources>

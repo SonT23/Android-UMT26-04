@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Bộ màu giao diện tối, cùng tên với values/colors.xml -->
+<resources>
+    <color name="primary">#FF9ECAFF</color>
+    <color name="on_primary">#FF003258</color>
+    <color name="primary_container">#FF00497D</color>
+    <color name="on_primary_container">#FFD1E4FF</color>
+
+    <color name="secondary">#FFBBC7DB</color>
+    <color name="on_secondary">#FF253140</color>
+    <color name="secondary_container">#FF3B4858</color>
+    <color name="on_secondary_container">#FFD7E3F7</color>
+
+    <color name="tertiary">#FFFFB870</color>
+    <color name="on_tertiary">#FF4A2800</color>
+    <color name="tertiary_container">#FF693C00</color>
+    <color name="on_tertiary_container">#FFFFDCBE</color>
+
+    <color name="error">#FFFFB4AB</color>
+    <color name="on_error">#FF690005</color>
+
+    <color name="background">#FF1A1C1E</color>
+    <color name="on_background">#FFE2E2E6</color>
+    <color name="surface">#FF1A1C1E</color>
+    <color name="on_surface">#FFE2E2E6</color>
+    <color name="surface_variant">#FF43474E</color>
+    <color name="on_surface_variant">#FFC3C7CF</color>
+    <color name="outline">#FF8D9199</color>
+</resources>

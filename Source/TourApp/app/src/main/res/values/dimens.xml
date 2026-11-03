@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Khoảng cách và bo góc dùng chung để các màn hình trông đồng bộ -->
+<resources>
+    <dimen name="space_xs">4dp</dimen>
+    <dimen name="space_s">8dp</dimen>
+    <dimen name="space_m">16dp</dimen>
+    <dimen name="space_l">24dp</dimen>
+    <dimen name="space_xl">32dp</dimen>
+    <dimen name="radius_card">12dp</dimen>
+    <dimen name="button_height">48dp</dimen>
+</resources>
