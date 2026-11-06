@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Bộ màu giao diện sáng. Giao diện tối nằm ở values-night/colors.xml, cùng tên màu.
+     Khi phần Web chốt màu thương hiệu thì chỉ cần đổi mã màu ở 2 file này. -->
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Màu chính: thanh điều hướng, nút chính, tiêu đề -->
+    <color name="primary">#FF0061A4</color>
+    <color name="on_primary">#FFFFFFFF</color>
+    <color name="primary_container">#FFD1E4FF</color>
+    <color name="on_primary_container">#FF001D36</color>
+
+    <!-- Màu phụ: chip lọc, nút phụ -->
+    <color name="secondary">#FF535F70</color>
+    <color name="on_secondary">#FFFFFFFF</color>
+    <color name="secondary_container">#FFD7E3F7</color>
+    <color name="on_secondary_container">#FF101C2B</color>
+
+    <!-- Màu nhấn: giá tiền, nhãn "Còn N chỗ" -->
+    <color name="tertiary">#FF8B5000</color>
+    <color name="on_tertiary">#FFFFFFFF</color>
+    <color name="tertiary_container">#FFFFDCBE</color>
+    <color name="on_tertiary_container">#FF2C1600</color>
+
+    <color name="error">#FFBA1A1A</color>
+    <color name="on_error">#FFFFFFFF</color>
+
+    <!-- Nền và chữ -->
+    <color name="background">#FFFDFCFF</color>
+    <color name="on_background">#FF1A1C1E</color>
+    <color name="surface">#FFFDFCFF</color>
+    <color name="on_surface">#FF1A1C1E</color>
+    <color name="surface_variant">#FFDFE2EB</color>
+    <color name="on_surface_variant">#FF43474E</color>
+    <color name="outline">#FF73777F</color>
+</resources>
