@@ -6,5 +6,5 @@
 
 \- GitHub: @Phu-Thinh
 
-\- Module phụ trách: module C: Đặt tour và đơn của khách
+\- Module phụ trách: C - Đặt tour và đơn của khách (chức năng khó: Theo dõi trạng thái đơn chạy nền)
 
