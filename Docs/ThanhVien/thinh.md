@@ -6,5 +6,5 @@
 
 \- GitHub: @Phu-Thinh
 
-\- Module phụ trách: (điền sau khi chốt đề tài)
+\- Module phụ trách: module C: Đặt tour và đơn của khách
 
