@@ -2,7 +2,7 @@
 
 UMT · Học kỳ 1, 2026–2027
 
-**Đề tài:** _chưa chốt_
+**Đề tài:** TourApp, ứng dụng Android đặt tour du lịch trong nước. Project ở [Source/TourApp/](Source/TourApp/).
 **Thành viên:** Hoàng · Sơn · Thịnh · Phúc · Trúc Đào (chi tiết trong [Docs/ThanhVien/](Docs/ThanhVien/))
 
 ## Cấu trúc thư mục
@@ -14,6 +14,10 @@ UMT · Học kỳ 1, 2026–2027
 | `Docs/` | Proposal, báo cáo, sơ đồ database, thông tin thành viên |
 | `Videos/` | Video demo. GitHub không nhận file trên 100 MB, video lớn thì để link Google Drive/YouTube trong một file `.md` ở đây |
 | `References/` | Tài liệu tham khảo, nguồn ảnh và icon đã dùng |
+
+## Đang làm gì
+
+Giai đoạn dựng giao diện: mỗi người làm các màn hình của module mình theo thiết kế trong [Docs/Figma/](Docs/Figma/). Hướng dẫn cho từng người ở **[Docs/HuongDanUI/](Docs/HuongDanUI/)**.
 
 ## Làm việc với Git
 

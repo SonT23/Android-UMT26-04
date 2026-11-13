@@ -163,12 +163,12 @@ Lên trang repo → bấm **Compare & pull request** (hoặc tab **Pull requests
 
 - **Tiêu đề:** giống commit, vd. `[+] Màn hình giỏ hàng`.
 - **Mô tả:** làm gì, thử thế nào. Chức năng có giao diện thì kèm ảnh chụp màn hình.
-- Cột bên phải → **Reviewers**: chọn người review của tuần.
+- Cột bên phải → **Reviewers**: chọn một thành viên khác (ai rảnh thì nhận).
 - Bấm **Create pull request**.
 
 Bị yêu cầu sửa thì sửa tiếp trên branch đó → commit → `git push`. PR tự cập nhật, không cần mở PR mới.
 
-### 3.4 Review (người review của tuần)
+### 3.4 Review (bất kỳ thành viên nào khác)
 
 - Tab **Files changed**: đọc code, bấm dấu `+` cạnh dòng code để góp ý.
 - Muốn chạy thử: `git fetch` → `git switch feature/<ten-chuc-nang>` → Run trong Android Studio.
@@ -267,6 +267,37 @@ git push -u origin feature/<ten-chuc-nang>
 ```
 
 **Lỡ commit sai tên hoặc email** (chưa push): sửa lại theo 1.3 rồi chạy `git commit --amend --reset-author --no-edit`.
+
+## 7. Commit thiết kế Figma
+
+File Figma nằm trên mạng nên Git không lưu được. Mỗi người **xuất ảnh PNG các màn hình mình vẽ** vào thư mục module của mình trong `Docs/Figma/`, rồi tự commit. Bảng thư mục, người làm và quy tắc đặt tên nằm ở [Docs/Figma/README.md](Docs/Figma/README.md).
+
+1. Trong Figma, đặt tên frame đúng mã màn hình, vd. `A01-trang-chu`.
+2. Chọn các frame của mình → khung bên phải, mục **Export** → **+** → `PNG`, `1x` → **Export**.
+3. Chép ảnh vào thư mục module, rồi commit **mỗi màn hình một commit**:
+
+   ```bash
+   git switch main
+   git pull
+   git switch -c docs/figma-kham-pha                 # đổi theo thư mục module của mình
+   git add Docs/Figma/B-kham-pha/A01-trang-chu.png
+   git commit -m "[+] Thiết kế Figma màn hình A01 Trang chủ"
+   git add Docs/Figma/B-kham-pha/A02-tim-tour.png
+   git commit -m "[+] Thiết kế Figma màn hình A02 Tìm tour"
+   git push -u origin docs/figma-kham-pha
+   ```
+
+4. Mở PR như mục 3.3.
+
+Sửa thiết kế thì xuất lại ảnh **giữ nguyên tên file**, rồi commit `[m] Sửa thiết kế A01 Trang chủ: <sửa gì>`. Không commit file `.fig`, không xuất ảnh 2x hay 3x.
+
+## 8. Dựng giao diện (giai đoạn hiện tại)
+
+Cả nhóm làm chung project `Source/TourApp`, mỗi người một package. Giai đoạn này mỗi người dựng hết giao diện các màn hình của mình bằng dữ liệu mẫu, phần nối với nhau làm sau.
+
+- Hướng dẫn riêng cho từng người, kèm tên file phải tạo và lệnh commit: [Docs/HuongDanUI/](Docs/HuongDanUI/).
+- Cấu trúc project, quy tắc đặt tên, bảng tra thành phần giao diện: [Source/TourApp/README.md](Source/TourApp/README.md).
+- Tên branch: `feature/layout-<module>`. Mỗi màn hình một commit `[+] Layout <mã> <tên màn hình>`.
 
 ## Tóm tắt hằng ngày
 
