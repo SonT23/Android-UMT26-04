@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Tour Booking</string>
+
+    <string name="xemthu_tieu_de">Screen preview</string>
+    <string name="xemthu_huong_dan">Tap a screen to open it. Register new screens in the ManHinhX.kt file of your module.</string>
+    <string name="xemthu_chua_co">No screens yet</string>
 </resources>
