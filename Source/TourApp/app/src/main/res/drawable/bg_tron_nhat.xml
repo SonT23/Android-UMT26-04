@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hình tròn màu xanh nhạt: nền ảnh đại diện bằng chữ cái, nền nút tròn. Chữ dùng ?attr/colorOnPrimaryContainer -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <solid android:color="?attr/colorPrimaryContainer" />
+</shape>

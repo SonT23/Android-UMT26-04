@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nền nhãn màu xanh lá: "Đang hiện", "Mở", "Hoàn thành". Chữ dùng @color/on_trang_thai_tot -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/trang_thai_tot" />
+    <corners android:radius="12dp" />
+</shape>
