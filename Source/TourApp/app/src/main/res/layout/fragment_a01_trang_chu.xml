@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A01 Trang chủ. Thanh điều hướng dưới KHÔNG nằm ở đây, nó thuộc KhachActivity. -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <TextView
+        android:id="@+id/xinChaoTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_m"
+        android:layout_marginTop="@dimen/space_m"
+        android:text="@string/a01_xin_chao"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tieuDeTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_m"
+        android:text="@string/a01_ban_muon_di_dau"
+        android:textAppearance="?attr/textAppearanceTitleLarge"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/xinChaoTV" />
+
+    <ImageView
+        android:id="@+id/thongBaoIV"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="@dimen/space_m"
+        android:contentDescription="@string/a01_thong_bao"
+        app:layout_constraintBottom_toBottomOf="@+id/tieuDeTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/xinChaoTV"
+        app:srcCompat="@drawable/ic_notifications"
+        app:tint="?attr/colorOnSurface" />
+
+    <!-- Ô tìm nhanh: bấm vào sẽ chuyển sang A02 Tìm tour (nối sau) -->
+    <TextView
+        android:id="@+id/timNhanhTV"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="@dimen/space_m"
+        android:layout_marginTop="@dimen/space_m"
+        android:layout_marginEnd="@dimen/space_m"
+        android:background="@drawable/bg_o_tim"
+        android:drawablePadding="@dimen/space_s"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/space_m"
+        android:paddingEnd="@dimen/space_m"
+        android:text="@string/a01_tim_nhanh"
+        android:textAppearance="?attr/textAppearanceBodyLarge"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        app:drawableStartCompat="@drawable/ic_search"
+        app:drawableTint="?attr/colorOnSurfaceVariant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tieuDeTV" />
+
+    <TextView
+        android:id="@+id/diemDenTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_m"
+        android:layout_marginTop="@dimen/space_l"
+        android:text="@string/a01_diem_den"
+        android:textAppearance="?attr/textAppearanceLabelMedium"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timNhanhTV" />
+
+    <TextView
+        android:id="@+id/xemTatCaTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_m"
+        android:text="@string/a01_xem_tat_ca"
+        android:textAppearance="?attr/textAppearanceLabelLarge"
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintBaseline_toBaselineOf="@+id/diemDenTV"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Danh sách điểm đến cuộn ngang -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/diemDenRV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_s"
+        android:clipToPadding="false"
+        android:paddingStart="@dimen/space_m"
+        android:paddingEnd="@dimen/space_xs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diemDenTV"
+        tools:listitem="@layout/item_a01_diem_den" />
+
+    <TextView
+        android:id="@+id/tourNoiBatTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_m"
+        android:layout_marginTop="@dimen/space_m"
+        android:text="@string/a01_tour_noi_bat"
+        android:textAppearance="?attr/textAppearanceLabelMedium"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diemDenRV" />
+
+    <!-- Danh sách tour nổi bật cuộn dọc, chiếm phần màn hình còn lại -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tourRV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/space_s"
+        android:clipToPadding="false"
+        android:paddingStart="@dimen/space_m"
+        android:paddingEnd="@dimen/space_m"
+        android:paddingBottom="@dimen/space_m"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tourNoiBatTV"
+        tools:listitem="@layout/item_a01_tour_noi_bat" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

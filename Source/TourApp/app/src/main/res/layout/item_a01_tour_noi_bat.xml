@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Thẻ tour nổi bật của A01: ảnh ở trên, tên, điểm đến và giá ở dưới -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="?attr/materialCardViewOutlinedStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="@dimen/radius_card">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/space_m">
+
+        <ImageView
+            android:id="@+id/anhIV"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:background="?attr/colorSurfaceVariant"
+            android:contentDescription="@string/a01_anh"
+            android:padding="44dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_image"
+            app:tint="?attr/colorOutline" />
+
+        <ImageView
+            android:id="@+id/yeuThichIV"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="@dimen/space_s"
+            android:layout_marginEnd="@dimen/space_s"
+            android:background="@drawable/bg_tron_trang"
+            android:contentDescription="@string/a01_yeu_thich"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_favorite_border"
+            app:tint="?attr/colorPrimary" />
+
+        <TextView
+            android:id="@+id/conChoTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="@dimen/space_s"
+            android:background="@drawable/bg_nhan"
+            android:paddingStart="@dimen/space_s"
+            android:paddingTop="2dp"
+            android:paddingEnd="@dimen/space_s"
+            android:paddingBottom="2dp"
+            android:textAppearance="?attr/textAppearanceLabelSmall"
+            android:textColor="?attr/colorOnTertiaryContainer"
+            app:layout_constraintBottom_toBottomOf="@+id/anhIV"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Còn 1 chỗ" />
+
+        <TextView
+            android:id="@+id/tenTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textColor="?attr/colorOnSurface"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/anhIV"
+            tools:text="Đà Lạt 3 ngày 2 đêm" />
+
+        <TextView
+            android:id="@+id/moTaTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintEnd_toEndOf="@+id/tenTV"
+            app:layout_constraintStart_toStartOf="@+id/tenTV"
+            app:layout_constraintTop_toBottomOf="@+id/tenTV"
+            tools:text="Đà Lạt, Lâm Đồng · 3 ngày 2 đêm" />
+
+        <TextView
+            android:id="@+id/giaTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_s"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textColor="?attr/colorTertiary"
+            app:layout_constraintEnd_toEndOf="@+id/tenTV"
+            app:layout_constraintStart_toStartOf="@+id/tenTV"
+            app:layout_constraintTop_toBottomOf="@+id/moTaTV"
+            tools:text="Từ 2.500.000 ₫" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
