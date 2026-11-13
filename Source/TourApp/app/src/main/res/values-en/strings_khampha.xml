@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- A01 Home -->
+    <string name="a01_xin_chao">Hello</string>
+    <string name="a01_ban_muon_di_dau">Where do you want to go?</string>
+    <string name="a01_tim_nhanh">Search tours, destinations</string>
+    <string name="a01_diem_den">DESTINATIONS</string>
+    <string name="a01_xem_tat_ca">See all</string>
+    <string name="a01_tour_noi_bat">FEATURED TOURS</string>
+    <string name="a01_thong_bao">Notifications</string>
+    <string name="a01_yeu_thich">Save to favourites</string>
+    <string name="a01_anh">Illustration</string>
+</resources>

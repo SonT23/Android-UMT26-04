@@ -4,4 +4,9 @@
      Mỗi file tạo cả bản tiếng Việt ở values/ và bản tiếng Anh ở values-en/. -->
 <resources>
     <string name="app_name">Đặt Tour</string>
+
+    <!-- Danh sách xem thử (màn hình tạm, bỏ khi có khung điều hướng) -->
+    <string name="xemthu_tieu_de">Xem thử màn hình</string>
+    <string name="xemthu_huong_dan">Bấm vào một màn hình để mở. Thêm màn hình mới trong file ManHinhX.kt của module mình.</string>
+    <string name="xemthu_chua_co">Chưa có màn hình nào</string>
 </resources>

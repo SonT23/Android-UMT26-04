@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Chuỗi của module B: Khám phá tour (Sơn). Tên chuỗi bắt đầu bằng mã màn hình. -->
+<resources>
+    <!-- A01 Trang chủ -->
+    <string name="a01_xin_chao">Xin chào</string>
+    <string name="a01_ban_muon_di_dau">Bạn muốn đi đâu?</string>
+    <string name="a01_tim_nhanh">Tìm tour, điểm đến</string>
+    <string name="a01_diem_den">ĐIỂM ĐẾN</string>
+    <string name="a01_xem_tat_ca">Xem tất cả</string>
+    <string name="a01_tour_noi_bat">TOUR NỔI BẬT</string>
+    <string name="a01_thong_bao">Thông báo</string>
+    <string name="a01_yeu_thich">Lưu vào yêu thích</string>
+    <string name="a01_anh">Ảnh minh họa</string>
+</resources>
