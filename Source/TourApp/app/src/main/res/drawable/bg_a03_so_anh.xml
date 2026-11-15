@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nền bo tròn cho số thứ tự ảnh "1/5" đặt trên ảnh ở A03 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="?attr/colorOnSurface" />
+    <corners android:radius="12dp" />
+</shape>

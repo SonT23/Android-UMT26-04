@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Thanh tên tour bo tròn nổi trên bản đồ ở A22 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="?attr/colorSurface" />
+    <stroke
+        android:width="1dp"
+        android:color="?attr/colorSurfaceVariant" />
+    <corners android:radius="24dp" />
+</shape>

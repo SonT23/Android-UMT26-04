@@ -17,13 +17,21 @@
 | Mã | Ảnh Figma | Layout | Lớp Kotlin | Trạng thái |
 |---|---|---|---|---|
 | A01 | [A01-trang-chu.png](../Figma/B-kham-pha/A01-trang-chu.png) | `fragment_a01_trang_chu.xml`, `item_a01_tour_noi_bat.xml`, `item_a01_diem_den.xml` | `TrangChuFragment`, `TourNoiBatAdapter`, `DiemDenAdapter` | Đã xong, dùng làm mẫu cho cả nhóm |
-| A02 | [A02-tim-tour.png](../Figma/B-kham-pha/A02-tim-tour.png) | `fragment_a02_tim_tour.xml`, `item_a02_tour.xml` | `TimTourFragment`, `TourAdapter` | Chưa làm |
-| A02 | [A02-tim-tour-bo-loc.png](../Figma/B-kham-pha/A02-tim-tour-bo-loc.png) | `dialog_a02_bo_loc.xml` | `BoLocFragment` | Chưa làm |
-| A03 | [A03-chi-tiet-tour.png](../Figma/B-kham-pha/A03-chi-tiet-tour.png) | `fragment_a03_chi_tiet_tour.xml`, `item_a03_lich_trinh.xml`, `item_a03_dot_khoi_hanh.xml` | `ChiTietTourFragment`, `LichTrinhAdapter`, `DotKhoiHanhAdapter` | Chưa làm |
-| A21 | [A21-yeu-thich-va-da-xem.png](../Figma/B-kham-pha/A21-yeu-thich-va-da-xem.png) | `fragment_a21_yeu_thich.xml`, `item_a21_da_xem.xml` | `YeuThichFragment`, `DaXemAdapter` | Chưa làm |
-| A22 | [A22-ban-do-lich-trinh.png](../Figma/B-kham-pha/A22-ban-do-lich-trinh.png) | `fragment_a22_ban_do_lich_trinh.xml`, `item_a22_diem_dung.xml` | `BanDoLichTrinhFragment`, `DiemDungAdapter` | Chưa làm |
+| A02 | [A02-tim-tour.png](../Figma/B-kham-pha/A02-tim-tour.png) | `fragment_a02_tim_tour.xml`, `item_a02_tour.xml` | `TimTourFragment`, `TourAdapter` | Đã xong |
+| A02 | [A02-tim-tour-bo-loc.png](../Figma/B-kham-pha/A02-tim-tour-bo-loc.png) | `dialog_a02_bo_loc.xml` | `BoLocFragment` | Đã xong |
+| A03 | [A03-chi-tiet-tour.png](../Figma/B-kham-pha/A03-chi-tiet-tour.png) | `fragment_a03_chi_tiet_tour.xml`, `item_a03_lich_trinh.xml`, `item_a03_dot_khoi_hanh.xml` | `ChiTietTourFragment`, `LichTrinhAdapter`, `DotKhoiHanhAdapter` | Đã xong |
+| A21 | [A21-yeu-thich-va-da-xem.png](../Figma/B-kham-pha/A21-yeu-thich-va-da-xem.png) | `fragment_a21_yeu_thich.xml`, `item_a21_da_xem.xml` | `YeuThichFragment`, `DaXemAdapter` | Đã xong |
+| A22 | [A22-ban-do-lich-trinh.png](../Figma/B-kham-pha/A22-ban-do-lich-trinh.png) | `fragment_a22_ban_do_lich_trinh.xml`, `item_a22_diem_dung.xml` | `BanDoLichTrinhFragment`, `DiemDungAdapter` | Đã xong |
 
-Dữ liệu mẫu của cả module đặt trong `DuLieuMau.kt` (đã có lớp `TourMau`; cần thêm trường cho A02 như ngày khởi hành).
+Dữ liệu mẫu của cả module nằm trong `DuLieuMau.kt`.
+
+Chỗ khác với ảnh Figma, sẽ làm khi nối chức năng:
+
+- A02: chip lọc ghi tên mục ("Điểm đến", "Tháng") thay vì giá trị đang chọn; chưa có dòng "Đang tải thêm…".
+- A02 Bộ lọc: màn hình riêng thay cho bảng trượt; khoảng giá là 2 ô nhập "Từ / Đến" thay cho thanh kéo.
+- A03: một ảnh giữ chỗ thay cho ảnh vuốt ngang, chưa có dấu chấm chỉ trang ảnh.
+- A21: dải báo mất mạng ẩn khi chạy, chỉ hiện trong bản xem trước của Layout Editor.
+- A22: nền xám và biểu tượng ghim thay cho bản đồ thật; chưa vẽ đường nối giữa các điểm.
 
 ## Chỉ dẫn từng màn hình
 

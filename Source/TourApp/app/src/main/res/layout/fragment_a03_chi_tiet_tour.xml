@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A03 Chi tiết tour. Cả màn hình cuộn được vì nội dung dài hơn chiều cao máy. -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/space_l">
+
+        <!-- Ảnh đầu trang. Vuốt ngang nhiều ảnh (ViewPager2) làm khi nối API. -->
+        <ImageView
+            android:id="@+id/anhIV"
+            android:layout_width="0dp"
+            android:layout_height="260dp"
+            android:background="?attr/colorSurfaceVariant"
+            android:contentDescription="@string/a01_anh"
+            android:paddingTop="90dp"
+            android:paddingBottom="90dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_image"
+            app:tint="?attr/colorOutline" />
+
+        <ImageView
+            android:id="@+id/quayLaiIV"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/space_m"
+            android:layout_marginTop="@dimen/space_m"
+            android:background="@drawable/bg_tron_trang"
+            android:contentDescription="@string/a03_quay_lai"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_back"
+            app:tint="?attr/colorOnSurface" />
+
+        <ImageView
+            android:id="@+id/yeuThichIV"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/space_m"
+            android:layout_marginEnd="@dimen/space_m"
+            android:background="@drawable/bg_tron_trang"
+            android:contentDescription="@string/a01_yeu_thich"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_favorite"
+            app:tint="?attr/colorPrimary" />
+
+        <ImageView
+            android:id="@+id/chiaSeIV"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="@dimen/space_s"
+            android:background="@drawable/bg_tron_trang"
+            android:contentDescription="@string/a03_chia_se"
+            android:padding="9dp"
+            app:layout_constraintEnd_toStartOf="@+id/yeuThichIV"
+            app:layout_constraintTop_toTopOf="@+id/yeuThichIV"
+            app:srcCompat="@drawable/ic_share"
+            app:tint="?attr/colorOnSurface" />
+
+        <TextView
+            android:id="@+id/soAnhTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_m"
+            android:layout_marginBottom="12dp"
+            android:alpha="0.75"
+            android:background="@drawable/bg_a03_so_anh"
+            android:paddingStart="10dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="2dp"
+            android:textAppearance="?attr/textAppearanceLabelMedium"
+            android:textColor="?attr/colorSurface"
+            app:layout_constraintBottom_toBottomOf="@+id/anhIV"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="1/5" />
+
+        <TextView
+            android:id="@+id/tenTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_m"
+            android:layout_marginTop="@dimen/space_m"
+            android:layout_marginEnd="@dimen/space_m"
+            android:textAppearance="?attr/textAppearanceHeadlineSmall"
+            android:textColor="?attr/colorOnSurface"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/anhIV"
+            tools:text="Đà Lạt 3 ngày 2 đêm" />
+
+        <TextView
+            android:id="@+id/diaDiemTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_xs"
+            android:drawablePadding="@dimen/space_xs"
+            android:gravity="center_vertical"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:drawableStartCompat="@drawable/ic_place"
+            app:drawableTint="?attr/colorOnSurfaceVariant"
+            app:layout_constraintEnd_toEndOf="@+id/tenTV"
+            app:layout_constraintStart_toStartOf="@+id/tenTV"
+            app:layout_constraintTop_toBottomOf="@+id/tenTV"
+            tools:text="Đà Lạt, Lâm Đồng · 3 ngày 2 đêm" />
+
+        <TextView
+            android:id="@+id/giaTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textAppearance="?attr/textAppearanceTitleLarge"
+            android:textColor="?attr/colorTertiary"
+            app:layout_constraintStart_toStartOf="@+id/tenTV"
+            app:layout_constraintTop_toBottomOf="@+id/diaDiemTV"
+            tools:text="Từ 2.500.000 ₫" />
+
+        <TextView
+            android:id="@+id/donViTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_s"
+            android:text="@string/a03_moi_nguoi_lon"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintBaseline_toBaselineOf="@+id/giaTV"
+            app:layout_constraintStart_toEndOf="@+id/giaTV" />
+
+        <TextView
+            android:id="@+id/lichTrinhTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_l"
+            android:text="@string/a03_lich_trinh"
+            android:textAppearance="?attr/textAppearanceLabelMedium"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintStart_toStartOf="@+id/tenTV"
+            app:layout_constraintTop_toBottomOf="@+id/giaTV" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lichTrinhRV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_s"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintEnd_toEndOf="@+id/tenTV"
+            app:layout_constraintStart_toStartOf="@+id/tenTV"
+            app:layout_constraintTop_toBottomOf="@+id/lichTrinhTV"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_a03_lich_trinh" />
+
+        <Button
+            android:id="@+id/banDoBtn"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/space_xs"
+            android:text="@string/a03_xem_ban_do"
+            app:icon="@drawable/ic_map"
+            app:iconGravity="textStart"
+            app:layout_constraintEnd_toEndOf="@+id/tenTV"
+            app:layout_constraintStart_toStartOf="@+id/tenTV"
+            app:layout_constraintTop_toBottomOf="@+id/lichTrinhRV" />
+
+        <TextView
+            android:id="@+id/dotTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_l"
+            android:text="@string/a03_dot_khoi_hanh"
+            android:textAppearance="?attr/textAppearanceLabelMedium"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintStart_toStartOf="@+id/tenTV"
+            app:layout_constraintTop_toBottomOf="@+id/banDoBtn" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dotRV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_s"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintEnd_toEndOf="@+id/tenTV"
+            app:layout_constraintStart_toStartOf="@+id/tenTV"
+            app:layout_constraintTop_toBottomOf="@+id/dotTV"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_a03_dot_khoi_hanh" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
