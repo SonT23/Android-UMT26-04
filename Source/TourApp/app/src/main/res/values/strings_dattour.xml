@@ -6,4 +6,14 @@
     <string name="a05_Ngay_khoi_hanh">Ngày khởi hành\t\t\t\t\t\t</string>
     <string name="a05_Tong_thanh_toan">Tổng thanh toán</string>
     <string name="a05_So_nguoi">Số người</string>
+    <string name="a09_Chi_tiet_don">Chi tiết đơn</string>
+    <string name="a09_Da_xac_nhan">Đã xác nhận</string>
+    <string name="a09_Huong_dan_checkin">Đưa mã này cho nhân viên để check-in</string>
+    <string name="a09_Tour">Tour\t\t</string>
+    <string name="a09_ngay_khoi_hanh">Ngày khởi hành</string>
+    <string name="a09_so_nguoi">Số người</string>
+    <string name="a09_tong_thanh_toan">Tổng thanh toán</string>
+    <string name="a09_them_vao_lịch">Thêm vào Lịch</string>
+    <string name="a09_huy_don">Hủy đơn</string>
+    <string name="a09_ho_tro">Cần hỗ trợ? Gọi 1900 1234</string>
 </resources>
