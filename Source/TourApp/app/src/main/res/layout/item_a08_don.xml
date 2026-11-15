@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="12dp"
+    app:strokeColor="?attr/colorOutlineVariant"
+    app:strokeWidth="1dp"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Dòng trên cùng: Mã đơn & Nhãn Trạng thái -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_ma_don"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="#HD12345"
+                android:textAppearance="?attr/textAppearanceTitleSmall"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_trang_thai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Đã xác nhận"
+                tools:background="@drawable/bg_nhan_xanh_duong"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Tên Tour -->
+        <TextView
+            android:id="@+id/tv_ten_tour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Khám phá Vịnh Hạ Long"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Ngày & Số người -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_calendar"
+                app:tint="?attr/colorOutline"
+                android:layout_marginEnd="6dp"/>
+
+            <TextView
+                android:id="@+id/tv_ngay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="20/11/2026"
+                android:textColor="?attr/colorOutline"
+                android:textSize="14sp"
+                android:layout_marginEnd="16dp" />
+
+            <TextView
+                android:id="@+id/tv_so_nguoi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="2 người lớn"
+                android:textColor="?attr/colorOutline"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorOutlineVariant"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Tổng tiền -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/a08_tong_thanh_toan"
+                android:textColor="?attr/colorOutline" />
+
+            <TextView
+                android:id="@+id/tv_tong_tien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="5,000,000 đ"
+                android:textColor="?attr/colorTertiary"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

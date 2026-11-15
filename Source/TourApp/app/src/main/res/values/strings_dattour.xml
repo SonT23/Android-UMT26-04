@@ -16,4 +16,11 @@
     <string name="a09_them_vao_lịch">Thêm vào Lịch</string>
     <string name="a09_huy_don">Hủy đơn</string>
     <string name="a09_ho_tro">Cần hỗ trợ? Gọi 1900 1234</string>
+    <string name="a08_don_cua_toi">Đơn của tôi</string>
+    <string name="a08_tat_ca">Tất cả</string>
+    <string name="a08_cho_xac_nhan">Chờ xác nhận</string>
+    <string name="a08_da_xac_nhan">Đã xác nhận</string>
+    <string name="a08_hoan_thanh">Hoàn thành</string>
+    <string name="a08_da_huy">Đã hủy</string>
+    <string name="a08_tong_thanh_toan">Tổng thanh toán</string>
 </resources>
