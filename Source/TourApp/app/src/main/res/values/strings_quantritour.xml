@@ -36,4 +36,22 @@
     <string name="a13_khong_co">Không có tour phù hợp</string>
     <string name="a13_menu_tour">Sửa, đợt khởi hành, ẩn hoặc hiện: %1$s</string>
     <string name="a13_menu_tren">Điểm đến</string>
+
+    <!-- A15 Đợt khởi hành -->
+    <string name="a15_tieu_de">Đợt khởi hành</string>
+    <string name="a15_quay_lai">Quay lại</string>
+    <string name="a15_xuat_danh_sach">Xuất danh sách khách</string>
+    <string name="a15_tat_ca">Tất cả</string>
+    <string name="a15_dang_mo">Đang mở</string>
+    <string name="a15_da_dong">Đã đóng</string>
+    <string name="a15_da_huy">Đã hủy</string>
+    <string name="a15_mo">Mở</string>
+    <string name="a15_sua">Sửa</string>
+    <string name="a15_dong_dot">Đóng đợt</string>
+    <string name="a15_huy_dot">Hủy đợt</string>
+    <string name="a15_them_dot">Thêm đợt</string>
+    <string name="a15_da_dat">Đã đặt %1$d/%2$d chỗ</string>
+    <string name="a15_da_dat_con">Đã đặt %1$d/%2$d chỗ, còn %3$d chỗ</string>
+    <string name="a15_khong_co">Không có đợt nào</string>
+    <string name="a15_sua_dot">Sửa đợt %1$s</string>
 </resources>

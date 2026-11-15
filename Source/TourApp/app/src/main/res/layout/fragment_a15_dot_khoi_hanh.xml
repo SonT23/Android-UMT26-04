@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A15 Đợt khởi hành của một tour: thanh trên hai dòng, chip lọc, danh sách đợt, nút thêm đợt -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Thanh trên: quay lại, tiêu đề hai dòng (tên màn hình, tên tour), nút xuất danh sách -->
+    <ImageView
+        android:id="@+id/quayLaiIV"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="@dimen/space_xs"
+        android:layout_marginTop="@dimen/space_s"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/a15_quay_lai"
+        android:padding="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back"
+        app:tint="?attr/colorOnSurface" />
+
+    <TextView
+        android:id="@+id/tieuDeTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_xs"
+        android:text="@string/a15_tieu_de"
+        android:textAppearance="?attr/textAppearanceTitleLarge"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintBottom_toTopOf="@+id/tenTourTV"
+        app:layout_constraintEnd_toStartOf="@+id/xuatIV"
+        app:layout_constraintStart_toEndOf="@+id/quayLaiIV"
+        app:layout_constraintTop_toTopOf="@+id/quayLaiIV"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tenTourTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/textAppearanceBodySmall"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        app:layout_constraintBottom_toBottomOf="@+id/quayLaiIV"
+        app:layout_constraintEnd_toEndOf="@+id/tieuDeTV"
+        app:layout_constraintStart_toStartOf="@+id/tieuDeTV"
+        app:layout_constraintTop_toBottomOf="@+id/tieuDeTV"
+        tools:text="Đà Lạt 3 ngày 2 đêm" />
+
+    <ImageView
+        android:id="@+id/xuatIV"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="@dimen/space_xs"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/a15_xuat_danh_sach"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/quayLaiIV"
+        app:srcCompat="@drawable/ic_download"
+        app:tint="?attr/colorOnSurface" />
+
+    <HorizontalScrollView
+        android:id="@+id/chipHSV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_s"
+        android:clipToPadding="false"
+        android:paddingStart="@dimen/space_m"
+        android:paddingEnd="@dimen/space_m"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quayLaiIV">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/locCG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:selectionRequired="true"
+            app:singleLine="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/tatCaChip"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/a15_tat_ca" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/dangMoChip"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a15_dang_mo" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/daDongChip"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a15_da_dong" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/daHuyChip"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a15_da_huy" />
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dotRV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/space_s"
+        android:clipToPadding="false"
+        android:paddingStart="@dimen/space_m"
+        android:paddingEnd="@dimen/space_m"
+        android:paddingBottom="88dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipHSV"
+        tools:listitem="@layout/item_a15_dot" />
+
+    <TextView
+        android:id="@+id/khongCoTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/a15_khong_co"
+        android:textAppearance="?attr/textAppearanceBodyLarge"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/dotRV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dotRV" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/themDotFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_m"
+        android:text="@string/a15_them_dot"
+        app:icon="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

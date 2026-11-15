@@ -54,3 +54,29 @@ fun taoTourMau(): ArrayList<TourMau> {
         TourMau("Sa Pa mùa lúa 3 ngày", "Sa Pa, 3 ngày 2 đêm", false, false, 0)
     )
 }
+
+// A15: trạng thái của một đợt khởi hành
+const val DOT_MO = "mo"
+const val DOT_DONG = "dong"
+const val DOT_HUY = "huy"
+
+// A15: một đợt khởi hành của tour. daDat là số chỗ đã đặt trên tongCho chỗ.
+class DotMau(
+    val ngay: String,
+    val gia: String,
+    val daDat: Int,
+    val tongCho: Int,
+    var trangThai: String
+)
+
+// Tour đang xem ở A15
+const val TEN_TOUR_DANG_XEM = "Đà Lạt 3 ngày 2 đêm"
+
+fun taoDotMau(): ArrayList<DotMau> {
+    return arrayListOf(
+        DotMau("20/11 đến 22/11/2026", "Người lớn 2.500.000 ₫, trẻ em 1.500.000 ₫", 3, 4, DOT_MO),
+        DotMau("04/12 đến 06/12/2026", "Người lớn 2.700.000 ₫, trẻ em 1.620.000 ₫", 0, 20, DOT_MO),
+        DotMau("30/10 đến 01/11/2026", "Người lớn 2.400.000 ₫, trẻ em 1.440.000 ₫", 20, 20, DOT_DONG),
+        DotMau("18/12 đến 20/12/2026", "Người lớn 2.800.000 ₫, trẻ em 1.680.000 ₫", 0, 16, DOT_HUY)
+    )
+}
