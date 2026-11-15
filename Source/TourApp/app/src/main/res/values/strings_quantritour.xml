@@ -10,4 +10,15 @@
     <string name="a12_mo_ta_dong">%1$s, %2$d tour</string>
     <string name="a12_sua_xoa">Sửa hoặc xóa: %1$s</string>
 
+    <!-- A12 Sửa điểm đến (bảng trượt, giai đoạn này dựng thành màn hình riêng) -->
+    <string name="a12_sua_tieu_de">Sửa điểm đến</string>
+    <string name="a12_ten_diem_den">Tên điểm đến</string>
+    <string name="a12_tinh_thanh">Tỉnh thành</string>
+    <string name="a12_mo_ta">Mô tả</string>
+    <string name="a12_vi_tri_ban_do">Vị trí trên bản đồ</string>
+    <string name="a12_chon_tren_ban_do">Chọn trên bản đồ</string>
+    <string name="a12_huy">Hủy</string>
+    <string name="a12_luu">Lưu</string>
+    <string name="a12_loi_ten">Vui lòng nhập tên điểm đến</string>
+    <string name="a12_da_luu">Đã lưu điểm đến %1$s</string>
 </resources>
