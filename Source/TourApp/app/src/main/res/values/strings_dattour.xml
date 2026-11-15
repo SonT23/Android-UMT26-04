@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="a05_dat_thanh_cong">Đặt tour thành công!</string>
+    <string name="a05_ma_don_hang">Mã đơn hàng của bạn là #HD12345</string>
+    <string name="a05_tour">Tour</string>
+    <string name="a05_Ngay_khoi_hanh">Ngày khởi hành\t\t\t\t\t\t</string>
+    <string name="a05_Tong_thanh_toan">Tổng thanh toán</string>
+    <string name="a05_So_nguoi">Số người</string>
+</resources>
