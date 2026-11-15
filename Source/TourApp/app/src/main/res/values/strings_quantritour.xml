@@ -54,4 +54,30 @@
     <string name="a15_da_dat_con">Đã đặt %1$d/%2$d chỗ, còn %3$d chỗ</string>
     <string name="a15_khong_co">Không có đợt nào</string>
     <string name="a15_sua_dot">Sửa đợt %1$s</string>
+
+    <!-- A14 Thêm, sửa tour -->
+    <string name="a14_tieu_de">Sửa tour</string>
+    <string name="a14_quay_lai">Quay lại</string>
+    <string name="a14_luu">Lưu</string>
+    <string name="a14_luu_nhap">Đã lưu nháp lúc 14:05. Mất mạng, sẽ gửi khi có mạng lại.</string>
+    <string name="a14_anh">ẢNH</string>
+    <string name="a14_anh_tour">Ảnh tour</string>
+    <string name="a14_dai_dien">Đại diện</string>
+    <string name="a14_them_anh">Thêm ảnh</string>
+    <string name="a14_thong_tin">THÔNG TIN</string>
+    <string name="a14_ten_tour">Tên tour</string>
+    <string name="a14_diem_den">Điểm đến</string>
+    <string name="a14_so_ngay">Số ngày</string>
+    <string name="a14_so_dem">Số đêm</string>
+    <string name="a14_noi_bat">Nổi bật trên trang chủ</string>
+    <string name="a14_hien_cho_khach">Hiện tour cho khách</string>
+    <string name="a14_lich_trinh">LỊCH TRÌNH</string>
+    <string name="a14_keo_doi_thu_tu">Kéo để đổi thứ tự</string>
+    <string name="a14_tuy_chon_ngay">Tùy chọn ngày</string>
+    <string name="a14_them_ngay">Thêm ngày</string>
+    <string name="a14_ngay_so">Ngày %1$d</string>
+    <string name="a14_ngay_moi">Chưa đặt tên</string>
+    <string name="a14_loi_ten">Vui lòng nhập tên tour</string>
+    <string name="a14_loi_so_dem">Số đêm không được lớn hơn số ngày</string>
+    <string name="a14_da_luu">Đã lưu tour %1$s</string>
 </resources>

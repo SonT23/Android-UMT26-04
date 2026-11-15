@@ -80,3 +80,21 @@ fun taoDotMau(): ArrayList<DotMau> {
         DotMau("18/12 đến 20/12/2026", "Người lớn 2.800.000 ₫, trẻ em 1.680.000 ₫", 0, 16, DOT_HUY)
     )
 }
+
+// A14: tour đang sửa như trong thiết kế
+const val SO_NGAY_DANG_SUA = 3
+const val SO_DEM_DANG_SUA = 2
+const val DIEM_DEN_DANG_SUA = "Đà Lạt"
+
+// A14: một ngày trong lịch trình. thuTu bắt đầu từ 1.
+class NgayMau(
+    val thuTu: Int,
+    val tieuDe: String
+)
+
+fun taoNgayMau(): ArrayList<NgayMau> {
+    return arrayListOf(
+        NgayMau(1, "Khởi hành, nhận phòng"),
+        NgayMau(2, "Đồi chè và thác Datanla")
+    )
+}
