@@ -68,4 +68,15 @@
     <string name="a21_da_xem_gan_day">RECENTLY VIEWED</string>
     <string name="a21_xoa_lich_su">Clear history</string>
     <string name="a21_chua_xem">No tours viewed yet.</string>
+
+    <!-- A22 Itinerary map -->
+    <string name="a22_ban_do_giu_cho">Google Maps will be shown here</string>
+    <string name="a22_diem_dung">Stop</string>
+    <string name="a22_diem_tap_trung">Meeting point</string>
+    <string name="a22_tat_ca">All</string>
+    <string name="a22_ngay_1">Day 1</string>
+    <string name="a22_ngay_2">Day 2</string>
+    <string name="a22_ngay_3">Day 3</string>
+    <string name="a22_vi_tri_cua_toi">My location</string>
+    <string name="a22_chi_duong">Directions in Google Maps</string>
 </resources>

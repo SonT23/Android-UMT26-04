@@ -97,3 +97,44 @@ fun taoDaXemMau(): ArrayList<DaXemMau> {
         DaXemMau("Hạ Long du thuyền", "02/11")
     )
 }
+
+// A22: các điểm dừng trên bản đồ, chia theo ngày
+class DiemDungMau(
+    val ten: String,
+    val moTa: String
+)
+
+class NgayBanDoMau(
+    val ten: String,
+    val tieuDe: String,
+    val diemDung: List<DiemDungMau>
+)
+
+// Phần tử 0 là "Tất cả" (gộp mọi điểm dừng), phần tử 1, 2, 3 là ngày 1, 2, 3
+fun taoBanDoMau(): ArrayList<NgayBanDoMau> {
+    val ngay1 = arrayListOf(
+        DiemDungMau("Nhà văn hóa Thanh Niên (điểm tập trung)", "06:00, TP.HCM"),
+        DiemDungMau("Khách sạn Ladalat", "14:00, cách điểm tập trung 300 km"),
+        DiemDungMau("Chợ đêm Đà Lạt", "19:00, cách khách sạn 2 km")
+    )
+    val ngay2 = arrayListOf(
+        DiemDungMau("Đồi chè Cầu Đất", "08:00, cách khách sạn 22 km"),
+        DiemDungMau("Thác Datanla", "13:30, cách điểm trước 27 km"),
+        DiemDungMau("Quảng trường Lâm Viên", "17:00, cách điểm trước 6 km")
+    )
+    val ngay3 = arrayListOf(
+        DiemDungMau("Chợ Đà Lạt", "08:00, cách khách sạn 1 km"),
+        DiemDungMau("Trả phòng khách sạn", "11:00"),
+        DiemDungMau("Về đến TP.HCM", "khoảng 19:00")
+    )
+    val tatCa = ArrayList<DiemDungMau>()
+    tatCa.addAll(ngay1)
+    tatCa.addAll(ngay2)
+    tatCa.addAll(ngay3)
+    return arrayListOf(
+        NgayBanDoMau("Cả hành trình", "Đà Lạt 3 ngày 2 đêm", tatCa),
+        NgayBanDoMau("Ngày 1", "Khởi hành, nhận phòng", ngay1),
+        NgayBanDoMau("Ngày 2", "Đồi chè và thác Datanla", ngay2),
+        NgayBanDoMau("Ngày 3", "Chợ Đà Lạt, trở về", ngay3)
+    )
+}

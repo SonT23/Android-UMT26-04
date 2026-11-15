@@ -69,4 +69,15 @@
     <string name="a21_da_xem_gan_day">ĐÃ XEM GẦN ĐÂY</string>
     <string name="a21_xoa_lich_su">Xóa lịch sử</string>
     <string name="a21_chua_xem">Chưa xem tour nào.</string>
+
+    <!-- A22 Bản đồ lịch trình -->
+    <string name="a22_ban_do_giu_cho">Bản đồ Google Maps sẽ hiển thị ở đây</string>
+    <string name="a22_diem_dung">Điểm dừng</string>
+    <string name="a22_diem_tap_trung">Điểm tập trung</string>
+    <string name="a22_tat_ca">Tất cả</string>
+    <string name="a22_ngay_1">Ngày 1</string>
+    <string name="a22_ngay_2">Ngày 2</string>
+    <string name="a22_ngay_3">Ngày 3</string>
+    <string name="a22_vi_tri_cua_toi">Vị trí của tôi</string>
+    <string name="a22_chi_duong">Chỉ đường bằng Google Maps</string>
 </resources>
