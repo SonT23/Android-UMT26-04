@@ -10,4 +10,15 @@
     <string name="a01_thong_bao">Notifications</string>
     <string name="a01_yeu_thich">Save to favourites</string>
     <string name="a01_anh">Illustration</string>
+
+    <!-- A02 Search -->
+    <string name="a02_tieu_de">Search tours</string>
+    <string name="a02_goi_y_tim">Search by tour name, destination</string>
+    <string name="a02_xoa_chu">Clear search</string>
+    <string name="a02_bo_loc_2">Filters (2)</string>
+    <string name="a02_chip_diem_den">Destination</string>
+    <string name="a02_chip_thang">Month</string>
+    <string name="a02_chip_so_ngay">Duration</string>
+    <string name="a02_so_tour">%1$d tours</string>
+    <string name="a02_gia_tang_dan">Price: low to high</string>
 </resources>

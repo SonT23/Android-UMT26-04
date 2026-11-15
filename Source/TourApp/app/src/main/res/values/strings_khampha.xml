@@ -11,4 +11,15 @@
     <string name="a01_thong_bao">Thông báo</string>
     <string name="a01_yeu_thich">Lưu vào yêu thích</string>
     <string name="a01_anh">Ảnh minh họa</string>
+
+    <!-- A02 Tìm tour -->
+    <string name="a02_tieu_de">Tìm tour</string>
+    <string name="a02_goi_y_tim">Tìm theo tên tour, điểm đến</string>
+    <string name="a02_xoa_chu">Xóa nội dung tìm</string>
+    <string name="a02_bo_loc_2">Bộ lọc (2)</string>
+    <string name="a02_chip_diem_den">Điểm đến</string>
+    <string name="a02_chip_thang">Tháng</string>
+    <string name="a02_chip_so_ngay">Số ngày</string>
+    <string name="a02_so_tour">%1$d tour</string>
+    <string name="a02_gia_tang_dan">Giá tăng dần</string>
 </resources>
