@@ -23,4 +23,21 @@
     <string name="a08_hoan_thanh">Hoàn thành</string>
     <string name="a08_da_huy">Đã hủy</string>
     <string name="a08_tong_thanh_toan">Tổng thanh toán</string>
+    <string name="a04_dat_tour">Đặt tour</string>
+    <string name="a04_ngay_khoi_hanh">Ngày khởi hành</string>
+    <string name="a04_So_luong_khach">Số lượng hành khách</string>
+    <string name="a04_thong_tin_lien_he">Thông tin liên hệ</string>
+    <string name="a04_tong_thanh_toan">Tổng thanh toán</string>
+    <string name="a04_thanh_toan">Thanh toán</string>
+    <string name="a04_xac_nhan_dat_tour">Xác nhận đặt tour</string>
+    <string name="a04_con_5_cho">Còn 5 chỗ</string>
+    <string name="a04_so_nguoi">SỐ NGƯỜI</string>
+    <string name="a04_nguoi_lon">Người lớn</string>
+    <string name="a04_tre_em">Trẻ em</string>
+    <string name="a04_ho_ten">Họ và tên</string>
+    <string name="a04_so_dien_thoai">Số điện thoại</string>
+    <string name="a04_ghi_chu_them">Ghi chú thêm</string>
+    <string name="a04_tam_tinh">Tạm tính</string>
+    <string name="a04_giam_gia">Giảm giá</string>
+    <string name="a04_tong_tien">Tổng tiền</string>
 </resources>

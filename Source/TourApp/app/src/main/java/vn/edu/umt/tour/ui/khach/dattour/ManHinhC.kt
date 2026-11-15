@@ -10,6 +10,7 @@ import vn.edu.umt.tour.xemthu.ManHinh
 val manHinhC: List<ManHinh> = listOf(
     ManHinh("A05", "Đặt thành công") { DatThanhCongFragment() },
     ManHinh("A09", "Chi tiết đơn") { ChiTietDonFragment() },
-    ManHinh("A08", "Đơn của tôi") { DonCuaToiFragment() }
+    ManHinh("A08", "Đơn của tôi") { DonCuaToiFragment() },
+    ManHinh("A04", "Đặt tour") { DatTourFragment() }
 )
 
