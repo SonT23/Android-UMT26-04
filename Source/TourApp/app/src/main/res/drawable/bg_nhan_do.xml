@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nền nhãn màu đỏ nhạt: "Đã hủy". Chữ dùng ?attr/colorOnErrorContainer -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="?attr/colorErrorContainer" />
+    <corners android:radius="12dp" />
+</shape>

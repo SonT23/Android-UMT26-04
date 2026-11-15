@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Nền bo tròn cho nhãn nhỏ như "Còn 1 chỗ" -->
+<!-- Nền nhãn màu cam nhạt: "Còn 1 chỗ", "Chờ xác nhận", "Nổi bật". Chữ dùng ?attr/colorOnTertiaryContainer -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="?attr/colorTertiaryContainer" />
     <corners android:radius="12dp" />

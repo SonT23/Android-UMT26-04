@@ -16,6 +16,9 @@
     <color name="tertiary_container">#FF693C00</color>
     <color name="on_tertiary_container">#FFFFDCBE</color>
 
+    <color name="trang_thai_tot">#FF1E5C2E</color>
+    <color name="on_trang_thai_tot">#FFC7EFCF</color>
+
     <color name="error">#FFFFB4AB</color>
     <color name="on_error">#FF690005</color>
 

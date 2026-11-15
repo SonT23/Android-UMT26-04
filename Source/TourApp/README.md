@@ -24,6 +24,8 @@ File dùng chung, chỉ sửa sau khi báo nhóm: `MainActivity.kt`, package `xe
 
 ## Làm giao diện trước, nối sau
 
+**Hướng dẫn riêng cho từng người** (màn hình nào, tên file nào, dùng view gì) nằm ở [Docs/HuongDanUI/](../../Docs/HuongDanUI/). Phần dưới đây là quy định chung.
+
 Giai đoạn này mỗi người dựng hết giao diện các màn hình của mình theo Figma, dùng dữ liệu mẫu. Chưa cần API, chưa cần database, chưa cần khung điều hướng. Bấm **Run** sẽ thấy danh sách "Xem thử màn hình"; bấm vào một dòng để mở màn hình đó.
 
 Màn hình mẫu để làm theo: **A01 Trang chủ** trong `ui/khach/khampha/`.
@@ -74,7 +76,136 @@ Thư mục `res/` dùng chung cho cả nhóm và không chia thư mục con đư
 
 File chuỗi của từng module: `strings_taikhoan.xml` (A), `strings_khampha.xml` (B), `strings_dattour.xml` (C), `strings_quantritour.xml` (D), `strings_quantridon.xml` (E).
 
-Icon và nền dùng chung (`ic_search`, `ic_favorite`, `ic_favorite_border`, `ic_notifications`, `ic_image`, `bg_nhan`, `bg_o_tim`, `bg_anh_trong`, `bg_tron_trang`) nằm ở `res/drawable/`, ai cũng dùng được. Cần icon mới: chuột phải `res/drawable` → **New → Vector Asset**, đặt tên `ic_<tên>`; xem trong thư mục đã có chưa trước khi thêm.
+### Icon và nền dùng chung
+
+Các file dưới đây nằm sẵn ở `res/drawable/`, ai cũng dùng được và không ai sửa.
+
+| Nhóm | Tên file |
+| --- | --- |
+| Điều hướng | `ic_arrow_back`, `ic_close`, `ic_chevron_right`, `ic_more_vert` |
+| Thao tác | `ic_add`, `ic_remove`, `ic_check`, `ic_search`, `ic_tune`, `ic_filter_list`, `ic_share`, `ic_download`, `ic_drag_handle` |
+| Nội dung | `ic_calendar`, `ic_schedule`, `ic_place`, `ic_map`, `ic_my_location`, `ic_phone`, `ic_message`, `ic_person`, `ic_lock`, `ic_logout`, `ic_visibility`, `ic_notifications`, `ic_favorite`, `ic_favorite_border`, `ic_image` |
+| Nền nhãn | `bg_nhan` (cam), `bg_nhan_xanh` (xanh lá), `bg_nhan_xanh_duong` (xanh dương), `bg_nhan_do` (đỏ), `bg_nhan_xam` (xám) |
+| Nền khác | `bg_o_tim` (ô tìm bo tròn), `bg_anh_trong` (ô xám giữ chỗ cho ảnh), `bg_tron_trang`, `bg_tron_nhat` (hình tròn) |
+
+Icon có màu đen, đổi màu bằng `app:tint`:
+
+```xml
+<ImageView
+    android:layout_width="24dp"
+    android:layout_height="24dp"
+    android:contentDescription="@string/a12_quay_lai"
+    app:srcCompat="@drawable/ic_arrow_back"
+    app:tint="?attr/colorOnSurface" />
+```
+
+Cần icon chưa có: chuột phải `res/drawable` → **New → Vector Asset** → bấm vào hình ở ô *Clip art* để tìm, đặt tên `ic_<tên>`. Cần nền riêng cho màn hình của mình thì đặt tên có mã màn hình, vd. `bg_a05_tron_xanh.xml`.
+
+### Bảng tra: thành phần trong Figma dựng bằng gì
+
+Các đoạn XML dưới đây đã chạy thử với theme của project, chép vào rồi đổi `id` và chuỗi.
+
+**Ô nhập có viền và nhãn**
+
+```xml
+<com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/emailTIL"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="@string/a06_email">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/emailET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress" />
+</com.google.android.material.textfield.TextInputLayout>
+```
+
+Ô mật khẩu: thêm `app:endIconMode="password_toggle"` vào `TextInputLayout` và đổi `inputType` thành `textPassword`. Dòng gợi ý dưới ô: `app:helperText="@string/..."`.
+
+**Nút.** Thẻ `Button` thường là nút chính nền xanh. Các kiểu khác thêm thuộc tính `style`:
+
+| Kiểu nút | Thuộc tính `style` |
+| --- | --- |
+| Nút chính (nền xanh) | không cần |
+| Nút viền | `@style/Widget.Material3.Button.OutlinedButton` |
+| Nút chữ | `@style/Widget.Material3.Button.TextButton` |
+| Nút nhạt (nền xanh nhạt) | `@style/Widget.Material3.Button.TonalButton` |
+
+Nút có icon thêm `app:icon="@drawable/ic_add"`. Nút rộng hết màn hình đặt `android:layout_height="@dimen/button_height"`.
+
+**Hàng chip lọc** (chọn một trong nhiều)
+
+```xml
+<com.google.android.material.chip.ChipGroup
+    android:id="@+id/locCG"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:selectionRequired="true"
+    app:singleSelection="true">
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/tatCaChip"
+        style="@style/Widget.Material3.Chip.Filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="@string/a13_tat_ca" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/dangHienChip"
+        style="@style/Widget.Material3.Chip.Filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/a13_dang_hien" />
+</com.google.android.material.chip.ChipGroup>
+```
+
+Hàng chip dài hơn màn hình thì đặt `ChipGroup` trong một `HorizontalScrollView` và thêm `app:singleLine="true"`.
+
+**Nhãn trạng thái** ("Còn 1 chỗ", "Đang hiện", "Đã hủy"…)
+
+```xml
+<TextView
+    android:id="@+id/trangThaiTV"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_nhan_xanh"
+    android:paddingStart="8dp"
+    android:paddingTop="2dp"
+    android:paddingEnd="8dp"
+    android:paddingBottom="2dp"
+    android:textAppearance="?attr/textAppearanceLabelSmall"
+    android:textColor="@color/on_trang_thai_tot" />
+```
+
+| Nền | Màu chữ đi kèm | Dùng cho |
+| --- | --- | --- |
+| `bg_nhan` | `?attr/colorOnTertiaryContainer` | Còn N chỗ, Chờ xác nhận, Nổi bật |
+| `bg_nhan_xanh` | `@color/on_trang_thai_tot` | Đang hiện, Mở, Hoàn thành |
+| `bg_nhan_xanh_duong` | `?attr/colorOnPrimaryContainer` | Đã xác nhận |
+| `bg_nhan_do` | `?attr/colorOnErrorContainer` | Đã hủy |
+| `bg_nhan_xam` | `?attr/colorOnSurfaceVariant` | Đang ẩn, Đã đóng, Hết chỗ |
+
+**Các thành phần khác**
+
+| Trong Figma | Dùng |
+| --- | --- |
+| Thẻ có viền bo góc | `com.google.android.material.card.MaterialCardView` với `style="?attr/materialCardViewOutlinedStyle"` (xem `item_a01_tour_noi_bat.xml`) |
+| Công tắc bật tắt | `com.google.android.material.materialswitch.MaterialSwitch`, chữ đặt ở `android:text` |
+| Ô chọn một giá trị từ danh sách | `Spinner` với `ArrayAdapter` |
+| Chọn một trong vài lựa chọn | `RadioGroup` chứa các `RadioButton` |
+| Thanh tiến độ ngang | `<ProgressBar style="?android:attr/progressBarStyleHorizontal" android:max="20" android:progress="12" ... />` |
+| Vòng xoay đang tải | `ProgressBar` không cần `style` |
+| Nút nổi "Thêm …" | `com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton` với `app:icon` và `android:text` |
+| Ô tìm kiếm bo tròn | `EditText` hoặc `TextView` nền `@drawable/bg_o_tim` (xem `fragment_a01_trang_chu.xml`) |
+| Ảnh chưa có | `ImageView` nền `@drawable/bg_anh_trong`, hình `@drawable/ic_image`, `app:tint="?attr/colorOutline"` |
+| Ảnh đại diện bằng chữ cái | `TextView` vuông, nền `@drawable/bg_tron_nhat`, `android:gravity="center"` |
+| Đường kẻ ngang | `View` cao `1dp`, nền `?attr/colorOutline` |
+| Danh sách | `RecyclerView` + Adapter có ViewHolder (xem `TourNoiBatAdapter.kt`) |
+| Danh sách nằm trong `ScrollView` | `RecyclerView` thêm `android:nestedScrollingEnabled="false"` |
+| Màn hình dài hơn chiều cao máy | bọc nội dung trong `ScrollView` |
 
 ### Lưu ý khi dựng layout
 
