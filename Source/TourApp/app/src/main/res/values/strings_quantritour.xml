@@ -21,4 +21,19 @@
     <string name="a12_luu">Lưu</string>
     <string name="a12_loi_ten">Vui lòng nhập tên điểm đến</string>
     <string name="a12_da_luu">Đã lưu điểm đến %1$s</string>
+
+    <!-- A13 Danh sách tour -->
+    <string name="a13_tieu_de">Tour</string>
+    <string name="a13_them_tour">Thêm tour</string>
+    <string name="a13_tuy_chon">Tùy chọn</string>
+    <string name="a13_tim">Tìm theo tên tour</string>
+    <string name="a13_tat_ca">Tất cả</string>
+    <string name="a13_dang_hien">Đang hiện</string>
+    <string name="a13_dang_an">Đang ẩn</string>
+    <string name="a13_noi_bat">Nổi bật</string>
+    <string name="a13_so_dot">%1$d đợt đang mở</string>
+    <string name="a13_anh">Ảnh tour</string>
+    <string name="a13_khong_co">Không có tour phù hợp</string>
+    <string name="a13_menu_tour">Sửa, đợt khởi hành, ẩn hoặc hiện: %1$s</string>
+    <string name="a13_menu_tren">Điểm đến</string>
 </resources>
