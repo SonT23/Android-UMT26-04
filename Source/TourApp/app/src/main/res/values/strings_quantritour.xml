@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Chuỗi của module D: Quản trị tour (Phúc). Tên chuỗi bắt đầu bằng mã màn hình. -->
+<resources>
+    <!-- A12 Điểm đến -->
+    <string name="a12_tieu_de">Điểm đến</string>
+    <string name="a12_quay_lai">Quay lại</string>
+    <string name="a12_them">Thêm điểm đến</string>
+    <string name="a12_tuy_chon">Tùy chọn</string>
+    <string name="a12_anh">Ảnh điểm đến</string>
+    <string name="a12_mo_ta_dong">%1$s, %2$d tour</string>
+    <string name="a12_sua_xoa">Sửa hoặc xóa: %1$s</string>
+
+</resources>

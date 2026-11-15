@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Một dòng điểm đến ở A12: ảnh, tên, tỉnh và số tour, nút tùy chọn, đường kẻ dưới -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/anhIV"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_anh_trong"
+        android:contentDescription="@string/a12_anh"
+        android:padding="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_image"
+        app:tint="?attr/colorOutline" />
+
+    <TextView
+        android:id="@+id/tenTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_m"
+        android:layout_marginEnd="@dimen/space_s"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintBottom_toTopOf="@+id/moTaTV"
+        app:layout_constraintEnd_toStartOf="@+id/tuyChonIV"
+        app:layout_constraintStart_toEndOf="@+id/anhIV"
+        app:layout_constraintTop_toTopOf="@+id/anhIV"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Đà Lạt" />
+
+    <TextView
+        android:id="@+id/moTaTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        app:layout_constraintBottom_toBottomOf="@+id/anhIV"
+        app:layout_constraintEnd_toEndOf="@+id/tenTV"
+        app:layout_constraintStart_toStartOf="@+id/tenTV"
+        app:layout_constraintTop_toBottomOf="@+id/tenTV"
+        tools:text="Lâm Đồng, 2 tour" />
+
+    <ImageView
+        android:id="@+id/tuyChonIV"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/a12_tuy_chon"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/anhIV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/anhIV"
+        app:srcCompat="@drawable/ic_more_vert"
+        app:tint="?attr/colorOnSurfaceVariant" />
+
+    <!-- Đường kẻ ngăn giữa các dòng -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:alpha="0.3"
+        android:background="?attr/colorOutline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anhIV" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
