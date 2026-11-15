@@ -46,4 +46,17 @@
     <string name="a02_xoa_loc">Xóa lọc</string>
     <string name="a02_xem_tour">Xem tour</string>
     <string name="a02_da_ap_dung">Đã áp dụng bộ lọc</string>
+
+    <!-- A03 Chi tiết tour -->
+    <string name="a03_quay_lai">Quay lại</string>
+    <string name="a03_chia_se">Chia sẻ tour</string>
+    <string name="a03_so_anh">%1$d/%2$d</string>
+    <string name="a03_moi_nguoi_lon">mỗi người lớn</string>
+    <string name="a03_lich_trinh">LỊCH TRÌNH</string>
+    <string name="a03_xem_ban_do">Xem bản đồ lịch trình</string>
+    <string name="a03_dot_khoi_hanh">ĐỢT KHỞI HÀNH</string>
+    <string name="a03_dat">Đặt</string>
+    <string name="a03_con_cho">Còn %1$d chỗ</string>
+    <string name="a03_het_cho">Hết chỗ</string>
+    <string name="a03_mo_rong">Xem chi tiết ngày</string>
 </resources>

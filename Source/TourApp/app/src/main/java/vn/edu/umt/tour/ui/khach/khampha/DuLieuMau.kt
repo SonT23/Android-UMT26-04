@@ -37,3 +37,37 @@ fun taoKetQuaTimMau(): ArrayList<TourMau> {
 fun taoDiemDenMau(): ArrayList<String> {
     return arrayListOf("Đà Lạt", "Nha Trang", "Hội An", "Phú Quốc", "Hạ Long", "Sa Pa")
 }
+
+// A03: lịch trình từng ngày. moRong = true khi người dùng bấm mở xem chi tiết ngày đó.
+class LichTrinhMau(
+    val ngay: String,
+    val tieuDe: String,
+    val moTa: String,
+    var moRong: Boolean = false
+)
+
+fun taoLichTrinhMau(): ArrayList<LichTrinhMau> {
+    return arrayListOf(
+        LichTrinhMau("Ngày 1", "Khởi hành, nhận phòng",
+            "06:00 đón khách tại TP.HCM. Chiều nhận phòng khách sạn, tối dạo chợ đêm Đà Lạt."),
+        LichTrinhMau("Ngày 2", "Đồi chè và thác Datanla",
+            "Sáng tham quan đồi chè Cầu Đất. Chiều trượt máng ở thác Datanla, tối tự do."),
+        LichTrinhMau("Ngày 3", "Chợ Đà Lạt, trở về",
+            "Sáng mua đặc sản ở chợ Đà Lạt, trả phòng lúc 11:00. Về đến TP.HCM khoảng 19:00.")
+    )
+}
+
+// A03: đợt khởi hành. soCho = 0 nghĩa là hết chỗ.
+class DotMau(
+    val ngay: String,
+    val gia: String,
+    val soCho: Int
+)
+
+fun taoDotMau(): ArrayList<DotMau> {
+    return arrayListOf(
+        DotMau("20/11 đến 22/11/2026", "Người lớn 2.500.000 ₫, trẻ em 1.500.000 ₫", 1),
+        DotMau("04/12 đến 06/12/2026", "Người lớn 2.700.000 ₫, trẻ em 1.620.000 ₫", 20),
+        DotMau("30/10 đến 01/11/2026", "Người lớn 2.400.000 ₫, trẻ em 1.440.000 ₫", 0)
+    )
+}
