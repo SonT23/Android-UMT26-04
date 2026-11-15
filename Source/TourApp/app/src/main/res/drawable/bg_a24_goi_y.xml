@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A24: nền tối của dòng gợi ý "Kéo bản đồ để đặt ghim". Chữ dùng ?attr/colorSurface -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="?attr/colorOnSurface" />
+    <corners android:radius="8dp" />
+</shape>

@@ -12,4 +12,5 @@ val manHinhD: List<ManHinh> = listOf(
     ManHinh("A13", "Danh sách tour") { DanhSachTourFragment() },
     ManHinh("A15", "Đợt khởi hành") { DotKhoiHanhFragment() },
     ManHinh("A14", "Thêm, sửa tour") { ThemSuaTourFragment() },
+    ManHinh("A24", "Chọn vị trí") { ChonViTriFragment() },
 )

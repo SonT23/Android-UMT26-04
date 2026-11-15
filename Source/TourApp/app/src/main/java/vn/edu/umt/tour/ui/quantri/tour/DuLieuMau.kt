@@ -92,6 +92,9 @@ class NgayMau(
     val tieuDe: String
 )
 
+// A24: vị trí đang ghim trên bản đồ như trong thiết kế
+const val TEN_VI_TRI = "Đà Lạt, Lâm Đồng"
+
 fun taoNgayMau(): ArrayList<NgayMau> {
     return arrayListOf(
         NgayMau(1, "Khởi hành, nhận phòng"),

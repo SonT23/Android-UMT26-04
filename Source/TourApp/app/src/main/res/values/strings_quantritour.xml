@@ -80,4 +80,15 @@
     <string name="a14_loi_ten">Vui lòng nhập tên tour</string>
     <string name="a14_loi_so_dem">Số đêm không được lớn hơn số ngày</string>
     <string name="a14_da_luu">Đã lưu tour %1$s</string>
+
+    <!-- A24 Chọn vị trí -->
+    <string name="a24_quay_lai">Quay lại</string>
+    <string name="a24_tim">Tìm địa chỉ hoặc địa điểm</string>
+    <string name="a24_ban_do_giu_cho">Bản đồ Google Maps sẽ hiển thị ở đây</string>
+    <string name="a24_goi_y">Kéo bản đồ để đặt ghim</string>
+    <string name="a24_ghim">Ghim vị trí</string>
+    <string name="a24_vi_tri_cua_toi">Về vị trí của tôi</string>
+    <string name="a24_vi_tri_diem_den">Vị trí điểm đến</string>
+    <string name="a24_dung_vi_tri">Dùng vị trí này</string>
+    <string name="a24_da_chon">Đã chọn: %1$s (%2$s)</string>
 </resources>
