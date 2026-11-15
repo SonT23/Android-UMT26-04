@@ -14,14 +14,24 @@
 
 ## Các màn hình cần làm
 
-| Mã | Ảnh Figma | Layout | Lớp Kotlin |
-|---|---|---|---|
-| A12 | [A12-diem-den.png](../Figma/D-quan-tri-tour/A12-diem-den.png) | `fragment_a12_diem_den.xml`, `item_a12_diem_den.xml` | `DiemDenFragment`, `DiemDenAdapter` |
-| A12 | (bảng "Sửa điểm đến" trong cùng ảnh) | `dialog_a12_sua_diem_den.xml` | `SuaDiemDenFragment` |
-| A13 | [A13-danh-sach-tour.png](../Figma/D-quan-tri-tour/A13-danh-sach-tour.png) | `fragment_a13_danh_sach_tour.xml`, `item_a13_tour.xml` | `DanhSachTourFragment`, `TourAdapter` |
-| A15 | [A15-dot-khoi-hanh.png](../Figma/D-quan-tri-tour/A15-dot-khoi-hanh.png) | `fragment_a15_dot_khoi_hanh.xml`, `item_a15_dot.xml` | `DotKhoiHanhFragment`, `DotAdapter` |
-| A14 | [A14-them-sua-tour.png](../Figma/D-quan-tri-tour/A14-them-sua-tour.png) | `fragment_a14_them_sua_tour.xml`, `item_a14_ngay.xml` | `ThemSuaTourFragment`, `NgayAdapter` |
-| A24 | [A24-chon-vi-tri.png](../Figma/D-quan-tri-tour/A24-chon-vi-tri.png) | `fragment_a24_chon_vi_tri.xml` | `ChonViTriFragment` |
+| Mã | Ảnh Figma | Layout | Lớp Kotlin | Trạng thái |
+|---|---|---|---|---|
+| A12 | [A12-diem-den.png](../Figma/D-quan-tri-tour/A12-diem-den.png) | `fragment_a12_diem_den.xml`, `item_a12_diem_den.xml` | `DiemDenFragment`, `DiemDenAdapter` | Đã xong |
+| A12 | (bảng "Sửa điểm đến" trong cùng ảnh) | `dialog_a12_sua_diem_den.xml` | `SuaDiemDenFragment` | Đã xong |
+| A13 | [A13-danh-sach-tour.png](../Figma/D-quan-tri-tour/A13-danh-sach-tour.png) | `fragment_a13_danh_sach_tour.xml`, `item_a13_tour.xml` | `DanhSachTourFragment`, `TourAdapter` | Đã xong |
+| A15 | [A15-dot-khoi-hanh.png](../Figma/D-quan-tri-tour/A15-dot-khoi-hanh.png) | `fragment_a15_dot_khoi_hanh.xml`, `item_a15_dot.xml` | `DotKhoiHanhFragment`, `DotAdapter` | Đã xong |
+| A14 | [A14-them-sua-tour.png](../Figma/D-quan-tri-tour/A14-them-sua-tour.png) | `fragment_a14_them_sua_tour.xml`, `item_a14_ngay.xml` | `ThemSuaTourFragment`, `NgayAdapter` | Đã xong |
+| A24 | [A24-chon-vi-tri.png](../Figma/D-quan-tri-tour/A24-chon-vi-tri.png) | `fragment_a24_chon_vi_tri.xml` | `ChonViTriFragment` | Đã xong |
+
+Dữ liệu mẫu của cả module nằm trong `DuLieuMau.kt`. Màu đều lấy từ thuộc tính theme nên giao diện tối tự đổi theo.
+
+Chỗ khác với ảnh Figma, sẽ làm khi nối chức năng:
+
+- A12: "Sửa điểm đến" là màn hình riêng thay cho bảng trượt; nút ba chấm của mỗi dòng chỉ hiện thông báo, chưa có menu Sửa, Xóa.
+- A13: nút ba chấm của thẻ chỉ hiện thông báo, chưa có menu Sửa, Đợt khởi hành, Ẩn hoặc Hiện. Chip lọc và ô tìm (bấm nút tìm trên bàn phím) đã lọc được trên dữ liệu mẫu.
+- A15: có thêm một đợt "Đã hủy" trong dữ liệu mẫu để thử chip "Đã hủy". Nút "Đóng đợt" và "Hủy đợt" đổi trạng thái trên dữ liệu mẫu.
+- A14: ảnh là ô giữ chỗ; dải báo lưu nháp luôn hiện; biểu tượng kéo chưa kéo được. Bấm "Lưu" có kiểm tra tên trống và số đêm lớn hơn số ngày.
+- A24: nền xám và ghim cố định thay cho bản đồ thật.
 
 Nên làm theo thứ tự trong bảng: ba màn hình danh sách trước, form dài A14 sau, A24 cuối.
 
