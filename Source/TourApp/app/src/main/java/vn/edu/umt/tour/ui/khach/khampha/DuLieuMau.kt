@@ -71,3 +71,29 @@ fun taoDotMau(): ArrayList<DotMau> {
         DotMau("30/10 đến 01/11/2026", "Người lớn 2.400.000 ₫, trẻ em 1.440.000 ₫", 0)
     )
 }
+
+// A21: tour đã lưu yêu thích. Nhãn xám ghi ngày lưu.
+fun taoYeuThichMau(): ArrayList<TourMau> {
+    return arrayListOf(
+        TourMau("Đà Lạt 3 ngày 2 đêm", "Đà Lạt · 3 ngày 2 đêm", "Từ 2.500.000 ₫", "Lưu ngày 10/11", true, true),
+        TourMau("Phú Quốc nghỉ dưỡng 4 ngày", "Phú Quốc · 4 ngày 3 đêm", "Từ 5.200.000 ₫", "Lưu ngày 08/11", true, true),
+        TourMau("Hạ Long du thuyền 2 ngày", "Hạ Long · 2 ngày 1 đêm", "Từ 3.100.000 ₫", "Lưu ngày 02/11", true, true)
+    )
+}
+
+// A21: tour đã xem gần đây
+class DaXemMau(
+    val ten: String,
+    val thoiGian: String
+)
+
+fun taoDaXemMau(): ArrayList<DaXemMau> {
+    return arrayListOf(
+        DaXemMau("Nha Trang biển đảo", "Hôm nay"),
+        DaXemMau("Hội An phố cổ", "Hôm qua"),
+        DaXemMau("Sa Pa mùa lúa", "09/11"),
+        DaXemMau("Đà Lạt 3 ngày 2 đêm", "08/11"),
+        DaXemMau("Phú Quốc nghỉ dưỡng", "05/11"),
+        DaXemMau("Hạ Long du thuyền", "02/11")
+    )
+}
