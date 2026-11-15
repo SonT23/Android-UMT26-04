@@ -22,4 +22,28 @@
     <string name="a02_chip_so_ngay">Số ngày</string>
     <string name="a02_so_tour">%1$d tour</string>
     <string name="a02_gia_tang_dan">Giá tăng dần</string>
+
+    <!-- A02 Bộ lọc -->
+    <string name="a02_bo_loc">Bộ lọc</string>
+    <string name="a02_dong">Đóng</string>
+    <string name="a02_diem_den">Điểm đến</string>
+    <string name="a02_tat_ca_diem_den">Tất cả điểm đến</string>
+    <string name="a02_khoang_gia">Khoảng giá (₫)</string>
+    <string name="a02_gia_tu">Từ</string>
+    <string name="a02_gia_den">Đến</string>
+    <string name="a02_thang_khoi_hanh">Tháng khởi hành</string>
+    <string name="a02_thang_11">Tháng 11</string>
+    <string name="a02_thang_12">Tháng 12</string>
+    <string name="a02_thang_1">Tháng 1</string>
+    <string name="a02_thang_2">Tháng 2</string>
+    <string name="a02_so_ngay">Số ngày</string>
+    <string name="a02_1_2_ngay">1–2 ngày</string>
+    <string name="a02_3_4_ngay">3–4 ngày</string>
+    <string name="a02_tu_5_ngay">Từ 5 ngày</string>
+    <string name="a02_sap_xep">Sắp xếp</string>
+    <string name="a02_gia_giam_dan">Giá giảm dần</string>
+    <string name="a02_ngay_gan_nhat">Ngày gần nhất</string>
+    <string name="a02_xoa_loc">Xóa lọc</string>
+    <string name="a02_xem_tour">Xem tour</string>
+    <string name="a02_da_ap_dung">Đã áp dụng bộ lọc</string>
 </resources>

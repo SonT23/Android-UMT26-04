@@ -21,4 +21,28 @@
     <string name="a02_chip_so_ngay">Duration</string>
     <string name="a02_so_tour">%1$d tours</string>
     <string name="a02_gia_tang_dan">Price: low to high</string>
+
+    <!-- A02 Filters -->
+    <string name="a02_bo_loc">Filters</string>
+    <string name="a02_dong">Close</string>
+    <string name="a02_diem_den">Destination</string>
+    <string name="a02_tat_ca_diem_den">All destinations</string>
+    <string name="a02_khoang_gia">Price range (₫)</string>
+    <string name="a02_gia_tu">From</string>
+    <string name="a02_gia_den">To</string>
+    <string name="a02_thang_khoi_hanh">Departure month</string>
+    <string name="a02_thang_11">November</string>
+    <string name="a02_thang_12">December</string>
+    <string name="a02_thang_1">January</string>
+    <string name="a02_thang_2">February</string>
+    <string name="a02_so_ngay">Duration</string>
+    <string name="a02_1_2_ngay">1–2 days</string>
+    <string name="a02_3_4_ngay">3–4 days</string>
+    <string name="a02_tu_5_ngay">5+ days</string>
+    <string name="a02_sap_xep">Sort by</string>
+    <string name="a02_gia_giam_dan">Price: high to low</string>
+    <string name="a02_ngay_gan_nhat">Soonest departure</string>
+    <string name="a02_xoa_loc">Clear</string>
+    <string name="a02_xem_tour">Show tours</string>
+    <string name="a02_da_ap_dung">Filters applied</string>
 </resources>
