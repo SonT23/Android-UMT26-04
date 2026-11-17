@@ -35,4 +35,15 @@
     <string name="a07_dang_ky">Sign up</string>
     <string name="a07_da_co_tai_khoan">Already have an account?</string>
     <string name="a07_dang_nhap">Sign in</string>
+
+    <!-- A10 Account -->
+    <string name="a10_tieu_de">Account</string>
+    <string name="a10_doi_anh">Change profile photo</string>
+    <string name="a10_thong_tin_ca_nhan">Personal information</string>
+    <string name="a10_ho_ten">Full name</string>
+    <string name="a10_so_dien_thoai">Phone number</string>
+    <string name="a10_luu_thay_doi">Save changes</string>
+    <string name="a10_doi_mat_khau">Change password</string>
+    <string name="a10_cai_dat">Settings</string>
+    <string name="a10_dang_xuat">Sign out</string>
 </resources>

@@ -35,4 +35,15 @@
     <string name="a07_dang_ky">Đăng ký</string>
     <string name="a07_da_co_tai_khoan">Đã có tài khoản?</string>
     <string name="a07_dang_nhap">Đăng nhập</string>
+
+    <!-- A10 Tài khoản -->
+    <string name="a10_tieu_de">Tài khoản</string>
+    <string name="a10_doi_anh">Đổi ảnh đại diện</string>
+    <string name="a10_thong_tin_ca_nhan">Thông tin cá nhân</string>
+    <string name="a10_ho_ten">Họ và tên</string>
+    <string name="a10_so_dien_thoai">Số điện thoại</string>
+    <string name="a10_luu_thay_doi">Lưu thay đổi</string>
+    <string name="a10_doi_mat_khau">Đổi mật khẩu</string>
+    <string name="a10_cai_dat">Cài đặt</string>
+    <string name="a10_dang_xuat">Đăng xuất</string>
 </resources>
