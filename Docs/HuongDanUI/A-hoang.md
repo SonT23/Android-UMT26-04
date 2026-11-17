@@ -14,16 +14,25 @@
 
 ## Các màn hình cần làm
 
-| Mã | Ảnh Figma | Layout | Lớp Kotlin |
-|---|---|---|---|
-| A06 | [A06-dang-nhap.png](../Figma/A-tai-khoan/A06-dang-nhap.png) | `fragment_a06_dang_nhap.xml` | `DangNhapFragment` |
-| A07 | [A07-dang-ky.png](../Figma/A-tai-khoan/A07-dang-ky.png) | `fragment_a07_dang_ky.xml` | `DangKyFragment` |
-| A00 | [A00-khoi-dong.png](../Figma/A-tai-khoan/A00-khoi-dong.png) | `fragment_a00_khoi_dong.xml` | `KhoiDongFragment` |
-| A10 | [A10-tai-khoan.png](../Figma/A-tai-khoan/A10-tai-khoan.png) | `fragment_a10_tai_khoan.xml` | `TaiKhoanFragment` |
-| A19 | [A19-cai-dat.png](../Figma/A-tai-khoan/A19-cai-dat.png) | `fragment_a19_cai_dat.xml` | `CaiDatFragment` |
-| A20 | [A20-quen-mat-khau.png](../Figma/A-tai-khoan/A20-quen-mat-khau.png) | `fragment_a20_quen_mat_khau.xml` | `QuenMatKhauFragment` |
+| Mã | Ảnh Figma | Layout | Lớp Kotlin | Trạng thái |
+|---|---|---|---|---|
+| A06 | [A06-dang-nhap.png](../Figma/A-tai-khoan/A06-dang-nhap.png) | `fragment_a06_dang_nhap.xml` | `DangNhapFragment` | Đã xong |
+| A07 | [A07-dang-ky.png](../Figma/A-tai-khoan/A07-dang-ky.png) | `fragment_a07_dang_ky.xml` | `DangKyFragment` | Đã xong |
+| A00 | [A00-khoi-dong.png](../Figma/A-tai-khoan/A00-khoi-dong.png) | `fragment_a00_khoi_dong.xml` | `KhoiDongFragment` | Đã xong |
+| A10 | [A10-tai-khoan.png](../Figma/A-tai-khoan/A10-tai-khoan.png) | `fragment_a10_tai_khoan.xml` | `TaiKhoanFragment` | Đã xong |
+| A19 | [A19-cai-dat.png](../Figma/A-tai-khoan/A19-cai-dat.png) | `fragment_a19_cai_dat.xml` | `CaiDatFragment` | Đã xong |
+| A20 | [A20-quen-mat-khau.png](../Figma/A-tai-khoan/A20-quen-mat-khau.png) | `fragment_a20_quen_mat_khau.xml` | `QuenMatKhauFragment` | Đã xong bước 2 (nhập mã); bước 1 và 3 làm sau |
 
 Nên làm theo thứ tự trong bảng: A06 đơn giản nhất và các màn hình sau dùng lại cách làm ô nhập, nút của nó. Module A không có danh sách nên không cần Adapter.
+
+Dữ liệu mẫu (họ tên, email, số điện thoại) nằm trong `DuLieuMau.kt`. Icon tự thêm (`ic_fingerprint`, `ic_photo_camera`, `ic_settings`, `ic_language`, `ic_dark_mode`) vẽ cùng kiểu nét với bộ icon chung.
+
+Chỗ khác với ảnh Figma, sẽ làm khi nối chức năng:
+
+- A00: tên ứng dụng lấy từ `@string/app_name` ("Đặt Tour") thay cho chữ "TourApp" trong ảnh, để khớp tên dưới biểu tượng app.
+- A06, A07: ô nhập để trống khi chạy; dữ liệu như trong ảnh chỉ hiện ở bản xem trước của Layout Editor. A07 bật sẵn lỗi ô mật khẩu để xem thử, gõ vào ô thì lỗi tắt.
+- A19: 3 ô Sáng / Tối / Theo máy cách nhau một khoảng thay vì dính liền. Chọn là đổi giao diện ngay cho cả app nhưng chưa lưu, mở lại app sẽ về "Theo máy".
+- A20: chưa đếm ngược "Gửi lại mã sau 00:45"; gõ một chữ số thì tự sang ô kế tiếp.
 
 ## Chỉ dẫn từng màn hình
 
