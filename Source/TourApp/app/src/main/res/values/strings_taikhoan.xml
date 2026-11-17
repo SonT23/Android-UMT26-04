@@ -46,4 +46,24 @@
     <string name="a10_doi_mat_khau">Đổi mật khẩu</string>
     <string name="a10_cai_dat">Cài đặt</string>
     <string name="a10_dang_xuat">Đăng xuất</string>
+
+    <!-- A19 Cài đặt -->
+    <string name="a19_quay_lai">Quay lại</string>
+    <string name="a19_tieu_de">Cài đặt</string>
+    <string name="a19_chung">Chung</string>
+    <string name="a19_ngon_ngu">Ngôn ngữ</string>
+    <string name="a19_ngon_ngu_hien_tai">Tiếng Việt</string>
+    <string name="a19_giao_dien">Giao diện</string>
+    <string name="a19_sang">Sáng</string>
+    <string name="a19_toi">Tối</string>
+    <string name="a19_theo_may">Theo máy</string>
+    <string name="a19_thong_bao">Thông báo</string>
+    <string name="a19_thong_bao_don">Thông báo đơn hàng</string>
+    <string name="a19_thong_bao_don_mo_ta">Báo khi đơn được xác nhận</string>
+    <string name="a19_nhac_lich">Nhắc lịch khởi hành</string>
+    <string name="a19_nhac_lich_mo_ta">Trước ngày đi 1 ngày</string>
+    <string name="a19_bao_mat">Bảo mật</string>
+    <string name="a19_van_tay">Mở khóa bằng vân tay</string>
+    <string name="a19_van_tay_mo_ta">Không cần nhập mật khẩu khi mở lại</string>
+    <string name="a19_phien_ban">Phiên bản 1.0.0</string>
 </resources>

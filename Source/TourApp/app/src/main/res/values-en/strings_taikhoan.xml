@@ -46,4 +46,24 @@
     <string name="a10_doi_mat_khau">Change password</string>
     <string name="a10_cai_dat">Settings</string>
     <string name="a10_dang_xuat">Sign out</string>
+
+    <!-- A19 Settings -->
+    <string name="a19_quay_lai">Back</string>
+    <string name="a19_tieu_de">Settings</string>
+    <string name="a19_chung">General</string>
+    <string name="a19_ngon_ngu">Language</string>
+    <string name="a19_ngon_ngu_hien_tai">English</string>
+    <string name="a19_giao_dien">Theme</string>
+    <string name="a19_sang">Light</string>
+    <string name="a19_toi">Dark</string>
+    <string name="a19_theo_may">System</string>
+    <string name="a19_thong_bao">Notifications</string>
+    <string name="a19_thong_bao_don">Booking updates</string>
+    <string name="a19_thong_bao_don_mo_ta">When a booking is confirmed</string>
+    <string name="a19_nhac_lich">Departure reminder</string>
+    <string name="a19_nhac_lich_mo_ta">1 day before departure</string>
+    <string name="a19_bao_mat">Security</string>
+    <string name="a19_van_tay">Unlock with fingerprint</string>
+    <string name="a19_van_tay_mo_ta">No password needed when reopening</string>
+    <string name="a19_phien_ban">Version 1.0.0</string>
 </resources>
