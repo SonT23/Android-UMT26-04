@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A06: nền logo, ô vuông bo góc màu chính -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="?attr/colorPrimary" />
+    <corners android:radius="20dp" />
+</shape>

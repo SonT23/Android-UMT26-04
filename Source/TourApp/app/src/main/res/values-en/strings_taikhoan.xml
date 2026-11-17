@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Module A strings in English. Same names as values/strings_taikhoan.xml -->
+<resources>
+    <!-- A06 Sign in -->
+    <string name="a06_logo">App logo</string>
+    <string name="a06_tieu_de">Sign in</string>
+    <string name="a06_mo_ta">Book tours and track your bookings</string>
+    <string name="a06_email">Email</string>
+    <string name="a06_mat_khau">Password</string>
+    <string name="a06_quen_mat_khau">Forgot password?</string>
+    <string name="a06_dang_nhap">Sign in</string>
+    <string name="a06_hoac">or</string>
+    <string name="a06_dang_nhap_van_tay">Sign in with fingerprint</string>
+    <string name="a06_chua_co_tai_khoan">Don\'t have an account?</string>
+    <string name="a06_dang_ky">Sign up</string>
+    <string name="a06_xem_tour">Browse tours without signing in</string>
+</resources>
