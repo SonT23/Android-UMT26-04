@@ -14,4 +14,19 @@
     <string name="a06_chua_co_tai_khoan">Don\'t have an account?</string>
     <string name="a06_dang_ky">Sign up</string>
     <string name="a06_xem_tour">Browse tours without signing in</string>
+
+    <!-- A07 Sign up -->
+    <string name="a07_quay_lai">Back</string>
+    <string name="a07_tieu_de">Create account</string>
+    <string name="a07_ho_ten">Full name</string>
+    <string name="a07_email">Email</string>
+    <string name="a07_so_dien_thoai">Phone number</string>
+    <string name="a07_goi_y_so_dien_thoai">10 digits</string>
+    <string name="a07_mat_khau">Password</string>
+    <string name="a07_loi_mat_khau">Password must be at least 8 characters</string>
+    <string name="a07_nhap_lai_mat_khau">Confirm password</string>
+    <string name="a07_dong_y_dieu_khoan">I agree to the terms of use</string>
+    <string name="a07_dang_ky">Sign up</string>
+    <string name="a07_da_co_tai_khoan">Already have an account?</string>
+    <string name="a07_dang_nhap">Sign in</string>
 </resources>

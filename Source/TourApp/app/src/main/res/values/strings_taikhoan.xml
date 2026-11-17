@@ -14,4 +14,19 @@
     <string name="a06_chua_co_tai_khoan">Chưa có tài khoản?</string>
     <string name="a06_dang_ky">Đăng ký</string>
     <string name="a06_xem_tour">Xem tour không cần đăng nhập</string>
+
+    <!-- A07 Đăng ký -->
+    <string name="a07_quay_lai">Quay lại</string>
+    <string name="a07_tieu_de">Tạo tài khoản</string>
+    <string name="a07_ho_ten">Họ và tên</string>
+    <string name="a07_email">Email</string>
+    <string name="a07_so_dien_thoai">Số điện thoại</string>
+    <string name="a07_goi_y_so_dien_thoai">Gồm 10 chữ số</string>
+    <string name="a07_mat_khau">Mật khẩu</string>
+    <string name="a07_loi_mat_khau">Mật khẩu cần từ 8 ký tự</string>
+    <string name="a07_nhap_lai_mat_khau">Nhập lại mật khẩu</string>
+    <string name="a07_dong_y_dieu_khoan">Tôi đồng ý với điều khoản sử dụng</string>
+    <string name="a07_dang_ky">Đăng ký</string>
+    <string name="a07_da_co_tai_khoan">Đã có tài khoản?</string>
+    <string name="a07_dang_nhap">Đăng nhập</string>
 </resources>
