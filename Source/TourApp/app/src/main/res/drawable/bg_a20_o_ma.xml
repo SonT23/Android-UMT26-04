@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A20: nền một ô nhập mã OTP. Ô đang nhập viền xanh dày hơn. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true">
+        <shape>
+            <solid android:color="?attr/colorSurface" />
+            <stroke
+                android:width="2dp"
+                android:color="?attr/colorPrimary" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="?attr/colorSurface" />
+            <stroke
+                android:width="1dp"
+                android:color="?attr/colorOutline" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+</selector>

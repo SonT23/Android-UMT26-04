@@ -66,4 +66,20 @@
     <string name="a19_van_tay">Mở khóa bằng vân tay</string>
     <string name="a19_van_tay_mo_ta">Không cần nhập mật khẩu khi mở lại</string>
     <string name="a19_phien_ban">Phiên bản 1.0.0</string>
+
+    <!-- A20 Quên mật khẩu (bước 2: nhập mã OTP) -->
+    <string name="a20_quay_lai">Quay lại</string>
+    <string name="a20_tieu_de">Quên mật khẩu</string>
+    <string name="a20_buoc_xong">Đã xong</string>
+    <string name="a20_so_buoc_2" translatable="false">2</string>
+    <string name="a20_so_buoc_3" translatable="false">3</string>
+    <string name="a20_buoc_email">Email</string>
+    <string name="a20_buoc_ma">Mã OTP</string>
+    <string name="a20_buoc_mat_khau">Mật khẩu mới</string>
+    <string name="a20_nhap_ma">Nhập mã xác nhận</string>
+    <string name="a20_da_gui_toi">Mã 6 số đã gửi tới %1$s</string>
+    <string name="a20_gui_lai_sau">Gửi lại mã sau %1$02d:%2$02d</string>
+    <string name="a20_xac_nhan_ma">Xác nhận mã</string>
+    <string name="a20_ma_da_nhap">Mã đã nhập: %1$s</string>
+    <string name="a20_kiem_tra_thu_rac">Không nhận được mã? Kiểm tra thư rác.</string>
 </resources>

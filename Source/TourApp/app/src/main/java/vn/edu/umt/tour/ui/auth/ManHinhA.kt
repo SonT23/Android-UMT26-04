@@ -13,4 +13,5 @@ val manHinhA: List<ManHinh> = listOf(
     ManHinh("A07", "Đăng ký") { DangKyFragment() },
     ManHinh("A10", "Tài khoản") { TaiKhoanFragment() },
     ManHinh("A19", "Cài đặt") { CaiDatFragment() },
+    ManHinh("A20", "Quên mật khẩu") { QuenMatKhauFragment() },
 )

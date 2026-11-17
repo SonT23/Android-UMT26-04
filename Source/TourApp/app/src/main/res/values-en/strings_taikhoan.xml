@@ -66,4 +66,18 @@
     <string name="a19_van_tay">Unlock with fingerprint</string>
     <string name="a19_van_tay_mo_ta">No password needed when reopening</string>
     <string name="a19_phien_ban">Version 1.0.0</string>
+
+    <!-- A20 Forgot password (step 2: enter OTP) -->
+    <string name="a20_quay_lai">Back</string>
+    <string name="a20_tieu_de">Forgot password</string>
+    <string name="a20_buoc_xong">Done</string>
+    <string name="a20_buoc_email">Email</string>
+    <string name="a20_buoc_ma">OTP code</string>
+    <string name="a20_buoc_mat_khau">New password</string>
+    <string name="a20_nhap_ma">Enter verification code</string>
+    <string name="a20_da_gui_toi">We sent a 6-digit code to %1$s</string>
+    <string name="a20_gui_lai_sau">Resend code in %1$02d:%2$02d</string>
+    <string name="a20_xac_nhan_ma">Verify code</string>
+    <string name="a20_ma_da_nhap">Code entered: %1$s</string>
+    <string name="a20_kiem_tra_thu_rac">Didn\'t get the code? Check your spam folder.</string>
 </resources>
