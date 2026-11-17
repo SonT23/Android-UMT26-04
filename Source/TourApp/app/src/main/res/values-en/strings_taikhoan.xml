@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Module A strings in English. Same names as values/strings_taikhoan.xml -->
 <resources>
+    <!-- A00 Splash -->
+    <string name="a00_logo">App logo</string>
+    <string name="a00_mo_ta">Domestic travel, book a tour in a few taps</string>
+    <string name="a00_dang_kiem_tra">Checking sign-in…</string>
+    <string name="a00_phien_ban">Version 1.0.0</string>
+
     <!-- A06 Sign in -->
     <string name="a06_logo">App logo</string>
     <string name="a06_tieu_de">Sign in</string>

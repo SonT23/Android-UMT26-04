@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Chuỗi của module A: Tài khoản, phiên, cài đặt (Hoàng). Bản tiếng Anh ở values-en/strings_taikhoan.xml -->
 <resources>
+    <!-- A00 Khởi động -->
+    <string name="a00_logo">Logo ứng dụng</string>
+    <string name="a00_mo_ta">Du lịch trong nước, đặt tour trong vài chạm</string>
+    <string name="a00_dang_kiem_tra">Đang kiểm tra đăng nhập…</string>
+    <string name="a00_phien_ban">Phiên bản 1.0.0</string>
+
     <!-- A06 Đăng nhập -->
     <string name="a06_logo">Logo ứng dụng</string>
     <string name="a06_tieu_de">Đăng nhập</string>
