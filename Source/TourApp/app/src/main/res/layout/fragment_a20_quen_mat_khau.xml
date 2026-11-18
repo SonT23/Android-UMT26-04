@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A20 Quên mật khẩu, bước 2: nhập mã OTP.
+     Bước 1 (nhập email) và bước 3 (mật khẩu mới) làm sau, mỗi bước một layout riêng. -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/space_l"
+        android:paddingEnd="@dimen/space_l"
+        android:paddingBottom="@dimen/space_l">
+
+        <!-- Thanh trên: nút quay lại và tiêu đề -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginStart="-12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/quayLaiIV"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/a20_quay_lai"
+                android:padding="12dp"
+                app:srcCompat="@drawable/ic_arrow_back"
+                app:tint="?attr/colorOnSurface" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_xs"
+                android:text="@string/a20_tieu_de"
+                android:textAppearance="?attr/textAppearanceTitleLarge"
+                android:textColor="?attr/colorOnSurface" />
+        </LinearLayout>
+
+        <!-- Hàng chỉ bước: 3 nhãn chia đều chiều ngang (chain), mỗi vòng tròn căn giữa trên nhãn của nó,
+             2 đường nối nằm giữa các vòng tròn -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_m">
+
+            <!-- Bước 1 đã qua: dấu tích trên nền xanh -->
+            <ImageView
+                android:id="@+id/buoc1IV"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_a20_buoc_xanh"
+                android:contentDescription="@string/a20_buoc_xong"
+                android:padding="7dp"
+                app:layout_constraintEnd_toEndOf="@+id/buoc1TV"
+                app:layout_constraintStart_toStartOf="@+id/buoc1TV"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_check"
+                app:tint="?attr/colorOnPrimary" />
+
+            <!-- Bước 2 đang làm: số trên nền xanh -->
+            <TextView
+                android:id="@+id/buoc2SoTV"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_a20_buoc_xanh"
+                android:gravity="center"
+                android:text="@string/a20_so_buoc_2"
+                android:textAppearance="?attr/textAppearanceLabelLarge"
+                android:textColor="?attr/colorOnPrimary"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/buoc2TV"
+                app:layout_constraintStart_toStartOf="@+id/buoc2TV"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Bước 3 chưa tới: số trên nền xám -->
+            <TextView
+                android:id="@+id/buoc3SoTV"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_a20_buoc_xam"
+                android:gravity="center"
+                android:text="@string/a20_so_buoc_3"
+                android:textAppearance="?attr/textAppearanceLabelLarge"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/buoc3TV"
+                app:layout_constraintStart_toStartOf="@+id/buoc3TV"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Đường nối 1 → 2 (đã qua, màu xanh) -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginStart="@dimen/space_s"
+                android:layout_marginEnd="@dimen/space_s"
+                android:background="?attr/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@+id/buoc1IV"
+                app:layout_constraintEnd_toStartOf="@+id/buoc2SoTV"
+                app:layout_constraintStart_toEndOf="@+id/buoc1IV"
+                app:layout_constraintTop_toTopOf="@+id/buoc1IV" />
+
+            <!-- Đường nối 2 → 3 (chưa tới, màu xám) -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginStart="@dimen/space_s"
+                android:layout_marginEnd="@dimen/space_s"
+                android:background="?attr/colorSurfaceVariant"
+                app:layout_constraintBottom_toBottomOf="@+id/buoc2SoTV"
+                app:layout_constraintEnd_toStartOf="@+id/buoc3SoTV"
+                app:layout_constraintStart_toEndOf="@+id/buoc2SoTV"
+                app:layout_constraintTop_toTopOf="@+id/buoc2SoTV" />
+
+            <TextView
+                android:id="@+id/buoc1TV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xs"
+                android:gravity="center"
+                android:text="@string/a20_buoc_email"
+                android:textAppearance="?attr/textAppearanceBodySmall"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                app:layout_constraintEnd_toStartOf="@+id/buoc2TV"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buoc1IV" />
+
+            <TextView
+                android:id="@+id/buoc2TV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xs"
+                android:gravity="center"
+                android:text="@string/a20_buoc_ma"
+                android:textAppearance="?attr/textAppearanceLabelMedium"
+                android:textColor="?attr/colorOnSurface"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/buoc3TV"
+                app:layout_constraintStart_toEndOf="@+id/buoc1TV"
+                app:layout_constraintTop_toBottomOf="@+id/buoc2SoTV" />
+
+            <TextView
+                android:id="@+id/buoc3TV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xs"
+                android:gravity="center"
+                android:text="@string/a20_buoc_mat_khau"
+                android:textAppearance="?attr/textAppearanceBodySmall"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/buoc2TV"
+                app:layout_constraintTop_toBottomOf="@+id/buoc3SoTV" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_l"
+            android:text="@string/a20_nhap_ma"
+            android:textAppearance="?attr/textAppearanceHeadlineSmall"
+            android:textColor="?attr/colorOnSurface" />
+
+        <TextView
+            android:id="@+id/daGuiToiTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_xs"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            tools:text="Mã 6 số đã gửi tới an@datour.test" />
+
+        <!-- 6 ô nhập mã, mỗi ô 1 chữ số, chia đều chiều ngang bằng layout_weight -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_l"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/ma1ET"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="@dimen/space_s"
+                android:layout_weight="1"
+                android:background="@drawable/bg_a20_o_ma"
+                android:gravity="center"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textColor="?attr/colorOnSurface"
+                tools:text="4" />
+
+            <EditText
+                android:id="@+id/ma2ET"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="@dimen/space_s"
+                android:layout_weight="1"
+                android:background="@drawable/bg_a20_o_ma"
+                android:gravity="center"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textColor="?attr/colorOnSurface"
+                tools:text="8" />
+
+            <EditText
+                android:id="@+id/ma3ET"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="@dimen/space_s"
+                android:layout_weight="1"
+                android:background="@drawable/bg_a20_o_ma"
+                android:gravity="center"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textColor="?attr/colorOnSurface"
+                tools:text="2" />
+
+            <EditText
+                android:id="@+id/ma4ET"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="@dimen/space_s"
+                android:layout_weight="1"
+                android:background="@drawable/bg_a20_o_ma"
+                android:gravity="center"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textColor="?attr/colorOnSurface"
+                tools:text="5" />
+
+            <EditText
+                android:id="@+id/ma5ET"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="@dimen/space_s"
+                android:layout_weight="1"
+                android:background="@drawable/bg_a20_o_ma"
+                android:gravity="center"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textColor="?attr/colorOnSurface" />
+
+            <EditText
+                android:id="@+id/ma6ET"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_a20_o_ma"
+                android:gravity="center"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textColor="?attr/colorOnSurface" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/guiLaiTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_m"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            tools:text="Gửi lại mã sau 00:45" />
+
+        <Button
+            android:id="@+id/xacNhanBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/space_l"
+            android:text="@string/a20_xac_nhan_ma" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_m"
+            android:gravity="center"
+            android:text="@string/a20_kiem_tra_thu_rac"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="?attr/colorOnSurfaceVariant" />
+    </LinearLayout>
+</ScrollView>
