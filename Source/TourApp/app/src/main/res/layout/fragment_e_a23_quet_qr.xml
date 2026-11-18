@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nền đen toàn màn hình. Camera thật (E8) làm ở tuần 9. Giờ dựng giữ chỗ. -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <!-- Thanh trên: nút đóng + tiêu đề -->
+    <ImageView
+        android:id="@+id/btnDong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/e_title_quet_qr"
+        android:padding="@dimen/space_m"
+        app:srcCompat="@drawable/ic_close"
+        app:tint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tieuDeTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/e_title_quet_qr"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/btnDong"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnDong" />
+
+    <!-- Khung ngắm QR (hình vuông 260dp ở giữa nửa trên) -->
+    <View
+        android:id="@+id/khungQr"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:background="@drawable/bg_a23_khung"
+        app:layout_constraintBottom_toTopOf="@+id/huongDanTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDong"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <!-- Dòng hướng dẫn dưới khung -->
+    <TextView
+        android:id="@+id/huongDanTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_m"
+        android:gravity="center"
+        android:text="@string/e_qr_huong_dan"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/khungQr" />
+
+    <!-- Khối kết quả sát đáy, nền surface -->
+    <LinearLayout
+        android:id="@+id/ketQuaLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+        android:orientation="vertical"
+        android:padding="@dimen/space_m"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Thông tin đợt khởi hành -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/e_dot_khoi_hanh_title"
+            android:textAppearance="?attr/textAppearanceLabelSmall"
+            android:textColor="?attr/colorOnSurfaceVariant" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceTitleSmall"
+            android:textColor="?attr/colorOnSurface"
+            tools:text="Đà Nẵng 3N2Đ · 12/12/2026" />
+
+        <!-- Tiến độ check-in -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_s"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAppearance="?attr/textAppearanceBodySmall"
+                android:textColor="?attr/colorOnSurface"
+                tools:text="Đã có mặt 18/24 khách" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceLabelSmall"
+                android:textColor="?attr/colorPrimary"
+                tools:text="75%" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_xs"
+            android:max="100"
+            android:progress="75"
+            android:progressTint="?attr/colorPrimary"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal" />
+
+        <!-- Thẻ check-in thành công (tạm ẩn, hiện khi quét được QR) -->
+        <LinearLayout
+            android:id="@+id/cardCheckInOK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_s"
+            android:background="@drawable/bg_nhan_xanh"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/space_m"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:contentDescription="@string/e_check_in_thanh_cong"
+                app:srcCompat="@drawable/ic_check"
+                app:tint="?attr/colorOnSurface" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_s"
+                android:text="@string/e_check_in_thanh_cong"
+                android:textAppearance="?attr/textAppearanceTitleSmall"
+                android:textColor="?attr/colorOnSurface" />
+        </LinearLayout>
+
+        <!-- Nút nhập mã thủ công -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNhapThuCong"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/space_m"
+            android:text="@string/e_qr_nhap_thu_cong" />
+
+        <!-- Nút xem danh sách đã check-in -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnXemDanhSach"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/space_s"
+            android:text="@string/e_xem_danh_sach_check_in" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

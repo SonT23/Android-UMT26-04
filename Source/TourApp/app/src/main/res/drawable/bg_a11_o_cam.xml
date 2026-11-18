@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ô số liệu màu cam (Doanh thu, Đợt khởi hành) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="?attr/colorTertiaryContainer" />
+    <corners android:radius="@dimen/radius_card" />
+</shape>

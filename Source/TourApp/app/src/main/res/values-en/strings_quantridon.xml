@@ -1,0 +1,35 @@
+<resources>
+    <!-- Module E: Quản trị đơn (Trúc Đào) -->
+    <string name="e_title_tong_quan">Dashboard</string>
+    <string name="e_title_danh_sach_don">Order List</string>
+    <string name="e_title_xu_ly_don">Process Order</string>
+    <string name="e_title_khach_hang">Customer Management</string>
+    <string name="e_title_quet_qr">QR Check-in</string>
+
+    <string name="e_tong_don">Total Orders</string>
+    <string name="e_cho_xu_ly">Pending</string>
+    <string name="e_da_xac_nhan">Confirmed</string>
+    <string name="e_doanh_thu">Revenue</string>
+    <string name="e_don_gan_day">Recent Orders</string>
+
+    <string name="e_tim_kiem_don">Search order ID, customer name...</string>
+    <string name="e_tim_kiem_khach">Search name, phone, email...</string>
+    <string name="e_tat_ca">All</string>
+    <string name="e_cho_duyet">Pending</string>
+
+    <string name="e_chi_tiet_don">Order Details</string>
+    <string name="e_ma_don">Order ID:</string>
+    <string name="e_khach_hang">Customer:</string>
+    <string name="e_sdt">Phone:</string>
+    <string name="e_ten_tour">Tour Name:</string>
+    <string name="e_so_luong_ve">Tickets:</string>
+    <string name="e_tong_tien">Total Amount:</string>
+    <string name="e_trang_thai">Status:</string>
+
+    <string name="e_btn_xac_nhan">Confirm Order</string>
+    <string name="e_btn_tu_choi">Reject Order</string>
+    <string name="e_btn_lien_he">Contact Customer</string>
+
+    <string name="e_qr_huong_dan">Point camera at customer ticket QR code to check-in</string>
+    <string name="e_qr_nhap_thu_cong">Enter ticket code manually</string>
+</resources>

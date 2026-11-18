@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nhãn màu đỏ cho trạng thái "Đã hủy" -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFD2CC" />
+    <corners android:radius="12dp" />
+</shape>

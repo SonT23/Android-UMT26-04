@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ô số liệu màu xanh dương (Chờ xác nhận, Đã xác nhận) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="?attr/colorPrimaryContainer" />
+    <corners android:radius="@dimen/radius_card" />
+</shape>

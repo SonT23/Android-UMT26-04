@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="?attr/materialCardViewOutlinedStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_s"
+    app:cardCornerRadius="@dimen/radius_card">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/space_m"
+        android:paddingVertical="@dimen/space_s">
+
+        <!-- Số thứ tự trong vòng tròn -->
+        <TextView
+            android:id="@+id/sttTV"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_tron_nhat"
+            android:gravity="center"
+            android:textAppearance="?attr/textAppearanceTitleSmall"
+            android:textColor="?attr/colorOnPrimaryContainer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1" />
+
+        <!-- Tên tour -->
+        <TextView
+            android:id="@+id/tenTourTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_m"
+            android:textAppearance="?attr/textAppearanceTitleSmall"
+            android:textColor="?attr/colorOnSurface"
+            app:layout_constraintEnd_toStartOf="@+id/doanhThuTV"
+            app:layout_constraintStart_toEndOf="@+id/sttTV"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Đà Nẵng 3N2Đ" />
+
+        <!-- Chi tiết: số đơn -->
+        <TextView
+            android:id="@+id/chiTietTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_m"
+            android:layout_marginTop="2dp"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintEnd_toStartOf="@+id/doanhThuTV"
+            app:layout_constraintStart_toEndOf="@+id/sttTV"
+            app:layout_constraintTop_toBottomOf="@+id/tenTourTV"
+            tools:text="42 đơn · 58.900.000đ" />
+
+        <!-- Doanh thu căn phải (ẩn, dùng trong TourBanChayAdapter) -->
+        <TextView
+            android:id="@+id/doanhThuTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="58.900.000đ" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
