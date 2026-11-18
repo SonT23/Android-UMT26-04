@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="a05_dat_thanh_cong">Đặt tour thành công!</string>
+    <string name="a05_ma_don_hang">Mã đơn hàng của bạn là #HD12345</string>
+    <string name="a05_tour">Tour</string>
+    <string name="a05_Ngay_khoi_hanh">Ngày khởi hành\t\t\t\t\t\t</string>
+    <string name="a05_Tong_thanh_toan">Tổng thanh toán</string>
+    <string name="a05_So_nguoi">Số người</string>
+    <string name="a09_Chi_tiet_don">Chi tiết đơn</string>
+    <string name="a09_Da_xac_nhan">Đã xác nhận</string>
+    <string name="a09_Huong_dan_checkin">Đưa mã này cho nhân viên để check-in</string>
+    <string name="a09_Tour">Tour\t\t</string>
+    <string name="a09_ngay_khoi_hanh">Ngày khởi hành</string>
+    <string name="a09_so_nguoi">Số người</string>
+    <string name="a09_tong_thanh_toan">Tổng thanh toán</string>
+    <string name="a09_them_vao_lịch">Thêm vào Lịch</string>
+    <string name="a09_huy_don">Hủy đơn</string>
+    <string name="a09_ho_tro">Cần hỗ trợ? Gọi 1900 1234</string>
+    <string name="a08_don_cua_toi">Đơn của tôi</string>
+    <string name="a08_tat_ca">Tất cả</string>
+    <string name="a08_cho_xac_nhan">Chờ xác nhận</string>
+    <string name="a08_da_xac_nhan">Đã xác nhận</string>
+    <string name="a08_hoan_thanh">Hoàn thành</string>
+    <string name="a08_da_huy">Đã hủy</string>
+    <string name="a08_tong_thanh_toan">Tổng thanh toán</string>
+    <string name="a04_dat_tour">Đặt tour</string>
+    <string name="a04_ngay_khoi_hanh">Ngày khởi hành</string>
+    <string name="a04_So_luong_khach">Số lượng hành khách</string>
+    <string name="a04_thong_tin_lien_he">Thông tin liên hệ</string>
+    <string name="a04_tong_thanh_toan">Tổng thanh toán</string>
+    <string name="a04_thanh_toan">Thanh toán</string>
+    <string name="a04_xac_nhan_dat_tour">Xác nhận đặt tour</string>
+    <string name="a04_con_5_cho">Còn 5 chỗ</string>
+    <string name="a04_so_nguoi">SỐ NGƯỜI</string>
+    <string name="a04_nguoi_lon">Người lớn</string>
+    <string name="a04_tre_em">Trẻ em</string>
+    <string name="a04_ho_ten">Họ và tên</string>
+    <string name="a04_so_dien_thoai">Số điện thoại</string>
+    <string name="a04_ghi_chu_them">Ghi chú thêm</string>
+    <string name="a04_tam_tinh">Tạm tính</string>
+    <string name="a04_giam_gia">Giảm giá</string>
+    <string name="a04_tong_tien">Tổng tiền</string>
+</resources>

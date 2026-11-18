@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A00: nền logo trên màn hình khởi động, ô vuông bo góc màu trắng (giao diện tối tự đổi màu) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="?attr/colorOnPrimary" />
+    <corners android:radius="24dp" />
+</shape>

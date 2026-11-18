@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Chuỗi của module A: Tài khoản, phiên, cài đặt (Hoàng). Bản tiếng Anh ở values-en/strings_taikhoan.xml -->
+<resources>
+    <!-- A00 Khởi động -->
+    <string name="a00_logo">Logo ứng dụng</string>
+    <string name="a00_mo_ta">Du lịch trong nước, đặt tour trong vài chạm</string>
+    <string name="a00_dang_kiem_tra">Đang kiểm tra đăng nhập…</string>
+    <string name="a00_phien_ban">Phiên bản 1.0.0</string>
+
+    <!-- A06 Đăng nhập -->
+    <string name="a06_logo">Logo ứng dụng</string>
+    <string name="a06_tieu_de">Đăng nhập</string>
+    <string name="a06_mo_ta">Đặt tour và theo dõi đơn của bạn</string>
+    <string name="a06_email">Email</string>
+    <string name="a06_mat_khau">Mật khẩu</string>
+    <string name="a06_quen_mat_khau">Quên mật khẩu?</string>
+    <string name="a06_dang_nhap">Đăng nhập</string>
+    <string name="a06_hoac">hoặc</string>
+    <string name="a06_dang_nhap_van_tay">Đăng nhập bằng vân tay</string>
+    <string name="a06_chua_co_tai_khoan">Chưa có tài khoản?</string>
+    <string name="a06_dang_ky">Đăng ký</string>
+    <string name="a06_xem_tour">Xem tour không cần đăng nhập</string>
+
+    <!-- A07 Đăng ký -->
+    <string name="a07_quay_lai">Quay lại</string>
+    <string name="a07_tieu_de">Tạo tài khoản</string>
+    <string name="a07_ho_ten">Họ và tên</string>
+    <string name="a07_email">Email</string>
+    <string name="a07_so_dien_thoai">Số điện thoại</string>
+    <string name="a07_goi_y_so_dien_thoai">Gồm 10 chữ số</string>
+    <string name="a07_mat_khau">Mật khẩu</string>
+    <string name="a07_loi_mat_khau">Mật khẩu cần từ 8 ký tự</string>
+    <string name="a07_nhap_lai_mat_khau">Nhập lại mật khẩu</string>
+    <string name="a07_dong_y_dieu_khoan">Tôi đồng ý với điều khoản sử dụng</string>
+    <string name="a07_dang_ky">Đăng ký</string>
+    <string name="a07_da_co_tai_khoan">Đã có tài khoản?</string>
+    <string name="a07_dang_nhap">Đăng nhập</string>
+
+    <!-- A10 Tài khoản -->
+    <string name="a10_tieu_de">Tài khoản</string>
+    <string name="a10_doi_anh">Đổi ảnh đại diện</string>
+    <string name="a10_thong_tin_ca_nhan">Thông tin cá nhân</string>
+    <string name="a10_ho_ten">Họ và tên</string>
+    <string name="a10_so_dien_thoai">Số điện thoại</string>
+    <string name="a10_luu_thay_doi">Lưu thay đổi</string>
+    <string name="a10_doi_mat_khau">Đổi mật khẩu</string>
+    <string name="a10_cai_dat">Cài đặt</string>
+    <string name="a10_dang_xuat">Đăng xuất</string>
+
+    <!-- A19 Cài đặt -->
+    <string name="a19_quay_lai">Quay lại</string>
+    <string name="a19_tieu_de">Cài đặt</string>
+    <string name="a19_chung">Chung</string>
+    <string name="a19_ngon_ngu">Ngôn ngữ</string>
+    <string name="a19_ngon_ngu_hien_tai">Tiếng Việt</string>
+    <string name="a19_giao_dien">Giao diện</string>
+    <string name="a19_sang">Sáng</string>
+    <string name="a19_toi">Tối</string>
+    <string name="a19_theo_may">Theo máy</string>
+    <string name="a19_thong_bao">Thông báo</string>
+    <string name="a19_thong_bao_don">Thông báo đơn hàng</string>
+    <string name="a19_thong_bao_don_mo_ta">Báo khi đơn được xác nhận</string>
+    <string name="a19_nhac_lich">Nhắc lịch khởi hành</string>
+    <string name="a19_nhac_lich_mo_ta">Trước ngày đi 1 ngày</string>
+    <string name="a19_bao_mat">Bảo mật</string>
+    <string name="a19_van_tay">Mở khóa bằng vân tay</string>
+    <string name="a19_van_tay_mo_ta">Không cần nhập mật khẩu khi mở lại</string>
+    <string name="a19_phien_ban">Phiên bản 1.0.0</string>
+
+    <!-- A20 Quên mật khẩu (bước 2: nhập mã OTP) -->
+    <string name="a20_quay_lai">Quay lại</string>
+    <string name="a20_tieu_de">Quên mật khẩu</string>
+    <string name="a20_buoc_xong">Đã xong</string>
+    <string name="a20_so_buoc_2" translatable="false">2</string>
+    <string name="a20_so_buoc_3" translatable="false">3</string>
+    <string name="a20_buoc_email">Email</string>
+    <string name="a20_buoc_ma">Mã OTP</string>
+    <string name="a20_buoc_mat_khau">Mật khẩu mới</string>
+    <string name="a20_nhap_ma">Nhập mã xác nhận</string>
+    <string name="a20_da_gui_toi">Mã 6 số đã gửi tới %1$s</string>
+    <string name="a20_gui_lai_sau">Gửi lại mã sau %1$02d:%2$02d</string>
+    <string name="a20_xac_nhan_ma">Xác nhận mã</string>
+    <string name="a20_ma_da_nhap">Mã đã nhập: %1$s</string>
+    <string name="a20_kiem_tra_thu_rac">Không nhận được mã? Kiểm tra thư rác.</string>
+</resources>

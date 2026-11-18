@@ -10,4 +10,73 @@
     <string name="a01_thong_bao">Notifications</string>
     <string name="a01_yeu_thich">Save to favourites</string>
     <string name="a01_anh">Illustration</string>
+
+    <!-- A02 Search -->
+    <string name="a02_tieu_de">Search tours</string>
+    <string name="a02_goi_y_tim">Search by tour name, destination</string>
+    <string name="a02_xoa_chu">Clear search</string>
+    <string name="a02_bo_loc_2">Filters (2)</string>
+    <string name="a02_chip_diem_den">Destination</string>
+    <string name="a02_chip_thang">Month</string>
+    <string name="a02_chip_so_ngay">Duration</string>
+    <string name="a02_so_tour">%1$d tours</string>
+    <string name="a02_gia_tang_dan">Price: low to high</string>
+
+    <!-- A02 Filters -->
+    <string name="a02_bo_loc">Filters</string>
+    <string name="a02_dong">Close</string>
+    <string name="a02_diem_den">Destination</string>
+    <string name="a02_tat_ca_diem_den">All destinations</string>
+    <string name="a02_khoang_gia">Price range (₫)</string>
+    <string name="a02_gia_tu">From</string>
+    <string name="a02_gia_den">To</string>
+    <string name="a02_thang_khoi_hanh">Departure month</string>
+    <string name="a02_thang_11">November</string>
+    <string name="a02_thang_12">December</string>
+    <string name="a02_thang_1">January</string>
+    <string name="a02_thang_2">February</string>
+    <string name="a02_so_ngay">Duration</string>
+    <string name="a02_1_2_ngay">1–2 days</string>
+    <string name="a02_3_4_ngay">3–4 days</string>
+    <string name="a02_tu_5_ngay">5+ days</string>
+    <string name="a02_sap_xep">Sort by</string>
+    <string name="a02_gia_giam_dan">Price: high to low</string>
+    <string name="a02_ngay_gan_nhat">Soonest departure</string>
+    <string name="a02_xoa_loc">Clear</string>
+    <string name="a02_xem_tour">Show tours</string>
+    <string name="a02_da_ap_dung">Filters applied</string>
+
+    <!-- A03 Tour details -->
+    <string name="a03_quay_lai">Back</string>
+    <string name="a03_chia_se">Share tour</string>
+    <string name="a03_so_anh">%1$d/%2$d</string>
+    <string name="a03_moi_nguoi_lon">per adult</string>
+    <string name="a03_lich_trinh">ITINERARY</string>
+    <string name="a03_xem_ban_do">View itinerary map</string>
+    <string name="a03_dot_khoi_hanh">DEPARTURES</string>
+    <string name="a03_dat">Book</string>
+    <string name="a03_con_cho">Seats left: %1$d</string>
+    <string name="a03_het_cho">Sold out</string>
+    <string name="a03_mo_rong">Show day details</string>
+
+    <!-- A21 Favourites and recently viewed -->
+    <string name="a21_tieu_de">Favourites and history</string>
+    <string name="a21_tab_yeu_thich">Favourites (%1$d)</string>
+    <string name="a21_tab_da_xem">Recently viewed</string>
+    <string name="a21_mat_mang">You are offline. Saved tours are still available.</string>
+    <string name="a21_chua_co_yeu_thich">No favourites yet. Tap the heart on a tour to save it.</string>
+    <string name="a21_da_xem_gan_day">RECENTLY VIEWED</string>
+    <string name="a21_xoa_lich_su">Clear history</string>
+    <string name="a21_chua_xem">No tours viewed yet.</string>
+
+    <!-- A22 Itinerary map -->
+    <string name="a22_ban_do_giu_cho">Google Maps will be shown here</string>
+    <string name="a22_diem_dung">Stop</string>
+    <string name="a22_diem_tap_trung">Meeting point</string>
+    <string name="a22_tat_ca">All</string>
+    <string name="a22_ngay_1">Day 1</string>
+    <string name="a22_ngay_2">Day 2</string>
+    <string name="a22_ngay_3">Day 3</string>
+    <string name="a22_vi_tri_cua_toi">My location</string>
+    <string name="a22_chi_duong">Directions in Google Maps</string>
 </resources>

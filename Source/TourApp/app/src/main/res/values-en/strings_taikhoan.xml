@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Module A strings in English. Same names as values/strings_taikhoan.xml -->
+<resources>
+    <!-- A00 Splash -->
+    <string name="a00_logo">App logo</string>
+    <string name="a00_mo_ta">Domestic travel, book a tour in a few taps</string>
+    <string name="a00_dang_kiem_tra">Checking sign-in…</string>
+    <string name="a00_phien_ban">Version 1.0.0</string>
+
+    <!-- A06 Sign in -->
+    <string name="a06_logo">App logo</string>
+    <string name="a06_tieu_de">Sign in</string>
+    <string name="a06_mo_ta">Book tours and track your bookings</string>
+    <string name="a06_email">Email</string>
+    <string name="a06_mat_khau">Password</string>
+    <string name="a06_quen_mat_khau">Forgot password?</string>
+    <string name="a06_dang_nhap">Sign in</string>
+    <string name="a06_hoac">or</string>
+    <string name="a06_dang_nhap_van_tay">Sign in with fingerprint</string>
+    <string name="a06_chua_co_tai_khoan">Don\'t have an account?</string>
+    <string name="a06_dang_ky">Sign up</string>
+    <string name="a06_xem_tour">Browse tours without signing in</string>
+
+    <!-- A07 Sign up -->
+    <string name="a07_quay_lai">Back</string>
+    <string name="a07_tieu_de">Create account</string>
+    <string name="a07_ho_ten">Full name</string>
+    <string name="a07_email">Email</string>
+    <string name="a07_so_dien_thoai">Phone number</string>
+    <string name="a07_goi_y_so_dien_thoai">10 digits</string>
+    <string name="a07_mat_khau">Password</string>
+    <string name="a07_loi_mat_khau">Password must be at least 8 characters</string>
+    <string name="a07_nhap_lai_mat_khau">Confirm password</string>
+    <string name="a07_dong_y_dieu_khoan">I agree to the terms of use</string>
+    <string name="a07_dang_ky">Sign up</string>
+    <string name="a07_da_co_tai_khoan">Already have an account?</string>
+    <string name="a07_dang_nhap">Sign in</string>
+
+    <!-- A10 Account -->
+    <string name="a10_tieu_de">Account</string>
+    <string name="a10_doi_anh">Change profile photo</string>
+    <string name="a10_thong_tin_ca_nhan">Personal information</string>
+    <string name="a10_ho_ten">Full name</string>
+    <string name="a10_so_dien_thoai">Phone number</string>
+    <string name="a10_luu_thay_doi">Save changes</string>
+    <string name="a10_doi_mat_khau">Change password</string>
+    <string name="a10_cai_dat">Settings</string>
+    <string name="a10_dang_xuat">Sign out</string>
+
+    <!-- A19 Settings -->
+    <string name="a19_quay_lai">Back</string>
+    <string name="a19_tieu_de">Settings</string>
+    <string name="a19_chung">General</string>
+    <string name="a19_ngon_ngu">Language</string>
+    <string name="a19_ngon_ngu_hien_tai">English</string>
+    <string name="a19_giao_dien">Theme</string>
+    <string name="a19_sang">Light</string>
+    <string name="a19_toi">Dark</string>
+    <string name="a19_theo_may">System</string>
+    <string name="a19_thong_bao">Notifications</string>
+    <string name="a19_thong_bao_don">Booking updates</string>
+    <string name="a19_thong_bao_don_mo_ta">When a booking is confirmed</string>
+    <string name="a19_nhac_lich">Departure reminder</string>
+    <string name="a19_nhac_lich_mo_ta">1 day before departure</string>
+    <string name="a19_bao_mat">Security</string>
+    <string name="a19_van_tay">Unlock with fingerprint</string>
+    <string name="a19_van_tay_mo_ta">No password needed when reopening</string>
+    <string name="a19_phien_ban">Version 1.0.0</string>
+
+    <!-- A20 Forgot password (step 2: enter OTP) -->
+    <string name="a20_quay_lai">Back</string>
+    <string name="a20_tieu_de">Forgot password</string>
+    <string name="a20_buoc_xong">Done</string>
+    <string name="a20_buoc_email">Email</string>
+    <string name="a20_buoc_ma">OTP code</string>
+    <string name="a20_buoc_mat_khau">New password</string>
+    <string name="a20_nhap_ma">Enter verification code</string>
+    <string name="a20_da_gui_toi">We sent a 6-digit code to %1$s</string>
+    <string name="a20_gui_lai_sau">Resend code in %1$02d:%2$02d</string>
+    <string name="a20_xac_nhan_ma">Verify code</string>
+    <string name="a20_ma_da_nhap">Code entered: %1$s</string>
+    <string name="a20_kiem_tra_thu_rac">Didn\'t get the code? Check your spam folder.</string>
+</resources>

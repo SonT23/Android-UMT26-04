@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Nhãn màu xanh dương cho trạng thái "Đã xác nhận" -->
+<!-- Nền nhãn màu xanh dương nhạt: "Đã xác nhận". Chữ dùng ?attr/colorOnPrimaryContainer -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="?attr/colorPrimaryContainer" />
     <corners android:radius="12dp" />
