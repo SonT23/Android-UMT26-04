@@ -360,7 +360,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_s"
                 android:nestedScrollingEnabled="false"
-                tools:listitem="@layout/item_e_tour_ban_chay" />
+                tools:listitem="@layout/item_a11_tour_ban_chay" />
 
         </LinearLayout>
     </ScrollView>

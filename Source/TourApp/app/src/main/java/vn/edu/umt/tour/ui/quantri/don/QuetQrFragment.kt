@@ -1,4 +1,4 @@
-package vn.edu.umt.tour.ui.quantri.don.uie
+package vn.edu.umt.tour.ui.quantri.don
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,7 +14,7 @@ class QuetQrFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_e_a23_quet_qr, container, false)
+        return inflater.inflate(R.layout.fragment_a23_quet_qr, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

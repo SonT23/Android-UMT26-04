@@ -1,6 +1,5 @@
 package vn.edu.umt.tour.ui.quantri.don
 
-import vn.edu.umt.tour.ui.quantri.don.uie.*
 import vn.edu.umt.tour.xemthu.ManHinh
 
 /**

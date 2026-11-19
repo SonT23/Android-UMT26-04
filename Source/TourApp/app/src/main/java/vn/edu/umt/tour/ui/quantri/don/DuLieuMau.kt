@@ -1,4 +1,4 @@
-package vn.edu.umt.tour.ui.quantri.don.uie
+package vn.edu.umt.tour.ui.quantri.don
 
 // Dữ liệu mẫu để dựng giao diện module E khi chưa có API.
 

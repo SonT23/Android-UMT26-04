@@ -1,4 +1,4 @@
-package vn.edu.umt.tour.ui.quantri.don.uie
+package vn.edu.umt.tour.ui.quantri.don
 
 import android.view.LayoutInflater
 import android.view.View
@@ -23,7 +23,7 @@ class DonAdapter(private val danhSachDon: List<DonDatTour>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DonViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_e_don, parent, false)
+            .inflate(R.layout.item_a16_don, parent, false)
         return DonViewHolder(view)
     }
 
