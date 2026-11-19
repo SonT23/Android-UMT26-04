@@ -44,6 +44,12 @@ class DatTourFragment : Fragment() {
         tvTamTinh = view.findViewById(R.id.tv_tam_tinh)
         tvTongTien = view.findViewById(R.id.tv_tong_tien)
 
+        // Đơn giá và giảm giá gán từ code (giá lấy từ biến ở trên), không gõ cứng trong layout
+        val formatter = DecimalFormat("#,###")
+        view.findViewById<TextView>(R.id.tv_gia_nl).text = formatter.format(giaNguoiLon) + " đ"
+        view.findViewById<TextView>(R.id.tv_gia_te).text = formatter.format(giaTreEm) + " đ"
+        view.findViewById<TextView>(R.id.tv_giam_gia).text = formatter.format(0) + " đ"
+
         // Gắn sự kiện cho các nút
         btnTruNL.setOnClickListener {
             if (soNguoiLon > 1) { // Không cho người lớn nhỏ hơn 1

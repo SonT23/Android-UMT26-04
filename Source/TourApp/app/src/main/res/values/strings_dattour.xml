@@ -6,6 +6,13 @@
     <string name="a05_Ngay_khoi_hanh">Ngày khởi hành\t\t\t\t\t\t</string>
     <string name="a05_Tong_thanh_toan">Tổng thanh toán</string>
     <string name="a05_So_nguoi">Số người</string>
+    <string name="a05_xem_don_cua_toi">Xem đơn của tôi</string>
+    <string name="a05_ve_trang_chu">Về trang chủ</string>
+    <!-- A05: dữ liệu mẫu của đơn vừa đặt, thay bằng dữ liệu đơn thật khi nối API -->
+    <string name="a05_mau_ten_tour">Khám phá Vịnh Hạ Long</string>
+    <string name="a05_mau_ngay_khoi_hanh">20/11/2026</string>
+    <string name="a05_mau_so_nguoi">2 người lớn</string>
+    <string name="a05_mau_tong_tien">5,000,000 đ</string>
     <string name="a09_Chi_tiet_don">Chi tiết đơn</string>
     <string name="a09_Da_xac_nhan">Đã xác nhận</string>
     <string name="a09_Huong_dan_checkin">Đưa mã này cho nhân viên để check-in</string>

@@ -149,7 +149,7 @@
                             android:layout_weight="1"
                             android:orientation="vertical">
                             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/a04_nguoi_lon" />
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2,500,000 đ" android:textColor="?attr/colorTertiary" android:textStyle="bold"/>
+                            <TextView android:id="@+id/tv_gia_nl" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="2,500,000 đ" android:textColor="?attr/colorTertiary" android:textStyle="bold"/>
                         </LinearLayout>
 
                         <ImageView android:id="@+id/btn_tru_nl" android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_remove" android:background="@drawable/bg_tron_nhat" android:padding="8dp"/>
@@ -170,7 +170,7 @@
                             android:layout_weight="1"
                             android:orientation="vertical">
                             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/a04_tre_em" />
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1,500,000 đ" android:textColor="?attr/colorTertiary" android:textStyle="bold"/>
+                            <TextView android:id="@+id/tv_gia_te" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="1,500,000 đ" android:textColor="?attr/colorTertiary" android:textStyle="bold"/>
                         </LinearLayout>
 
                         <ImageView android:id="@+id/btn_tru_te" android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_remove" android:background="@drawable/bg_tron_nhat" android:padding="8dp"/>
@@ -252,7 +252,7 @@
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp">
                     <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/a04_giam_gia" android:textColor="?attr/colorOutline"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 đ" android:textStyle="bold"/>
+                    <TextView android:id="@+id/tv_giam_gia" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="0 đ" android:textStyle="bold"/>
                 </LinearLayout>
 
                 <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorOutlineVariant" android:layout_marginBottom="12dp"/>
