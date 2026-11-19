@@ -3,5 +3,6 @@
 Thumbs.db
 desktop.ini
 
-# Mở nhầm thư mục gốc bằng Android Studio (project nằm trong Source/)
-/.idea/
+# Cấu hình riêng của Android Studio trên từng máy (máy ảo đang chọn, cửa sổ đang mở…).
+# Không commit, nếu không mỗi lần ai đó bấm Run là sinh xung đột.
+.idea/
