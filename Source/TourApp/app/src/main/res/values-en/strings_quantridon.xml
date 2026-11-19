@@ -32,4 +32,15 @@
 
     <string name="e_qr_huong_dan">Point camera at customer ticket QR code to check-in</string>
     <string name="e_qr_nhap_thu_cong">Enter ticket code manually</string>
+
+    <!-- A11: revenue chart labels -->
+    <string name="a11_nam">2026</string>
+    <string name="a11_thang_1">Jan</string>
+    <string name="a11_thang_2">Feb</string>
+    <string name="a11_thang_3">Mar</string>
+    <string name="a11_thang_4">Apr</string>
+    <string name="a11_thang_5">May</string>
+    <string name="a11_thang_6">Jun</string>
+    <string name="a11_thang_7">Jul</string>
+    <string name="a11_thang_8">Aug</string>
 </resources>

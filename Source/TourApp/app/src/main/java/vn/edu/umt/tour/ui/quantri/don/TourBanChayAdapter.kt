@@ -1,4 +1,4 @@
-package vn.edu.umt.tour.ui.quantri.don.uie
+package vn.edu.umt.tour.ui.quantri.don
 
 import android.view.LayoutInflater
 import android.view.View
@@ -19,7 +19,7 @@ class TourBanChayAdapter(private val danhSach: List<TourBanChayMau>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_e_tour_ban_chay, parent, false)
+            .inflate(R.layout.item_a11_tour_ban_chay, parent, false)
         return ViewHolder(view)
     }
 

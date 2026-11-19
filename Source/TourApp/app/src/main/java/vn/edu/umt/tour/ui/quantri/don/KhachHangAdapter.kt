@@ -1,4 +1,4 @@
-package vn.edu.umt.tour.ui.quantri.don.uie
+package vn.edu.umt.tour.ui.quantri.don
 
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -23,7 +23,7 @@ class KhachHangAdapter(private val danhSachKhach: MutableList<KhachHangQuanTri>)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): KhachViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_e_khach_hang, parent, false)
+            .inflate(R.layout.item_a18_khach_hang, parent, false)
         return KhachViewHolder(view)
     }
 

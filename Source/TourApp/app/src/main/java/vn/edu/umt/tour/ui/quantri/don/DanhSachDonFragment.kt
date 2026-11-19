@@ -1,4 +1,4 @@
-package vn.edu.umt.tour.ui.quantri.don.uie
+package vn.edu.umt.tour.ui.quantri.don
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,7 +22,7 @@ class DanhSachDonFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_e_a16_danh_sach_don, container, false)
+        return inflater.inflate(R.layout.fragment_a16_danh_sach_don, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

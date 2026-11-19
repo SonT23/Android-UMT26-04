@@ -66,4 +66,15 @@
     <string name="e_qr_nhap_thu_cong">Nhập mã đơn thủ công</string>
     <string name="e_xem_danh_sach_check_in">Xem danh sách đã check-in</string>
     <string name="e_dot_khoi_hanh_title">Đợt khởi hành</string>
+
+    <!-- A11: nhãn của biểu đồ doanh thu (biểu đồ thật làm ở chức năng E1) -->
+    <string name="a11_nam">2026</string>
+    <string name="a11_thang_1">T1</string>
+    <string name="a11_thang_2">T2</string>
+    <string name="a11_thang_3">T3</string>
+    <string name="a11_thang_4">T4</string>
+    <string name="a11_thang_5">T5</string>
+    <string name="a11_thang_6">T6</string>
+    <string name="a11_thang_7">T7</string>
+    <string name="a11_thang_8">T8</string>
 </resources>
