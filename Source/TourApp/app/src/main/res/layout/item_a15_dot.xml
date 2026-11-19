@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Một đợt khởi hành ở A15: ngày, nhãn trạng thái, giá, thanh tiến độ số chỗ, hàng nút -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="?attr/materialCardViewOutlinedStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="@dimen/radius_card">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/space_m"
+        android:paddingTop="@dimen/space_m"
+        android:paddingEnd="@dimen/space_m"
+        android:paddingBottom="@dimen/space_s">
+
+        <TextView
+            android:id="@+id/ngayTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_s"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textColor="?attr/colorOnSurface"
+            app:layout_constraintEnd_toStartOf="@+id/trangThaiTV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="20/11 đến 22/11/2026" />
+
+        <TextView
+            android:id="@+id/trangThaiTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_nhan_xanh"
+            android:paddingStart="@dimen/space_s"
+            android:paddingTop="2dp"
+            android:paddingEnd="@dimen/space_s"
+            android:paddingBottom="2dp"
+            android:textAppearance="?attr/textAppearanceLabelSmall"
+            android:textColor="@color/on_trang_thai_tot"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ngayTV"
+            tools:text="Mở" />
+
+        <TextView
+            android:id="@+id/giaTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ngayTV"
+            tools:text="Người lớn 2.500.000 ₫, trẻ em 1.500.000 ₫" />
+
+        <!-- Thanh tiến độ: max = tổng số chỗ, progress = số chỗ đã đặt (gán trong Adapter) -->
+        <ProgressBar
+            android:id="@+id/choPB"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_s"
+            android:progressTint="?attr/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/giaTV"
+            tools:max="4"
+            tools:progress="3" />
+
+        <TextView
+            android:id="@+id/soChoTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_xs"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/choPB"
+            tools:text="Đã đặt 3/4 chỗ, còn 1 chỗ" />
+
+        <!-- Hàng nút chữ. Đợt đã đóng hoặc đã hủy thì ẩn cả hàng; "Hủy đợt" chỉ hiện khi chưa có ai đặt -->
+        <LinearLayout
+            android:id="@+id/nutLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-12dp"
+            android:layout_marginTop="@dimen/space_xs"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/soChoTV">
+
+            <Button
+                android:id="@+id/suaBtn"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a15_sua" />
+
+            <Button
+                android:id="@+id/dongBtn"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a15_dong_dot" />
+
+            <Button
+                android:id="@+id/huyBtn"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a15_huy_dot"
+                android:textColor="?attr/colorError" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

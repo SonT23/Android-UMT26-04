@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A12 Điểm đến: thanh trên và danh sách điểm đến.
+     Thanh điều hướng dưới KHÔNG nằm ở đây, nó thuộc QuanTriActivity. -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Thanh trên: nút quay lại, tiêu đề, nút thêm -->
+    <ImageView
+        android:id="@+id/quayLaiIV"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="@dimen/space_xs"
+        android:layout_marginTop="@dimen/space_s"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/a12_quay_lai"
+        android:padding="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back"
+        app:tint="?attr/colorOnSurface" />
+
+    <TextView
+        android:id="@+id/tieuDeTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_xs"
+        android:text="@string/a12_tieu_de"
+        android:textAppearance="?attr/textAppearanceTitleLarge"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintBottom_toBottomOf="@+id/quayLaiIV"
+        app:layout_constraintEnd_toStartOf="@+id/themIV"
+        app:layout_constraintStart_toEndOf="@+id/quayLaiIV"
+        app:layout_constraintTop_toTopOf="@+id/quayLaiIV" />
+
+    <ImageView
+        android:id="@+id/themIV"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="@dimen/space_xs"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/a12_them"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/quayLaiIV"
+        app:srcCompat="@drawable/ic_add"
+        app:tint="?attr/colorOnSurface" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/diemDenRV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/space_s"
+        android:clipToPadding="false"
+        android:paddingStart="@dimen/space_m"
+        android:paddingEnd="@dimen/space_m"
+        android:paddingBottom="@dimen/space_m"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quayLaiIV"
+        tools:listitem="@layout/item_a12_diem_den" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

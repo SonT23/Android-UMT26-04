@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A14 Thêm, sửa tour. Thanh trên đứng yên, phần form bên dưới cuộn được vì dài hơn màn hình. -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Thanh trên: quay lại, tiêu đề, chữ "Lưu" -->
+    <ImageView
+        android:id="@+id/quayLaiIV"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="@dimen/space_xs"
+        android:layout_marginTop="@dimen/space_s"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/a14_quay_lai"
+        android:padding="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back"
+        app:tint="?attr/colorOnSurface" />
+
+    <TextView
+        android:id="@+id/tieuDeTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_xs"
+        android:text="@string/a14_tieu_de"
+        android:textAppearance="?attr/textAppearanceTitleLarge"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintBottom_toBottomOf="@+id/quayLaiIV"
+        app:layout_constraintEnd_toStartOf="@+id/luuTV"
+        app:layout_constraintStart_toEndOf="@+id/quayLaiIV"
+        app:layout_constraintTop_toTopOf="@+id/quayLaiIV" />
+
+    <TextView
+        android:id="@+id/luuTV"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginEnd="@dimen/space_xs"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:text="@string/a14_luu"
+        android:textAppearance="?attr/textAppearanceLabelLarge"
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/quayLaiIV" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/space_s"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quayLaiIV">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/space_l">
+
+            <!-- Dải báo lưu nháp (chức năng D7). Giờ luôn hiện để dựng giao diện. -->
+            <TextView
+                android:id="@+id/luuNhapTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorTertiaryContainer"
+                android:paddingStart="@dimen/space_m"
+                android:paddingTop="10dp"
+                android:paddingEnd="@dimen/space_m"
+                android:paddingBottom="10dp"
+                android:text="@string/a14_luu_nhap"
+                android:textAppearance="?attr/textAppearanceBodySmall"
+                android:textColor="?attr/colorOnTertiaryContainer" />
+
+            <!-- ẢNH: 3 ảnh giữ chỗ và ô "Thêm ảnh", cuộn ngang khi nhiều ảnh -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_m"
+                android:layout_marginTop="@dimen/space_m"
+                android:text="@string/a14_anh"
+                android:textAppearance="?attr/textAppearanceLabelMedium"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_s"
+                android:clipToPadding="false"
+                android:paddingStart="@dimen/space_m"
+                android:paddingEnd="@dimen/space_m"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Ảnh thứ nhất là ảnh đại diện: có chữ "Đại diện" ở góc dưới -->
+                    <FrameLayout
+                        android:layout_width="72dp"
+                        android:layout_height="72dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_anh_trong"
+                            android:contentDescription="@string/a14_anh_tour"
+                            android:padding="22dp"
+                            app:srcCompat="@drawable/ic_image"
+                            app:tint="?attr/colorOutline" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|start"
+                            android:layout_margin="@dimen/space_xs"
+                            android:background="@drawable/bg_nhan_xam"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp"
+                            android:text="@string/a14_dai_dien"
+                            android:textAppearance="?attr/textAppearanceLabelSmall"
+                            android:textColor="?attr/colorOnSurfaceVariant" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_marginStart="@dimen/space_s"
+                        android:background="@drawable/bg_anh_trong"
+                        android:contentDescription="@string/a14_anh_tour"
+                        android:padding="22dp"
+                        app:srcCompat="@drawable/ic_image"
+                        app:tint="?attr/colorOutline" />
+
+                    <ImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_marginStart="@dimen/space_s"
+                        android:background="@drawable/bg_anh_trong"
+                        android:contentDescription="@string/a14_anh_tour"
+                        android:padding="22dp"
+                        app:srcCompat="@drawable/ic_image"
+                        app:tint="?attr/colorOutline" />
+
+                    <!-- Ô "Thêm ảnh": chụp hoặc chọn ảnh thật (D3, D6) làm sau -->
+                    <LinearLayout
+                        android:id="@+id/themAnhLL"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_marginStart="@dimen/space_s"
+                        android:background="@drawable/bg_a14_o_them"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/ic_add"
+                            app:tint="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/a14_them_anh"
+                            android:textAppearance="?attr/textAppearanceLabelSmall"
+                            android:textColor="?attr/colorPrimary" />
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- THÔNG TIN -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_m"
+                android:layout_marginTop="@dimen/space_l"
+                android:text="@string/a14_thong_tin"
+                android:textAppearance="?attr/textAppearanceLabelMedium"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tenTIL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_m"
+                android:layout_marginTop="@dimen/space_s"
+                android:layout_marginEnd="@dimen/space_m"
+                android:hint="@string/a14_ten_tour">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tenET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_m"
+                android:layout_marginTop="@dimen/space_m"
+                android:text="@string/a14_diem_den"
+                android:textAppearance="?attr/textAppearanceLabelMedium"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+            <Spinner
+                android:id="@+id/diemDenSP"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/space_s"
+                android:layout_marginEnd="@dimen/space_m" />
+
+            <!-- Số ngày và số đêm nằm ngang, mỗi ô chiếm một nửa -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_m"
+                android:layout_marginTop="@dimen/space_s"
+                android:layout_marginEnd="@dimen/space_m"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/soNgayTIL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/a14_so_ngay">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/soNgayET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/soDemTIL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:hint="@string/a14_so_dem">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/soDemET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/noiBatSW"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_m"
+                android:layout_marginTop="@dimen/space_s"
+                android:layout_marginEnd="@dimen/space_m"
+                android:checked="true"
+                android:text="@string/a14_noi_bat"
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/hienSW"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_m"
+                android:layout_marginEnd="@dimen/space_m"
+                android:checked="true"
+                android:text="@string/a14_hien_cho_khach"
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+            <!-- LỊCH TRÌNH: danh sách ngày nằm trong ScrollView nên tắt cuộn riêng của RecyclerView -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_m"
+                android:layout_marginTop="@dimen/space_m"
+                android:text="@string/a14_lich_trinh"
+                android:textAppearance="?attr/textAppearanceLabelMedium"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ngayRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_m"
+                android:layout_marginTop="@dimen/space_s"
+                android:layout_marginEnd="@dimen/space_m"
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_a14_ngay" />
+
+            <Button
+                android:id="@+id/themNgayBtn"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginStart="@dimen/space_m"
+                android:layout_marginTop="@dimen/space_xs"
+                android:layout_marginEnd="@dimen/space_m"
+                android:text="@string/a14_them_ngay"
+                app:icon="@drawable/ic_add" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

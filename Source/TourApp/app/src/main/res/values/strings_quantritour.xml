@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Chuỗi của module D: Quản trị tour (Phúc). Tên chuỗi bắt đầu bằng mã màn hình. -->
+<resources>
+    <!-- A12 Điểm đến -->
+    <string name="a12_tieu_de">Điểm đến</string>
+    <string name="a12_quay_lai">Quay lại</string>
+    <string name="a12_them">Thêm điểm đến</string>
+    <string name="a12_tuy_chon">Tùy chọn</string>
+    <string name="a12_anh">Ảnh điểm đến</string>
+    <string name="a12_mo_ta_dong">%1$s, %2$d tour</string>
+    <string name="a12_sua_xoa">Sửa hoặc xóa: %1$s</string>
+
+    <!-- A12 Sửa điểm đến (bảng trượt, giai đoạn này dựng thành màn hình riêng) -->
+    <string name="a12_sua_tieu_de">Sửa điểm đến</string>
+    <string name="a12_ten_diem_den">Tên điểm đến</string>
+    <string name="a12_tinh_thanh">Tỉnh thành</string>
+    <string name="a12_mo_ta">Mô tả</string>
+    <string name="a12_vi_tri_ban_do">Vị trí trên bản đồ</string>
+    <string name="a12_chon_tren_ban_do">Chọn trên bản đồ</string>
+    <string name="a12_huy">Hủy</string>
+    <string name="a12_luu">Lưu</string>
+    <string name="a12_loi_ten">Vui lòng nhập tên điểm đến</string>
+    <string name="a12_da_luu">Đã lưu điểm đến %1$s</string>
+
+    <!-- A13 Danh sách tour -->
+    <string name="a13_tieu_de">Tour</string>
+    <string name="a13_them_tour">Thêm tour</string>
+    <string name="a13_tuy_chon">Tùy chọn</string>
+    <string name="a13_tim">Tìm theo tên tour</string>
+    <string name="a13_tat_ca">Tất cả</string>
+    <string name="a13_dang_hien">Đang hiện</string>
+    <string name="a13_dang_an">Đang ẩn</string>
+    <string name="a13_noi_bat">Nổi bật</string>
+    <string name="a13_so_dot">%1$d đợt đang mở</string>
+    <string name="a13_anh">Ảnh tour</string>
+    <string name="a13_khong_co">Không có tour phù hợp</string>
+    <string name="a13_menu_tour">Sửa, đợt khởi hành, ẩn hoặc hiện: %1$s</string>
+    <string name="a13_menu_tren">Điểm đến</string>
+
+    <!-- A15 Đợt khởi hành -->
+    <string name="a15_tieu_de">Đợt khởi hành</string>
+    <string name="a15_quay_lai">Quay lại</string>
+    <string name="a15_xuat_danh_sach">Xuất danh sách khách</string>
+    <string name="a15_tat_ca">Tất cả</string>
+    <string name="a15_dang_mo">Đang mở</string>
+    <string name="a15_da_dong">Đã đóng</string>
+    <string name="a15_da_huy">Đã hủy</string>
+    <string name="a15_mo">Mở</string>
+    <string name="a15_sua">Sửa</string>
+    <string name="a15_dong_dot">Đóng đợt</string>
+    <string name="a15_huy_dot">Hủy đợt</string>
+    <string name="a15_them_dot">Thêm đợt</string>
+    <string name="a15_da_dat">Đã đặt %1$d/%2$d chỗ</string>
+    <string name="a15_da_dat_con">Đã đặt %1$d/%2$d chỗ, còn %3$d chỗ</string>
+    <string name="a15_khong_co">Không có đợt nào</string>
+    <string name="a15_sua_dot">Sửa đợt %1$s</string>
+
+    <!-- A14 Thêm, sửa tour -->
+    <string name="a14_tieu_de">Sửa tour</string>
+    <string name="a14_quay_lai">Quay lại</string>
+    <string name="a14_luu">Lưu</string>
+    <string name="a14_luu_nhap">Đã lưu nháp lúc 14:05. Mất mạng, sẽ gửi khi có mạng lại.</string>
+    <string name="a14_anh">ẢNH</string>
+    <string name="a14_anh_tour">Ảnh tour</string>
+    <string name="a14_dai_dien">Đại diện</string>
+    <string name="a14_them_anh">Thêm ảnh</string>
+    <string name="a14_thong_tin">THÔNG TIN</string>
+    <string name="a14_ten_tour">Tên tour</string>
+    <string name="a14_diem_den">Điểm đến</string>
+    <string name="a14_so_ngay">Số ngày</string>
+    <string name="a14_so_dem">Số đêm</string>
+    <string name="a14_noi_bat">Nổi bật trên trang chủ</string>
+    <string name="a14_hien_cho_khach">Hiện tour cho khách</string>
+    <string name="a14_lich_trinh">LỊCH TRÌNH</string>
+    <string name="a14_keo_doi_thu_tu">Kéo để đổi thứ tự</string>
+    <string name="a14_tuy_chon_ngay">Tùy chọn ngày</string>
+    <string name="a14_them_ngay">Thêm ngày</string>
+    <string name="a14_ngay_so">Ngày %1$d</string>
+    <string name="a14_ngay_moi">Chưa đặt tên</string>
+    <string name="a14_loi_ten">Vui lòng nhập tên tour</string>
+    <string name="a14_loi_so_dem">Số đêm không được lớn hơn số ngày</string>
+    <string name="a14_da_luu">Đã lưu tour %1$s</string>
+
+    <!-- A24 Chọn vị trí -->
+    <string name="a24_quay_lai">Quay lại</string>
+    <string name="a24_tim">Tìm địa chỉ hoặc địa điểm</string>
+    <string name="a24_ban_do_giu_cho">Bản đồ Google Maps sẽ hiển thị ở đây</string>
+    <string name="a24_goi_y">Kéo bản đồ để đặt ghim</string>
+    <string name="a24_ghim">Ghim vị trí</string>
+    <string name="a24_vi_tri_cua_toi">Về vị trí của tôi</string>
+    <string name="a24_vi_tri_diem_den">Vị trí điểm đến</string>
+    <string name="a24_dung_vi_tri">Dùng vị trí này</string>
+    <string name="a24_da_chon">Đã chọn: %1$s (%2$s)</string>
+</resources>
