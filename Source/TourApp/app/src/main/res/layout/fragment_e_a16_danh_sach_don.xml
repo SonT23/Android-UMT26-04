@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:padding="@dimen/space_m">
+
+    <!-- Hàng tiêu đề + nút lọc -->
+    <TextView
+        android:id="@+id/tieuDeTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/e_title_danh_sach_don"
+        android:textAppearance="?attr/textAppearanceHeadlineSmall"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintEnd_toStartOf="@+id/btnLocDon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btnLocDon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/e_title_danh_sach_don"
+        android:padding="@dimen/space_s"
+        app:srcCompat="@drawable/ic_filter_list"
+        app:tint="?attr/colorOnSurface"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Ô tìm kiếm -->
+    <EditText
+        android:id="@+id/timKiemET"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="@dimen/space_m"
+        android:background="@drawable/bg_o_tim"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="@dimen/space_s"
+        android:hint="@string/e_tim_kiem_don"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:paddingHorizontal="@dimen/space_m"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        android:textColor="?attr/colorOnSurface"
+        android:textColorHint="?attr/colorOnSurfaceVariant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tieuDeTV" />
+
+    <!-- Chip lọc trạng thái -->
+    <HorizontalScrollView
+        android:id="@+id/chipScroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_s"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timKiemET">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTatCa"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/e_tat_ca" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipChoXacNhan"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/e_cho_xu_ly" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipDaXacNhan"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/e_da_xac_nhan" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipHoanThanh"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/e_hoan_thanh" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipDaHuy"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/e_da_huy" />
+
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <!-- Danh sách đơn -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/danhSachDonRV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/space_m"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipScroll"
+        tools:listitem="@layout/item_e_don" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

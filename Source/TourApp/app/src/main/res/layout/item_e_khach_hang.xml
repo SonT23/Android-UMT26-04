@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="?attr/materialCardViewOutlinedStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_s"
+    app:cardCornerRadius="@dimen/radius_card">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_m">
+
+        <!-- Avatar chữ cái đầu -->
+        <TextView
+            android:id="@+id/avatarTV"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_tron_nhat"
+            android:gravity="center"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textColor="?attr/colorOnPrimaryContainer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="N" />
+
+        <!-- Tên khách -->
+        <TextView
+            android:id="@+id/tenTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_m"
+            android:textAppearance="?attr/textAppearanceTitleSmall"
+            android:textColor="?attr/colorOnSurface"
+            app:layout_constraintEnd_toStartOf="@+id/trangThaiTV"
+            app:layout_constraintStart_toEndOf="@+id/avatarTV"
+            app:layout_constraintTop_toTopOf="@+id/avatarTV"
+            tools:text="Nguyễn Văn A" />
+
+        <!-- SĐT và email -->
+        <TextView
+            android:id="@+id/thongTinTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_m"
+            android:layout_marginTop="2dp"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintEnd_toStartOf="@+id/trangThaiTV"
+            app:layout_constraintStart_toEndOf="@+id/avatarTV"
+            app:layout_constraintTop_toBottomOf="@+id/tenTV"
+            tools:text="0905 123 456 · a.nguyen@email.com" />
+
+        <!-- Số đơn / trạng thái khóa -->
+        <TextView
+            android:id="@+id/soTourTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_m"
+            android:layout_marginTop="2dp"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintEnd_toStartOf="@+id/trangThaiTV"
+            app:layout_constraintStart_toEndOf="@+id/avatarTV"
+            app:layout_constraintTop_toBottomOf="@+id/thongTinTV"
+            tools:text="3 đơn" />
+
+        <!-- Nhãn trạng thái (Hoạt động / Bị khóa) -->
+        <TextView
+            android:id="@+id/trangThaiTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_nhan_xanh"
+            android:paddingHorizontal="@dimen/space_s"
+            android:paddingVertical="2dp"
+            android:textAppearance="?attr/textAppearanceLabelSmall"
+            android:textColor="?attr/colorOnSurface"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Hoạt động" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

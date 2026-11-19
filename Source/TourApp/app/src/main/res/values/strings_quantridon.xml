@@ -1,0 +1,69 @@
+<resources>
+    <!-- Module E: Quản trị đơn (Trúc Đào) -->
+    <string name="e_title_tong_quan">Tổng quan</string>
+    <string name="e_title_danh_sach_don">Đơn đặt tour</string>
+    <string name="e_title_xu_ly_don">Chi tiết đơn</string>
+    <string name="e_title_khach_hang">Khách hàng</string>
+    <string name="e_title_quet_qr">Quét QR check-in</string>
+
+    <!-- Ô số liệu A11 -->
+    <string name="e_don_cho_xac_nhan">Đơn chờ xác nhận</string>
+    <string name="e_don_da_xac_nhan">Đơn đã xác nhận</string>
+    <string name="e_doanh_thu_thang">Doanh thu tháng</string>
+    <string name="e_dot_khoi_hanh">Đợt khởi hành 7 ngày tới</string>
+    <string name="e_doanh_thu_theo_thang">Doanh thu theo tháng</string>
+    <string name="e_tour_ban_chay">Tour bán chạy</string>
+    <string name="e_don_label">đơn</string>
+    <string name="e_don_gan_day">Đơn đặt tour gần đây</string>
+
+    <!-- Dùng chung -->
+    <string name="e_tong_don">Tổng số đơn</string>
+    <string name="e_cho_xu_ly">Chờ xác nhận</string>
+    <string name="e_da_xac_nhan">Đã xác nhận</string>
+    <string name="e_hoan_thanh">Hoàn thành</string>
+    <string name="e_da_huy">Đã hủy</string>
+    <string name="e_doanh_thu">Doanh thu</string>
+    <string name="e_tat_ca">Tất cả</string>
+
+    <!-- A16 Danh sách đơn -->
+    <string name="e_tim_kiem_don">Tìm theo mã đơn, tên, số điện thoại</string>
+    <string name="e_khach">khách</string>
+
+    <!-- A18 Khách hàng -->
+    <string name="e_tim_kiem_khach">Tìm theo tên, số điện thoại, email</string>
+    <string name="e_hoat_dong">Hoạt động</string>
+    <string name="e_bi_khoa">Bị khóa</string>
+    <string name="e_so_don_bi_khoa">0 đơn, đã khóa</string>
+
+    <!-- A17 Xử lý đơn -->
+    <string name="e_chi_tiet_don">Chi tiết đơn đặt tour</string>
+    <string name="e_khach_hang_title">Khách hàng</string>
+    <string name="e_tour_dot_khoi_hanh">Tour &amp; đợt khởi hành</string>
+    <string name="e_thanh_toan">Thanh toán</string>
+    <string name="e_tong_tien">Tổng tiền</string>
+    <string name="e_da_thanh_toan">Đã thanh toán</string>
+    <string name="e_so_tien_ghi_nhan">Số tiền ghi nhận (đ)</string>
+    <string name="e_ghi_nhan_thanh_toan">Ghi nhận thanh toán</string>
+    <string name="e_btn_xac_nhan">Xác nhận đơn</string>
+    <string name="e_btn_huy">Hủy đơn</string>
+    <string name="e_btn_goi_dien">Gọi điện</string>
+    <string name="e_btn_nhan_tin">Nhắn tin</string>
+
+    <!-- Cũ, giữ để không lỗi nếu dùng ở nơi khác -->
+    <string name="e_ma_don">Mã đơn:</string>
+    <string name="e_khach_hang">Khách hàng:</string>
+    <string name="e_sdt">Số điện thoại:</string>
+    <string name="e_ten_tour">Tên tour:</string>
+    <string name="e_so_luong_ve">Số lượng vé:</string>
+    <string name="e_trang_thai">Trạng thái:</string>
+    <string name="e_btn_tu_choi">Từ chối đơn</string>
+    <string name="e_btn_lien_he">Liên hệ khách hàng</string>
+    <string name="e_cho_duyet">Chờ duyệt</string>
+
+    <!-- A23 Quét QR -->
+    <string name="e_qr_huong_dan">Đưa mã QR của khách vào khung</string>
+    <string name="e_check_in_thanh_cong">Check-in thành công!</string>
+    <string name="e_qr_nhap_thu_cong">Nhập mã đơn thủ công</string>
+    <string name="e_xem_danh_sach_check_in">Xem danh sách đã check-in</string>
+    <string name="e_dot_khoi_hanh_title">Đợt khởi hành</string>
+</resources>
