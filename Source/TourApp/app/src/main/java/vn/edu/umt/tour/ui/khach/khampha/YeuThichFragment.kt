@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
@@ -52,7 +51,7 @@ class YeuThichFragment : Fragment() {
         yeuThichTabTV.text = getString(R.string.a21_tab_yeu_thich, yeuThich.size)
 
         yeuThichAdapter.onTourClick = { tour ->
-            Toast.makeText(requireContext(), tour.ten, Toast.LENGTH_SHORT).show()
+            moManHinhCon(ChiTietTourFragment.newInstance(tour.ma))
         }
         // Bấm tim ở đây nghĩa là bỏ khỏi yêu thích: xóa khỏi danh sách rồi báo adapter
         yeuThichAdapter.onYeuThichClick = { viTri ->
@@ -77,7 +76,7 @@ class YeuThichFragment : Fragment() {
         daXemLuoiRV.adapter = luoiAdapter
 
         daXemAdapter.onClick = { tour ->
-            Toast.makeText(requireContext(), tour.ten, Toast.LENGTH_SHORT).show()
+            moManHinhCon(ChiTietTourFragment.newInstance(tour.ma))
         }
         luoiAdapter.onClick = daXemAdapter.onClick
 

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -53,8 +54,13 @@ class BoLocFragment : Fragment() {
             sapXepCG.check(R.id.giaTangChip)
         }
 
+        // Áp dụng bộ lọc rồi quay về A02 (lọc thật trên danh sách làm khi nối Firestore)
         view.findViewById<Button>(R.id.xemBtn).setOnClickListener {
             Toast.makeText(requireContext(), R.string.a02_da_ap_dung, Toast.LENGTH_SHORT).show()
+            quayLai()
         }
+
+        // Nút X: đóng bảng bộ lọc, quay về A02
+        view.findViewById<ImageView>(R.id.dongIV).setOnClickListener { quayLai() }
     }
 }
