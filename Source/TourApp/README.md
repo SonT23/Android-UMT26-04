@@ -26,7 +26,7 @@ File dùng chung, chỉ sửa sau khi báo nhóm: `MainActivity.kt`, package `xe
 
 **Hướng dẫn riêng cho từng người** (màn hình nào, tên file nào, dùng view gì) nằm ở [Docs/HuongDanUI/](../../Docs/HuongDanUI/). Phần dưới đây là quy định chung.
 
-Giai đoạn này mỗi người dựng hết giao diện các màn hình của mình theo Figma, dùng dữ liệu mẫu. Chưa cần API, chưa cần database, chưa cần khung điều hướng. Bấm **Run** sẽ thấy danh sách "Xem thử màn hình"; bấm vào một dòng để mở màn hình đó.
+Mỗi người dựng hết giao diện các màn hình của mình theo Figma, dùng dữ liệu mẫu (cả 25 màn hình đã xong ngày 19/11). Bấm **Run** sẽ thấy danh sách "Xem thử màn hình"; bấm vào một dòng để mở màn hình đó. Bước tiếp theo là nối các màn hình với nhau, xem mục **Nối các màn hình** bên dưới.
 
 Màn hình mẫu để làm theo: **A01 Trang chủ** trong `ui/khach/khampha/`.
 
@@ -216,9 +216,126 @@ Hàng chip dài hơn màn hình thì đặt `ChipGroup` trong một `HorizontalS
 - **Ảnh:** chưa có ảnh thật thì dùng `ImageView` với nền `@drawable/bg_anh_trong` và hình `@drawable/ic_image` như màn hình A01.
 - **Xem trước không cần chạy:** thêm `tools:text="..."` vào `TextView` và `tools:listitem="@layout/item_..."` vào `RecyclerView` để thấy dữ liệu mẫu ngay trong Layout Editor.
 
-### Khi nối các phần lại
+## Nối các màn hình (điều hướng)
 
-Khung điều hướng xong thì Fragment được gắn thẳng vào `KhachActivity` hoặc `QuanTriActivity`, không phải sửa layout. Dữ liệu mẫu được thay bằng lớp trong `model/` và lời gọi API. Danh sách xem thử (`MainActivity` tạm và package `xemthu/`) sẽ được gỡ bỏ ở bước đó.
+Nối dần từ bây giờ, không đợi làm xong hết chức năng rồi mới ghép. Chức năng nào đi qua nhiều màn hình (A03 Chi tiết tour → A04 Đặt tour → A05 Đặt thành công) thì nối luôn khi làm chức năng đó. Như vậy màn hình nhận dữ liệu từ màn hình trước ngay từ đầu, không phải viết lại lúc ghép.
+
+### Ai nối phần nào
+
+| Lớp | Nội dung | Người làm |
+| --- | --- | --- |
+| Khung | `SplashActivity`, `AuthActivity`, `KhachActivity`, `QuanTriActivity`; thanh điều hướng dưới gắn các màn hình gốc | Hoàng |
+| Trong module | Từ màn hình của mình mở màn hình con của mình | Mỗi người, làm cùng lúc với chức năng |
+| Giữa các module | Màn hình người này mở màn hình người kia, có truyền dữ liệu | Hai người liên quan (bảng dưới) |
+
+Tab ở thanh điều hướng dưới (Hoàng chốt):
+
+| Activity | Các tab |
+| --- | --- |
+| `KhachActivity` | A01 Trang chủ · A02 Tìm tour · A21 Yêu thích · A08 Đơn của tôi · A10 Tài khoản |
+| `QuanTriActivity` | A11 Tổng quan · A13 Tour · A16 Đơn · A18 Khách hàng · A10 Tài khoản |
+
+Các chỗ nối có truyền dữ liệu:
+
+| Từ → đến | Truyền | Bên gửi | Bên nhận |
+| --- | --- | --- | --- |
+| A00 Khởi động, A06 Đăng nhập → `KhachActivity` hoặc `QuanTriActivity` | vai trò | Hoàng | Hoàng |
+| A01, A02, A21 → A03 Chi tiết tour | mã tour | Sơn | Sơn |
+| A03 Chi tiết tour → A04 Đặt tour | mã tour, mã đợt | Sơn | Thịnh |
+| A05 Đặt thành công, A08 Đơn của tôi → A09 Chi tiết đơn | mã đơn | Thịnh | Thịnh |
+| A13 Danh sách tour → A14 Thêm, sửa tour, A15 Đợt khởi hành | mã tour (thêm mới thì không có) | Phúc | Phúc |
+| A14 → A24 Chọn vị trí → **trả tọa độ về** A14 | vĩ độ, kinh độ | Phúc | Phúc |
+| A16 Danh sách đơn, A23 Quét QR → A17 Xử lý đơn | mã đơn | Trúc Đào | Trúc Đào |
+
+### Mở màn hình con
+
+Mọi Activity chứa Fragment của nhóm dùng **một khung chung có id `khung`**. `XemThuActivity` đã dùng id này; `KhachActivity` và `QuanTriActivity` cũng đặt `FrameLayout` id `khung`. Nhờ vậy code dưới đây chạy được ngay trong danh sách Xem thử, và chạy trong app thật mà không phải sửa.
+
+```kotlin
+// Trong TrangChuFragment, khi bấm vào một tour
+parentFragmentManager.beginTransaction()
+    .replace(R.id.khung, ChiTietTourFragment.newInstance(tour.ma))
+    .addToBackStack(null)
+    .commit()
+```
+
+- `replace` thay màn hình đang hiện trong `khung` bằng màn hình mới.
+- `addToBackStack(null)` ghi lại bước này, bấm Back sẽ quay về màn hình trước. Thiếu dòng này thì Back thoát luôn khỏi Activity.
+- Nhóm không dùng Navigation Component: nó cần một file sơ đồ điều hướng dùng chung, 5 người cùng sửa sẽ xung đột liên tục.
+
+### Truyền dữ liệu: `newInstance` + `arguments`
+
+Màn hình **nhận** tự khai báo mình cần tham số gì. Màn hình gửi chỉ gọi `newInstance(...)`, không phải nhớ tên khóa.
+
+```kotlin
+class ChiTietTourFragment : Fragment() {
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val maTour = requireArguments().getString(MA_TOUR)!!
+        // Tìm tour theo maTour trong DuLieuMau; tuần 9 đổi sang đọc Firestore
+    }
+
+    companion object {
+        private const val MA_TOUR = "ma_tour"
+
+        fun newInstance(maTour: String) = ChiTietTourFragment().apply {
+            arguments = bundleOf(MA_TOUR to maTour)
+        }
+    }
+}
+```
+
+- **Không truyền qua constructor** (`ChiTietTourFragment(maTour)`). Khi xoay máy, hoặc app bị hệ thống tắt rồi mở lại, Android tạo lại Fragment bằng constructor rỗng: tham số mất và app văng. `arguments` thì được Android tự lưu và trả lại.
+- **Chỉ truyền mã**, không truyền cả đối tượng. Màn hình nhận tự lấy dữ liệu theo mã. Để mã kiểu `String` ngay từ bây giờ, vì mã document của Firestore là chuỗi.
+- `bundleOf` import từ `androidx.core.os.bundleOf`.
+- Màn hình đã có `newInstance` thì sửa luôn dòng đăng ký trong `ManHinhX.kt` để danh sách Xem thử truyền một mã mẫu. Nếu không, `requireArguments()` sẽ báo lỗi khi mở từ danh sách:
+
+  ```kotlin
+  ManHinh("A03", "Chi tiết tour") { ChiTietTourFragment.newInstance("T01") },
+  ```
+
+- Nối sang màn hình của người khác: người **nhận** viết `newInstance` trước (một PR nhỏ), người gửi chỉ việc gọi.
+
+### Trả kết quả về màn hình trước
+
+Dùng khi màn hình con chọn xong một giá trị rồi đóng lại, ví dụ A24 Chọn vị trí trả tọa độ về A14. Fragment Result có sẵn trong `fragment-ktx`:
+
+```kotlin
+// A24 ChonViTriFragment: khi bấm Xác nhận thì gửi kết quả rồi đóng
+setFragmentResult(KET_QUA, bundleOf(VI_DO to viDo, KINH_DO to kinhDo))
+parentFragmentManager.popBackStack()
+
+companion object {
+    const val KET_QUA = "a24_ket_qua"
+    const val VI_DO = "vi_do"
+    const val KINH_DO = "kinh_do"
+}
+```
+
+```kotlin
+// A14 ThemSuaTourFragment: đăng ký nhận trong onCreate
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setFragmentResultListener(ChonViTriFragment.KET_QUA) { _, bundle ->
+        val viDo = bundle.getDouble(ChonViTriFragment.VI_DO)
+        val kinhDo = bundle.getDouble(ChonViTriFragment.KINH_DO)
+        // hiện tọa độ lên form
+    }
+}
+```
+
+`popBackStack()` đóng màn hình hiện tại, quay về màn hình trước (giống bấm Back). Kết quả được giữ lại và giao cho A14 khi A14 hiện lên. Import: `androidx.fragment.app.setFragmentResult`, `androidx.fragment.app.setFragmentResultListener`.
+
+### Chuyển giữa các Activity (phần của Hoàng)
+
+- Đăng nhập xong: mở `KhachActivity` hoặc `QuanTriActivity` bằng `startActivity(Intent(...))` rồi gọi `finish()`, để bấm Back không quay lại màn hình đăng nhập. Đăng xuất làm ngược lại.
+- Bấm sang tab khác: xóa các màn hình con đang mở của tab cũ (`popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)`) rồi `replace` màn hình gốc của tab mới vào `khung`.
+- Các bạn khác không cần đụng vào phần này. Fragment của mình gắn vào khung là chạy.
+
+### Danh sách Xem thử
+
+Giữ lại tới tuần 10 để mở riêng từng màn hình khi làm và test. `MainActivity` tạm và package `xemthu/` chỉ gỡ ở bước hoàn thiện cuối cùng.
 
 ## Thư viện có sẵn
 
