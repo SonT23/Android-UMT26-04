@@ -5,6 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
+import vn.edu.umt.tour.data.local.AppDatabase
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import vn.edu.umt.tour.R
@@ -39,10 +42,17 @@ class TrangChuFragment : Fragment() {
         adapter.onTourClick = { tour ->
             moManHinhCon(ChiTietTourFragment.newInstance(tour.ma))
         }
+        // B5: tô tim theo dữ liệu đã lưu trong Room, bấm tim thì lưu hoặc xóa trong Room
+        val dao = AppDatabase.layDatabase(requireContext()).yeuThichDao()
+        viewLifecycleOwner.lifecycleScope.launch {
+            danhDauYeuThich(dao, tours)
+            adapter.notifyItemRangeChanged(0, tours.size)
+        }
         adapter.onYeuThichClick = { viTri ->
-            // Đổi trạng thái tim rồi báo adapter vẽ lại đúng dòng đó
-            tours[viTri].yeuThich = !tours[viTri].yeuThich
+            val tour = tours[viTri]
+            tour.yeuThich = !tour.yeuThich
             adapter.notifyItemChanged(viTri)
+            viewLifecycleOwner.lifecycleScope.launch { luuYeuThich(dao, tour) }
         }
     }
 }

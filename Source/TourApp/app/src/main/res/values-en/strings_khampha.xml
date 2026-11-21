@@ -68,6 +68,7 @@
     <string name="a21_mat_mang">You are offline. Saved tours are still available.</string>
     <string name="a21_chua_co_yeu_thich">No favourites yet. Tap the heart on a tour to save it.</string>
     <string name="a21_da_xem_gan_day">RECENTLY VIEWED</string>
+    <string name="a21_luu_ngay">Saved %1$s</string>
     <string name="a21_xoa_lich_su">Clear history</string>
     <string name="a21_chua_xem">No tours viewed yet.</string>
 

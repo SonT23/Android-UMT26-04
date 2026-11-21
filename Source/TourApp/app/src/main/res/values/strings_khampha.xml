@@ -70,6 +70,7 @@
     <string name="a21_mat_mang">Đang mất mạng. Tour đã lưu vẫn xem được.</string>
     <string name="a21_chua_co_yeu_thich">Chưa có tour yêu thích. Bấm biểu tượng tim ở một tour để lưu lại.</string>
     <string name="a21_da_xem_gan_day">ĐÃ XEM GẦN ĐÂY</string>
+    <string name="a21_luu_ngay">Lưu ngày %1$s</string>
     <string name="a21_xoa_lich_su">Xóa lịch sử</string>
     <string name="a21_chua_xem">Chưa xem tour nào.</string>
 

@@ -8,6 +8,9 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
+import vn.edu.umt.tour.data.local.AppDatabase
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.chip.Chip
@@ -40,9 +43,17 @@ class TimTourFragment : Fragment() {
         adapter.onTourClick = { tour ->
             moManHinhCon(ChiTietTourFragment.newInstance(tour.ma))
         }
+        // B5: tô tim theo dữ liệu đã lưu trong Room, bấm tim thì lưu hoặc xóa trong Room
+        val dao = AppDatabase.layDatabase(requireContext()).yeuThichDao()
+        viewLifecycleOwner.lifecycleScope.launch {
+            danhDauYeuThich(dao, tours)
+            adapter.notifyItemRangeChanged(0, tours.size)
+        }
         adapter.onYeuThichClick = { viTri ->
-            tours[viTri].yeuThich = !tours[viTri].yeuThich
+            val tour = tours[viTri]
+            tour.yeuThich = !tour.yeuThich
             adapter.notifyItemChanged(viTri)
+            viewLifecycleOwner.lifecycleScope.launch { luuYeuThich(dao, tour) }
         }
 
         // Nút X xóa chữ trong ô tìm

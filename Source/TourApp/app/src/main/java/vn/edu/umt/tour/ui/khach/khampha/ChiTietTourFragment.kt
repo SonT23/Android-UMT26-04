@@ -11,6 +11,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
+import vn.edu.umt.tour.data.local.AppDatabase
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import vn.edu.umt.tour.R
@@ -33,7 +36,6 @@ class ChiTietTourFragment : Fragment() {
         // Lấy mã tour màn hình trước gửi sang, rồi tìm tour theo mã
         val maTour = requireArguments().getString(MA_TOUR)!!
         val tour = timTourMau(maTour)
-        yeuThich = tour.yeuThich
         view.findViewById<TextView>(R.id.tenTV).text = tour.ten
         view.findViewById<TextView>(R.id.diaDiemTV).text = tour.moTa
         view.findViewById<TextView>(R.id.giaTV).text = tour.gia
@@ -54,20 +56,18 @@ class ChiTietTourFragment : Fragment() {
             Toast.makeText(requireContext(), dot.ngay, Toast.LENGTH_SHORT).show()
         }
 
-        // Nút tim: bấm để đổi qua lại giữa đã lưu và chưa lưu
+        // B5 nút tim: đọc trạng thái từ Room khi mở màn hình, bấm thì lưu hoặc xóa trong Room
         val yeuThichIV = view.findViewById<ImageView>(R.id.yeuThichIV)
-        if (yeuThich) {
-            yeuThichIV.setImageResource(R.drawable.ic_favorite)
-        } else {
-            yeuThichIV.setImageResource(R.drawable.ic_favorite_border)
+        val dao = AppDatabase.layDatabase(requireContext()).yeuThichDao()
+        viewLifecycleOwner.lifecycleScope.launch {
+            yeuThich = dao.daThich(maTour)
+            veTim(yeuThichIV)
         }
         yeuThichIV.setOnClickListener {
             yeuThich = !yeuThich
-            if (yeuThich) {
-                yeuThichIV.setImageResource(R.drawable.ic_favorite)
-            } else {
-                yeuThichIV.setImageResource(R.drawable.ic_favorite_border)
-            }
+            veTim(yeuThichIV)
+            tour.yeuThich = yeuThich
+            viewLifecycleOwner.lifecycleScope.launch { luuYeuThich(dao, tour) }
         }
 
         // B7 Chia sẻ tour: gửi tên, nơi đi, giá cho app khác (Zalo, Messenger, Gmail…)
@@ -88,6 +88,15 @@ class ChiTietTourFragment : Fragment() {
 
         // Nút quay lại: về màn hình trước (A01, A02 hoặc A21)
         view.findViewById<ImageView>(R.id.quayLaiIV).setOnClickListener { quayLai() }
+    }
+
+    // Tim đầy khi đã thích, tim rỗng khi chưa
+    private fun veTim(yeuThichIV: ImageView) {
+        if (yeuThich) {
+            yeuThichIV.setImageResource(R.drawable.ic_favorite)
+        } else {
+            yeuThichIV.setImageResource(R.drawable.ic_favorite_border)
+        }
     }
 
     companion object {
