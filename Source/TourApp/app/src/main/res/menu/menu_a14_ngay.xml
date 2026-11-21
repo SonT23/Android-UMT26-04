@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- D5: menu của nút tùy chọn trên mỗi ngày trong lịch trình ở A14 -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/suaNgayMenu"
+        android:title="@string/a14_menu_sua" />
+    <item
+        android:id="@+id/xoaNgayMenu"
+        android:title="@string/a14_menu_xoa" />
+</menu>

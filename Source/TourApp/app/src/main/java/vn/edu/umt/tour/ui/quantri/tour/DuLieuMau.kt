@@ -87,9 +87,10 @@ const val SO_DEM_DANG_SUA = 2
 const val DIEM_DEN_DANG_SUA = "Đà Lạt"
 
 // A14: một ngày trong lịch trình. thuTu bắt đầu từ 1.
+// D5 sửa tiêu đề và đánh số lại khi xóa, kéo thả nên hai trường là var.
 class NgayMau(
-    val thuTu: Int,
-    val tieuDe: String
+    var thuTu: Int,
+    var tieuDe: String
 )
 
 // A24: vị trí đang ghim trên bản đồ như trong thiết kế
