@@ -263,6 +263,18 @@ parentFragmentManager.beginTransaction()
 - `addToBackStack(null)` ghi lại bước này, bấm Back sẽ quay về màn hình trước. Thiếu dòng này thì Back thoát luôn khỏi Activity.
 - Nhóm không dùng Navigation Component: nó cần một file sơ đồ điều hướng dùng chung, 5 người cùng sửa sẽ xung đột liên tục.
 
+### Nút Quay lại (←) và nút Hủy, Đóng trong màn hình
+
+Không gọi `requireActivity().finish()` (đóng cả Activity, trong app thật là văng khỏi cả phần khách hoặc quản trị), cũng không gọi `parentFragmentManager.popBackStack()` (màn hình mở thẳng từ danh sách Xem thử không nằm trong back stack, nên bấm không có phản ứng gì). Dùng:
+
+```kotlin
+quayLaiIV.setOnClickListener {
+    requireActivity().onBackPressedDispatcher.onBackPressed()
+}
+```
+
+Lệnh này làm đúng như bấm nút Back của máy: có màn hình trước thì quay về màn hình đó, không có thì đóng Activity (trong danh sách Xem thử là quay về danh sách).
+
 ### Truyền dữ liệu: `newInstance` + `arguments`
 
 Màn hình **nhận** tự khai báo mình cần tham số gì. Màn hình gửi chỉ gọi `newInstance(...)`, không phải nhớ tên khóa.
@@ -304,7 +316,7 @@ Dùng khi màn hình con chọn xong một giá trị rồi đóng lại, ví d�
 ```kotlin
 // A24 ChonViTriFragment: khi bấm Xác nhận thì gửi kết quả rồi đóng
 setFragmentResult(KET_QUA, bundleOf(VI_DO to viDo, KINH_DO to kinhDo))
-parentFragmentManager.popBackStack()
+requireActivity().onBackPressedDispatcher.onBackPressed()
 
 companion object {
     const val KET_QUA = "a24_ket_qua"
@@ -325,7 +337,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 }
 ```
 
-`popBackStack()` đóng màn hình hiện tại, quay về màn hình trước (giống bấm Back). Kết quả được giữ lại và giao cho A14 khi A14 hiện lên. Import: `androidx.fragment.app.setFragmentResult`, `androidx.fragment.app.setFragmentResultListener`.
+Dòng cuối đóng màn hình hiện tại, quay về màn hình trước (giống bấm Back, xem mục "Nút Quay lại"). Kết quả được giữ lại và giao cho A14 khi A14 hiện lên. Import: `androidx.fragment.app.setFragmentResult`, `androidx.fragment.app.setFragmentResultListener`.
 
 ### Chuyển giữa các Activity (phần của Hoàng)
 
