@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.ksp)
+    // Đọc app/google-services.json (cấu hình project Firebase, không phải mật khẩu)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -50,10 +52,10 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.kotlinx.coroutines.android)
 
-    // Gọi REST API
-    implementation(libs.retrofit)
-    implementation(libs.retrofit.converter.gson)
-    implementation(libs.okhttp.logging.interceptor)
+    // Firebase: đăng nhập (Authentication) và dữ liệu (Firestore). BoM chọn phiên bản cho từng thư viện.
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
 
     // Cơ sở dữ liệu trên máy
     implementation(libs.androidx.room.runtime)
