@@ -58,6 +58,8 @@
     <string name="a03_con_cho">Seats left: %1$d</string>
     <string name="a03_het_cho">Sold out</string>
     <string name="a03_mo_rong">Show day details</string>
+    <string name="a03_noi_dung_chia_se">%1$s\n%2$s\n%3$s\nBook it on the Tour Booking app.</string>
+    <string name="a03_chia_se_qua">Share tour via</string>
 
     <!-- A21 Favourites and recently viewed -->
     <string name="a21_tieu_de">Favourites and history</string>

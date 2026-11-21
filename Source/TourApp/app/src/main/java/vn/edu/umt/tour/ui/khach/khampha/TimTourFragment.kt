@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -37,9 +36,9 @@ class TimTourFragment : Fragment() {
         val soKetQuaTV = view.findViewById<TextView>(R.id.soKetQuaTV)
         soKetQuaTV.text = getString(R.string.a02_so_tour, tours.size)
 
+        // Bấm vào một tour: mở A03 Chi tiết tour, truyền mã tour
         adapter.onTourClick = { tour ->
-            // Sau này mở A03 Chi tiết tour
-            Toast.makeText(requireContext(), tour.ten, Toast.LENGTH_SHORT).show()
+            moManHinhCon(ChiTietTourFragment.newInstance(tour.ma))
         }
         adapter.onYeuThichClick = { viTri ->
             tours[viTri].yeuThich = !tours[viTri].yeuThich
@@ -52,9 +51,9 @@ class TimTourFragment : Fragment() {
             timET.setText("")
         }
 
-        // Chip "Bộ lọc": sau này mở bảng bộ lọc (BoLocFragment)
+        // Chip "Bộ lọc": mở bảng bộ lọc
         view.findViewById<Chip>(R.id.boLocChip).setOnClickListener {
-            Toast.makeText(requireContext(), R.string.a02_bo_loc_2, Toast.LENGTH_SHORT).show()
+            moManHinhCon(BoLocFragment())
         }
     }
 }
