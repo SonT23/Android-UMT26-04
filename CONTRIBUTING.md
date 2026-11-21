@@ -155,6 +155,15 @@ Mỗi commit chỉ chứa **một** tính năng hoặc thay đổi, đừng gộ
 
 ### 3.3 Push và mở pull request
 
+**Trước khi mở PR**, tự kiểm tra:
+
+- Build không lỗi: Android Studio **Build → Make Project**, hoặc `./gradlew assembleDebug` trong `Source/TourApp`.
+- Chạy app, mở màn hình của mình trong danh sách **Xem thử** và bấm thử đúng chức năng vừa làm.
+- Branch đã có code mới nhất của `main` (mục 3.7). Conflict thì tự gộp trên máy trước, không đẩy sang người duyệt.
+- PR chỉ chứa file trong module của mình. Có sửa file dùng chung (xem bảng "Ai code ở đâu" trong [Source/TourApp/README.md](Source/TourApp/README.md)) thì đã báo nhóm.
+
+Mở PR **sớm, không để sát hạn**: PR cần một người khác duyệt mới merge được, mở vào tối trước hạn thì thường không kịp.
+
 ```bash
 git push -u origin feature/<ten-chuc-nang>     # các lần sau trên branch này chỉ cần: git push
 ```
@@ -291,13 +300,16 @@ File Figma nằm trên mạng nên Git không lưu được. Mỗi người **xu
 
 Sửa thiết kế thì xuất lại ảnh **giữ nguyên tên file**, rồi commit `[m] Sửa thiết kế A01 Trang chủ: <sửa gì>`. Không commit file `.fig`, không xuất ảnh 2x hay 3x.
 
-## 8. Dựng giao diện (giai đoạn hiện tại)
+## 8. Làm chức năng và nối màn hình (giai đoạn hiện tại)
 
-Cả nhóm làm chung project `Source/TourApp`, mỗi người một package. Giai đoạn này mỗi người dựng hết giao diện các màn hình của mình bằng dữ liệu mẫu, phần nối với nhau làm sau.
+Cả nhóm làm chung project `Source/TourApp`, mỗi người một package. Giao diện 25 màn hình đã xong ngày 19/11 (hướng dẫn dựng giao diện vẫn ở [Docs/HuongDanUI/](Docs/HuongDanUI/)). Giờ mỗi người làm chức năng thật trên màn hình của mình và nối các màn hình với nhau.
 
-- Hướng dẫn riêng cho từng người, kèm tên file phải tạo và lệnh commit: [Docs/HuongDanUI/](Docs/HuongDanUI/).
-- Cấu trúc project, quy tắc đặt tên, bảng tra thành phần giao diện: [Source/TourApp/README.md](Source/TourApp/README.md).
-- Tên branch: `feature/layout-<module>`. Mỗi màn hình một commit `[+] Layout <mã> <tên màn hình>`.
+- **Mỗi chức năng một branch, một PR.** Tên branch `feature/<mã chức năng>-<tên>`, vd. `feature/b7-chia-se-tour`. Commit mang mã chức năng, vd. `[+] B7 Chia sẻ tour`, `[m] C1 Giữ số người khi xoay máy`.
+- **Phần nền** (khung điều hướng, `model/`, Firebase, `util/`) làm trên branch riêng, vd. `feature/khung-dieu-huong`, `feature/model`.
+- **Nối màn hình** theo mục "Nối các màn hình" trong [Source/TourApp/README.md](Source/TourApp/README.md): khung chứa Fragment có id `khung`, mở màn hình con bằng `replace` + `addToBackStack`, truyền mã qua `newInstance`. Nối trong module thì tự làm cùng chức năng; nối sang module người khác thì người nhận viết `newInstance` trước.
+- **Không chờ phần của người khác.** Chưa có khung điều hướng thì test qua danh sách Xem thử; chưa có `model/`, `util/` hay Firebase thì tạm dùng dữ liệu mẫu và code tạm trong package của mình, khi phần đó merge thì đổi sang.
+- **Giữ danh sách Xem thử** (`MainActivity` tạm, package `xemthu/`) tới tuần 10. Màn hình nhận tham số qua `newInstance` thì sửa dòng đăng ký trong `ManHinhX.kt` để truyền một mã mẫu.
+- Sửa file dùng chung (Manifest, Gradle, theme, `strings.xml` chung, database dùng chung) thì báo nhóm trước khi push. Sau khi PR sửa Gradle được merge, mọi người `git pull` rồi bấm **Sync Now**.
 
 ## Tóm tắt hằng ngày
 
