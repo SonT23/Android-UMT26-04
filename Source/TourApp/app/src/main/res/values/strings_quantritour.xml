@@ -91,4 +91,11 @@
     <string name="a24_vi_tri_diem_den">Vị trí điểm đến</string>
     <string name="a24_dung_vi_tri">Dùng vị trí này</string>
     <string name="a24_da_chon">Đã chọn: %1$s (%2$s)</string>
+
+    <!-- Tiện ích nạp dữ liệu mẫu lên Firestore (NapDuLieuMauFragment, chỉ có trong danh sách Xem thử) -->
+    <string name="nap_tieu_de">Nạp dữ liệu mẫu lên Firestore</string>
+    <string name="nap_mo_ta">Ghi %1$s (dữ liệu giả để demo). Id cố định nên bấm lại nhiều lần không bị trùng, chỉ ghi đè đúng các document mẫu.</string>
+    <string name="nap_nut">Nạp dữ liệu mẫu</string>
+    <string name="nap_xong">Đã nạp xong. Mở Firebase Console, mục Firestore Database để xem.</string>
+    <string name="nap_loi">Không nạp được: %1$s</string>
 </resources>
