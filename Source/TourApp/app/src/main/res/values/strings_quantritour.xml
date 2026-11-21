@@ -21,6 +21,20 @@
     <string name="a12_luu">Lưu</string>
     <string name="a12_loi_ten">Vui lòng nhập tên điểm đến</string>
     <string name="a12_da_luu">Đã lưu điểm đến %1$s</string>
+    <string name="a12_them_tieu_de">Thêm điểm đến</string>
+    <string name="a12_chua_chon_vi_tri">Chưa chọn vị trí</string>
+    <string name="a12_da_them">Đã thêm điểm đến %1$s</string>
+    <string name="a12_loi_trung_ten">Đã có điểm đến cùng tên trong tỉnh này</string>
+
+    <!-- D1 Sửa, xóa điểm đến ở A12 -->
+    <string name="a12_menu_sua">Sửa</string>
+    <string name="a12_menu_xoa">Xóa</string>
+    <string name="a12_xoa_hoi">Xóa điểm đến %1$s?</string>
+    <string name="a12_xoa_giai_thich">Điểm đến bị xóa sẽ không còn trong danh sách chọn khi tạo tour.</string>
+    <string name="a12_xoa_dong_y">Xóa</string>
+    <string name="a12_xoa_khong">Không</string>
+    <string name="a12_da_xoa">Đã xóa điểm đến %1$s</string>
+    <string name="a12_khong_xoa_duoc">%1$s đang có %2$d tour, không xóa được</string>
 
     <!-- A13 Danh sách tour -->
     <string name="a13_tieu_de">Tour</string>

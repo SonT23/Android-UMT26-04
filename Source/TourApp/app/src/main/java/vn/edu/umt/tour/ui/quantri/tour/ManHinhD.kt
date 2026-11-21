@@ -8,7 +8,7 @@ import vn.edu.umt.tour.xemthu.ManHinh
  */
 val manHinhD: List<ManHinh> = listOf(
     ManHinh("A12", "Điểm đến") { DiemDenFragment() },
-    ManHinh("A12", "Sửa điểm đến") { SuaDiemDenFragment() },
+    ManHinh("A12", "Sửa điểm đến") { SuaDiemDenFragment.newInstance("DD01") },
     ManHinh("A13", "Danh sách tour") { DanhSachTourFragment() },
     ManHinh("A15", "Đợt khởi hành") { DotKhoiHanhFragment() },
     ManHinh("A14", "Thêm, sửa tour") { ThemSuaTourFragment() },
