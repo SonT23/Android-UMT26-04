@@ -8,6 +8,16 @@ Project Android Studio của nhóm 04 (Kotlin, giao diện XML). Package `vn.edu
 2. Chờ Gradle sync xong, chọn máy ảo hoặc điện thoại → **Run**.
 3. Dòng lệnh: `./gradlew assembleDebug`, file APK ở `app/build/outputs/apk/debug/`.
 
+## Firebase
+
+App dùng Firebase Authentication (đăng nhập) và Cloud Firestore (dữ liệu). Cấu trúc dữ liệu ở [Docs/Firestore.md](../../Docs/Firestore.md).
+
+- `app/google-services.json` là file cấu hình của project Firebase, đã commit sẵn trong repo (không phải mật khẩu). Thiếu file này thì plugin `google-services` báo lỗi khi build.
+- Thư viện: Firebase BoM, `firebase-auth`, `firebase-firestore` trong `gradle/libs.versions.toml`. BoM chọn phiên bản cho từng thư viện Firebase, nên trong `app/build.gradle.kts` không ghi phiên bản.
+- Tên collection lấy từ `data/Collections.kt`, vd. `db.collection(Collections.TOUR)`, không gõ chuỗi trực tiếp.
+- Dữ liệu mẫu: chạy app, trong danh sách Xem thử bấm **Firebase · Nạp dữ liệu mẫu**. Hàm ở `data/DuLieuMauFirestore.kt` ghi điểm đến DD01 đến DD06, tour T01 đến T05, đợt DT01 đến DT07 bằng id cố định, nên bấm lại nhiều lần không bị trùng.
+- Sau khi PR sửa Gradle được merge: `git pull` rồi bấm **Sync Now** trên thanh vàng của Android Studio (hoặc **File → Sync Project with Gradle Files**).
+
 ## Ai code ở đâu
 
 Cả nhóm làm chung **một project** này, không ai tạo project riêng. Mỗi người có một package riêng trong `java/vn/edu/umt/tour/` và chỉ tạo, sửa file trong package của mình.
@@ -20,7 +30,7 @@ Cả nhóm làm chung **một project** này, không ai tạo project riêng. M�
 | `ui/quantri/tour/` | D: Quản trị tour | Phúc | `ManHinhD.kt` |
 | `ui/quantri/don/` | E: Quản trị đơn, khách, thống kê | Trúc Đào | `ManHinhE.kt` |
 
-File dùng chung, chỉ sửa sau khi báo nhóm: `MainActivity.kt`, package `xemthu/`, `AndroidManifest.xml`, `colors.xml`, `themes.xml`, `dimens.xml`, `strings.xml`, file Gradle. Các phần sẽ thêm sau: `SplashActivity`, `KhachActivity`, `QuanTriActivity` (Hoàng), `model/` (Thịnh), `data/api/` (Phúc), `util/` (Trúc Đào).
+File dùng chung, chỉ sửa sau khi báo nhóm: `MainActivity.kt`, package `xemthu/`, `AndroidManifest.xml`, `colors.xml`, `themes.xml`, `dimens.xml`, `strings.xml`, file Gradle. Các phần sẽ thêm sau: `SplashActivity`, `KhachActivity`, `QuanTriActivity` (Hoàng), `model/` (Thịnh), `util/` (Trúc Đào). Package `data/`: `Collections.kt` và dữ liệu mẫu Firestore (Phúc), `data/local/` Room (Sơn).
 
 ## Làm giao diện trước, nối sau
 
@@ -351,6 +361,6 @@ Giữ lại tới tuần 10 để mở riêng từng màn hình khi làm và tes
 
 ## Thư viện có sẵn
 
-Material 3, Fragment, RecyclerView, SwipeRefreshLayout, ViewModel, Coroutines, Retrofit + Gson, OkHttp logging, Room (KSP), WorkManager, Coil. Phiên bản ở `gradle/libs.versions.toml`.
+Material 3, Fragment, RecyclerView, SwipeRefreshLayout, ViewModel, Coroutines, Firebase (Authentication, Firestore), Room (KSP), WorkManager, Coil. Phiên bản ở `gradle/libs.versions.toml`.
 
-Thư viện riêng của module (Google Maps, CameraX, ML Kit, ZXing, MPAndroidChart, Biometric) do người cần tự thêm vào `libs.versions.toml` trong PR chức năng của mình. Coil đang giữ bản 3.4.0: bản 3.5 trở lên cần Kotlin 2.4, Android Studio hiện tại chưa biên dịch được.
+Thư viện riêng của module (Google Maps, CameraX, ML Kit, ZXing, MPAndroidChart, Biometric) do người cần tự thêm vào `libs.versions.toml` trong PR chức năng của mình. Coil đang giữ bản 3.4.0: bản 3.5 trở lên cần Kotlin 2.4, Android Studio hiện tại chưa biên dịch được. Firebase BoM giữ bản 34.19.0 cùng lý do: BoM 35 dùng `firebase-auth` 25, cũng cần Kotlin 2.4.

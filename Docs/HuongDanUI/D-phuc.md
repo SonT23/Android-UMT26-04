@@ -114,4 +114,4 @@ Các commit tiếp theo: `[+] Layout A12 Sửa điểm đến`, `[+] Layout A13 
 
 ## Việc làm sau, không thuộc giai đoạn này
 
-`data/api/` (ApiClient, ApiService), gọi API điểm đến và tour, tải ảnh, CameraX, lưu nháp bằng Room, kéo thả lịch trình, bản đồ thật.
+Đọc, ghi điểm đến và tour trên Firestore (tên collection ở `data/Collections.kt`), tải ảnh, CameraX, lưu nháp bằng Room, kéo thả lịch trình, bản đồ thật.
