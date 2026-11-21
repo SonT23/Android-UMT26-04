@@ -3,7 +3,10 @@ package vn.edu.umt.tour.ui.khach.khampha
 // Dữ liệu mẫu để dựng giao diện module B khi chưa có API.
 // Khi nối API thì thay TourMau bằng lớp Tour trong package model/ (Thịnh làm).
 
+// ma: mã tour dạng chuỗi ("T01"…), cùng một tour thì cùng mã ở mọi màn hình.
+// Màn hình sau nhận mã này qua newInstance rồi tự tìm tour (xem timTourMau ở cuối file).
 class TourMau(
+    val ma: String,
     val ten: String,
     val moTa: String,
     val gia: String,
@@ -15,22 +18,22 @@ class TourMau(
 
 fun taoTourMau(): ArrayList<TourMau> {
     return arrayListOf(
-        TourMau("Đà Lạt 3 ngày 2 đêm", "Đà Lạt, Lâm Đồng · 3 ngày 2 đêm", "Từ 2.500.000 ₫", "Còn 1 chỗ", true),
-        TourMau("Nha Trang biển đảo 4 ngày", "Nha Trang, Khánh Hòa · 4 ngày 3 đêm", "Từ 3.900.000 ₫", "Còn 12 chỗ", false),
-        TourMau("Phú Quốc nghỉ dưỡng 4 ngày", "Phú Quốc, Kiên Giang · 4 ngày 3 đêm", "Từ 5.200.000 ₫", "Còn 6 chỗ", false),
-        TourMau("Hạ Long du thuyền 2 ngày", "Hạ Long, Quảng Ninh · 2 ngày 1 đêm", "Từ 3.100.000 ₫", "Hết chỗ", false)
+        TourMau("T01", "Đà Lạt 3 ngày 2 đêm", "Đà Lạt, Lâm Đồng · 3 ngày 2 đêm", "Từ 2.500.000 ₫", "Còn 1 chỗ", true),
+        TourMau("T02", "Nha Trang biển đảo 4 ngày", "Nha Trang, Khánh Hòa · 4 ngày 3 đêm", "Từ 3.900.000 ₫", "Còn 12 chỗ", false),
+        TourMau("T03", "Phú Quốc nghỉ dưỡng 4 ngày", "Phú Quốc, Kiên Giang · 4 ngày 3 đêm", "Từ 5.200.000 ₫", "Còn 6 chỗ", false),
+        TourMau("T04", "Hạ Long du thuyền 2 ngày", "Hạ Long, Quảng Ninh · 2 ngày 1 đêm", "Từ 3.100.000 ₫", "Hết chỗ", false)
     )
 }
 
 // A02: kết quả tìm "Đà Lạt"
 fun taoKetQuaTimMau(): ArrayList<TourMau> {
     return arrayListOf(
-        TourMau("Đà Lạt 3 ngày 2 đêm", "Đà Lạt · 3 ngày 2 đêm · 20/11", "Từ 2.500.000 ₫", "Còn 1 chỗ", true),
-        TourMau("Đà Lạt săn mây 2 ngày 1 đêm", "Đà Lạt · 2 ngày 1 đêm · 22/11", "Từ 1.800.000 ₫", "Còn 8 chỗ", false),
-        TourMau("Đà Lạt mùa hoa 4 ngày", "Đà Lạt · 4 ngày 3 đêm · 27/11", "Từ 3.200.000 ₫", "Hết chỗ", false, true),
-        TourMau("Đà Lạt, Nha Trang 5 ngày", "Đà Lạt · 5 ngày 4 đêm · 04/12", "Từ 4.600.000 ₫", "Còn 20 chỗ", false),
-        TourMau("Đà Lạt cắm trại 2 ngày", "Đà Lạt · 2 ngày 1 đêm · 06/12", "Từ 1.500.000 ₫", "Còn 15 chỗ", false),
-        TourMau("Đà Lạt, Mũi Né 4 ngày", "Đà Lạt · 4 ngày 3 đêm · 11/12", "Từ 4.100.000 ₫", "Còn 3 chỗ", false)
+        TourMau("T01", "Đà Lạt 3 ngày 2 đêm", "Đà Lạt · 3 ngày 2 đêm · 20/11", "Từ 2.500.000 ₫", "Còn 1 chỗ", true),
+        TourMau("T05", "Đà Lạt săn mây 2 ngày 1 đêm", "Đà Lạt · 2 ngày 1 đêm · 22/11", "Từ 1.800.000 ₫", "Còn 8 chỗ", false),
+        TourMau("T06", "Đà Lạt mùa hoa 4 ngày", "Đà Lạt · 4 ngày 3 đêm · 27/11", "Từ 3.200.000 ₫", "Hết chỗ", false, true),
+        TourMau("T07", "Đà Lạt, Nha Trang 5 ngày", "Đà Lạt · 5 ngày 4 đêm · 04/12", "Từ 4.600.000 ₫", "Còn 20 chỗ", false),
+        TourMau("T08", "Đà Lạt cắm trại 2 ngày", "Đà Lạt · 2 ngày 1 đêm · 06/12", "Từ 1.500.000 ₫", "Còn 15 chỗ", false),
+        TourMau("T09", "Đà Lạt, Mũi Né 4 ngày", "Đà Lạt · 4 ngày 3 đêm · 11/12", "Từ 4.100.000 ₫", "Còn 3 chỗ", false)
     )
 }
 
@@ -75,26 +78,27 @@ fun taoDotMau(): ArrayList<DotMau> {
 // A21: tour đã lưu yêu thích. Nhãn xám ghi ngày lưu.
 fun taoYeuThichMau(): ArrayList<TourMau> {
     return arrayListOf(
-        TourMau("Đà Lạt 3 ngày 2 đêm", "Đà Lạt · 3 ngày 2 đêm", "Từ 2.500.000 ₫", "Lưu ngày 10/11", true, true),
-        TourMau("Phú Quốc nghỉ dưỡng 4 ngày", "Phú Quốc · 4 ngày 3 đêm", "Từ 5.200.000 ₫", "Lưu ngày 08/11", true, true),
-        TourMau("Hạ Long du thuyền 2 ngày", "Hạ Long · 2 ngày 1 đêm", "Từ 3.100.000 ₫", "Lưu ngày 02/11", true, true)
+        TourMau("T01", "Đà Lạt 3 ngày 2 đêm", "Đà Lạt · 3 ngày 2 đêm", "Từ 2.500.000 ₫", "Lưu ngày 10/11", true, true),
+        TourMau("T03", "Phú Quốc nghỉ dưỡng 4 ngày", "Phú Quốc · 4 ngày 3 đêm", "Từ 5.200.000 ₫", "Lưu ngày 08/11", true, true),
+        TourMau("T04", "Hạ Long du thuyền 2 ngày", "Hạ Long · 2 ngày 1 đêm", "Từ 3.100.000 ₫", "Lưu ngày 02/11", true, true)
     )
 }
 
 // A21: tour đã xem gần đây
 class DaXemMau(
+    val ma: String,
     val ten: String,
     val thoiGian: String
 )
 
 fun taoDaXemMau(): ArrayList<DaXemMau> {
     return arrayListOf(
-        DaXemMau("Nha Trang biển đảo", "Hôm nay"),
-        DaXemMau("Hội An phố cổ", "Hôm qua"),
-        DaXemMau("Sa Pa mùa lúa", "09/11"),
-        DaXemMau("Đà Lạt 3 ngày 2 đêm", "08/11"),
-        DaXemMau("Phú Quốc nghỉ dưỡng", "05/11"),
-        DaXemMau("Hạ Long du thuyền", "02/11")
+        DaXemMau("T02", "Nha Trang biển đảo", "Hôm nay"),
+        DaXemMau("T10", "Hội An phố cổ", "Hôm qua"),
+        DaXemMau("T11", "Sa Pa mùa lúa", "09/11"),
+        DaXemMau("T01", "Đà Lạt 3 ngày 2 đêm", "08/11"),
+        DaXemMau("T03", "Phú Quốc nghỉ dưỡng", "05/11"),
+        DaXemMau("T04", "Hạ Long du thuyền", "02/11")
     )
 }
 
@@ -137,4 +141,19 @@ fun taoBanDoMau(): ArrayList<NgayBanDoMau> {
         NgayBanDoMau("Ngày 2", "Đồi chè và thác Datanla", ngay2),
         NgayBanDoMau("Ngày 3", "Chợ Đà Lạt, trở về", ngay3)
     )
+}
+
+// Tour chỉ xuất hiện trong mục "Đã xem gần đây" của A21
+fun taoTourKhacMau(): ArrayList<TourMau> {
+    return arrayListOf(
+        TourMau("T10", "Hội An phố cổ 3 ngày", "Hội An, Quảng Nam · 3 ngày 2 đêm", "Từ 2.900.000 ₫", "Còn 9 chỗ", false),
+        TourMau("T11", "Sa Pa mùa lúa 3 ngày", "Sa Pa, Lào Cai · 3 ngày 2 đêm", "Từ 3.300.000 ₫", "Còn 4 chỗ", false)
+    )
+}
+
+// Tìm tour mẫu theo mã. A03, A22 dùng hàm này sau khi nhận mã qua newInstance.
+// Tuần 9 thay bằng đọc document có mã này trong collection "tour" của Firestore.
+fun timTourMau(ma: String): TourMau {
+    val tatCa = taoTourMau() + taoKetQuaTimMau() + taoYeuThichMau() + taoTourKhacMau()
+    return tatCa.firstOrNull { it.ma == ma } ?: taoTourMau()[0]
 }
