@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -37,7 +38,10 @@ class BanDoLichTrinhFragment : Fragment() {
         diemDungRV = view.findViewById(R.id.diemDungRV)
         diemDungRV.layoutManager = LinearLayoutManager(requireContext())
 
-        view.findViewById<TextView>(R.id.tenTourTV).text = banDo[0].tieuDe
+        // Tên tour lấy theo mã A03 gửi sang; lịch trình vẫn là dữ liệu mẫu chung
+        val maTour = requireArguments().getString(MA_TOUR)!!
+        view.findViewById<TextView>(R.id.tenTourTV).text = timTourMau(maTour).ten
+        view.findViewById<ImageView>(R.id.quayLaiIV).setOnClickListener { quayLai() }
 
         // Mỗi chip ứng với một phần tử trong danh sách banDo: 0 = Tất cả, 1..3 = Ngày 1..3
         view.findViewById<Chip>(R.id.tatCaChip).setOnClickListener { hienNgay(0) }
@@ -51,6 +55,14 @@ class BanDoLichTrinhFragment : Fragment() {
         }
         view.findViewById<Button>(R.id.chiDuongBtn).setOnClickListener {
             Toast.makeText(requireContext(), R.string.a22_chi_duong, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    companion object {
+        private const val MA_TOUR = "ma_tour"
+
+        fun newInstance(maTour: String) = BanDoLichTrinhFragment().apply {
+            arguments = bundleOf(MA_TOUR to maTour)
         }
     }
 

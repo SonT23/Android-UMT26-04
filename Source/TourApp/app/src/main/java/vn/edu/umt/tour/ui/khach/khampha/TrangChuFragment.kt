@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -36,9 +35,9 @@ class TrangChuFragment : Fragment() {
         tourRV.layoutManager = LinearLayoutManager(requireContext())
         tourRV.adapter = adapter
 
+        // Bấm vào thẻ tour: mở A03 Chi tiết tour, truyền mã tour
         adapter.onTourClick = { tour ->
-            // Sau này mở A03 Chi tiết tour
-            Toast.makeText(requireContext(), tour.ten, Toast.LENGTH_SHORT).show()
+            moManHinhCon(ChiTietTourFragment.newInstance(tour.ma))
         }
         adapter.onYeuThichClick = { viTri ->
             // Đổi trạng thái tim rồi báo adapter vẽ lại đúng dòng đó

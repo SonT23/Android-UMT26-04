@@ -10,7 +10,7 @@ val manHinhB: List<ManHinh> = listOf(
     ManHinh("A01", "Trang chủ") { TrangChuFragment() },
     ManHinh("A02", "Tìm tour") { TimTourFragment() },
     ManHinh("A02", "Bộ lọc") { BoLocFragment() },
-    ManHinh("A03", "Chi tiết tour") { ChiTietTourFragment() },
+    ManHinh("A03", "Chi tiết tour") { ChiTietTourFragment.newInstance("T01") },
     ManHinh("A21", "Yêu thích và đã xem") { YeuThichFragment() },
-    ManHinh("A22", "Bản đồ lịch trình") { BanDoLichTrinhFragment() },
+    ManHinh("A22", "Bản đồ lịch trình") { BanDoLichTrinhFragment.newInstance("T01") },
 )
