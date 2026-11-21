@@ -59,6 +59,9 @@
     <string name="a03_con_cho">Còn %1$d chỗ</string>
     <string name="a03_het_cho">Hết chỗ</string>
     <string name="a03_mo_rong">Xem chi tiết ngày</string>
+    <!-- B7 Chia sẻ tour: %1$s tên tour, %2$s nơi đi và số ngày, %3$s giá -->
+    <string name="a03_noi_dung_chia_se">%1$s\n%2$s\n%3$s\nĐặt tour trên ứng dụng Đặt Tour.</string>
+    <string name="a03_chia_se_qua">Chia sẻ tour qua</string>
 
     <!-- A21 Yêu thích và đã xem -->
     <string name="a21_tieu_de">Yêu thích và đã xem</string>
@@ -67,6 +70,7 @@
     <string name="a21_mat_mang">Đang mất mạng. Tour đã lưu vẫn xem được.</string>
     <string name="a21_chua_co_yeu_thich">Chưa có tour yêu thích. Bấm biểu tượng tim ở một tour để lưu lại.</string>
     <string name="a21_da_xem_gan_day">ĐÃ XEM GẦN ĐÂY</string>
+    <string name="a21_luu_ngay">Lưu ngày %1$s</string>
     <string name="a21_xoa_lich_su">Xóa lịch sử</string>
     <string name="a21_chua_xem">Chưa xem tour nào.</string>
 

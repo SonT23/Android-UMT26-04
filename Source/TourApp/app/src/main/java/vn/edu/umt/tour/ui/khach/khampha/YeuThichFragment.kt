@@ -7,9 +7,14 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
+import vn.edu.umt.tour.data.local.AppDatabase
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -42,22 +47,38 @@ class YeuThichFragment : Fragment() {
         yeuThichSV = view.findViewById(R.id.yeuThichSV)
         daXemLuoiRV = view.findViewById(R.id.daXemLuoiRV)
 
-        // ----- Danh sách yêu thích -----
-        val yeuThich = taoYeuThichMau()
+        // ----- Danh sách yêu thích (B5): đọc từ bảng yeu_thich trong Room -----
+        val yeuThich = ArrayList<TourMau>()
         val yeuThichAdapter = TourAdapter(yeuThich)
         val yeuThichRV = view.findViewById<RecyclerView>(R.id.yeuThichRV)
         yeuThichRV.layoutManager = LinearLayoutManager(requireContext())
         yeuThichRV.adapter = yeuThichAdapter
         val chuaCoYeuThichTV = view.findViewById<TextView>(R.id.chuaCoYeuThichTV)
-        yeuThichTabTV.text = getString(R.string.a21_tab_yeu_thich, yeuThich.size)
+        yeuThichTabTV.text = getString(R.string.a21_tab_yeu_thich, 0)
+
+        val dao = AppDatabase.layDatabase(requireContext()).yeuThichDao()
+        val dinhDangNgay = SimpleDateFormat("dd/MM", Locale.getDefault())
+        viewLifecycleOwner.lifecycleScope.launch {
+            // Đổi từng dòng YeuThich trong Room thành TourMau để dùng lại TourAdapter của A02
+            for (yt in dao.layTatCa()) {
+                val ngayLuu = getString(R.string.a21_luu_ngay, dinhDangNgay.format(Date(yt.luuLuc)))
+                yeuThich.add(TourMau(yt.maTour, yt.ten, yt.moTa, yt.gia, ngayLuu, true, true))
+            }
+            yeuThichAdapter.notifyItemRangeInserted(0, yeuThich.size)
+            yeuThichTabTV.text = getString(R.string.a21_tab_yeu_thich, yeuThich.size)
+            if (yeuThich.isEmpty()) {
+                chuaCoYeuThichTV.visibility = View.VISIBLE
+            }
+        }
 
         yeuThichAdapter.onTourClick = { tour ->
-            Toast.makeText(requireContext(), tour.ten, Toast.LENGTH_SHORT).show()
+            moManHinhCon(ChiTietTourFragment.newInstance(tour.ma))
         }
-        // Bấm tim ở đây nghĩa là bỏ khỏi yêu thích: xóa khỏi danh sách rồi báo adapter
+        // Bấm tim ở đây nghĩa là bỏ khỏi yêu thích: xóa khỏi danh sách, báo adapter, xóa trong Room
         yeuThichAdapter.onYeuThichClick = { viTri ->
-            yeuThich.removeAt(viTri)
+            val tour = yeuThich.removeAt(viTri)
             yeuThichAdapter.notifyItemRemoved(viTri)
+            viewLifecycleOwner.lifecycleScope.launch { dao.xoa(tour.ma) }
             yeuThichTabTV.text = getString(R.string.a21_tab_yeu_thich, yeuThich.size)
             if (yeuThich.isEmpty()) {
                 chuaCoYeuThichTV.visibility = View.VISIBLE
@@ -77,7 +98,7 @@ class YeuThichFragment : Fragment() {
         daXemLuoiRV.adapter = luoiAdapter
 
         daXemAdapter.onClick = { tour ->
-            Toast.makeText(requireContext(), tour.ten, Toast.LENGTH_SHORT).show()
+            moManHinhCon(ChiTietTourFragment.newInstance(tour.ma))
         }
         luoiAdapter.onClick = daXemAdapter.onClick
 

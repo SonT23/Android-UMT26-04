@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
+import vn.edu.umt.tour.data.local.AppDatabase
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.chip.Chip
@@ -37,13 +39,21 @@ class TimTourFragment : Fragment() {
         val soKetQuaTV = view.findViewById<TextView>(R.id.soKetQuaTV)
         soKetQuaTV.text = getString(R.string.a02_so_tour, tours.size)
 
+        // Bấm vào một tour: mở A03 Chi tiết tour, truyền mã tour
         adapter.onTourClick = { tour ->
-            // Sau này mở A03 Chi tiết tour
-            Toast.makeText(requireContext(), tour.ten, Toast.LENGTH_SHORT).show()
+            moManHinhCon(ChiTietTourFragment.newInstance(tour.ma))
+        }
+        // B5: tô tim theo dữ liệu đã lưu trong Room, bấm tim thì lưu hoặc xóa trong Room
+        val dao = AppDatabase.layDatabase(requireContext()).yeuThichDao()
+        viewLifecycleOwner.lifecycleScope.launch {
+            danhDauYeuThich(dao, tours)
+            adapter.notifyItemRangeChanged(0, tours.size)
         }
         adapter.onYeuThichClick = { viTri ->
-            tours[viTri].yeuThich = !tours[viTri].yeuThich
+            val tour = tours[viTri]
+            tour.yeuThich = !tour.yeuThich
             adapter.notifyItemChanged(viTri)
+            viewLifecycleOwner.lifecycleScope.launch { luuYeuThich(dao, tour) }
         }
 
         // Nút X xóa chữ trong ô tìm
@@ -52,9 +62,9 @@ class TimTourFragment : Fragment() {
             timET.setText("")
         }
 
-        // Chip "Bộ lọc": sau này mở bảng bộ lọc (BoLocFragment)
+        // Chip "Bộ lọc": mở bảng bộ lọc
         view.findViewById<Chip>(R.id.boLocChip).setOnClickListener {
-            Toast.makeText(requireContext(), R.string.a02_bo_loc_2, Toast.LENGTH_SHORT).show()
+            moManHinhCon(BoLocFragment())
         }
     }
 }
