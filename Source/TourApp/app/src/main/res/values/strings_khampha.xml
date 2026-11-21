@@ -59,6 +59,9 @@
     <string name="a03_con_cho">Còn %1$d chỗ</string>
     <string name="a03_het_cho">Hết chỗ</string>
     <string name="a03_mo_rong">Xem chi tiết ngày</string>
+    <!-- B7 Chia sẻ tour: %1$s tên tour, %2$s nơi đi và số ngày, %3$s giá -->
+    <string name="a03_noi_dung_chia_se">%1$s\n%2$s\n%3$s\nĐặt tour trên ứng dụng Đặt Tour.</string>
+    <string name="a03_chia_se_qua">Chia sẻ tour qua</string>
 
     <!-- A21 Yêu thích và đã xem -->
     <string name="a21_tieu_de">Yêu thích và đã xem</string>

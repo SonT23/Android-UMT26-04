@@ -1,5 +1,6 @@
 package vn.edu.umt.tour.ui.khach.khampha
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -69,9 +70,15 @@ class ChiTietTourFragment : Fragment() {
             }
         }
 
-        // Chia sẻ (B7) làm sau
+        // B7 Chia sẻ tour: gửi tên, nơi đi, giá cho app khác (Zalo, Messenger, Gmail…)
         view.findViewById<ImageView>(R.id.chiaSeIV).setOnClickListener {
-            Toast.makeText(requireContext(), R.string.a03_chia_se, Toast.LENGTH_SHORT).show()
+            val noiDung = getString(R.string.a03_noi_dung_chia_se, tour.ten, tour.moTa, tour.gia)
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.type = "text/plain"
+            intent.putExtra(Intent.EXTRA_SUBJECT, tour.ten)
+            intent.putExtra(Intent.EXTRA_TEXT, noiDung)
+            // createChooser luôn hiện bảng chọn app, kể cả khi người dùng đã đặt app mặc định
+            startActivity(Intent.createChooser(intent, getString(R.string.a03_chia_se_qua)))
         }
 
         // Mở A22 Bản đồ lịch trình của tour này
