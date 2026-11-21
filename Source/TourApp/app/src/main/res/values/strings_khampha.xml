@@ -73,6 +73,8 @@
     <string name="a21_luu_ngay">Lưu ngày %1$s</string>
     <string name="a21_xoa_lich_su">Xóa lịch sử</string>
     <string name="a21_chua_xem">Chưa xem tour nào.</string>
+    <string name="a21_hom_nay">Hôm nay</string>
+    <string name="a21_hom_qua">Hôm qua</string>
 
     <!-- A22 Bản đồ lịch trình -->
     <string name="a22_ban_do_giu_cho">Bản đồ Google Maps sẽ hiển thị ở đây</string>

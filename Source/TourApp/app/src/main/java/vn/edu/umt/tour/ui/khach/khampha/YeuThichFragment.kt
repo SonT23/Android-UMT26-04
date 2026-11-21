@@ -20,8 +20,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import vn.edu.umt.tour.R
 
-// A21 Yêu thích và đã xem: hai tab, danh sách tour đã lưu, các tour đã xem gần đây.
-// Hiện dùng dữ liệu mẫu; lưu bằng Room (B5, B6) làm sau.
+// A21 Yêu thích và đã xem: hai tab, danh sách tour đã lưu (B5), các tour đã xem gần đây (B6).
+// Cả hai đọc từ Room nên vẫn xem được khi mất mạng.
 class YeuThichFragment : Fragment() {
 
     private lateinit var yeuThichTabTV: TextView
@@ -85,8 +85,8 @@ class YeuThichFragment : Fragment() {
             }
         }
 
-        // ----- Tour đã xem: dải ngang ở tab 1 và lưới ở tab 2 dùng chung một danh sách -----
-        val daXem = taoDaXemMau()
+        // ----- Tour đã xem (B6): dải ngang ở tab 1 và lưới ở tab 2 dùng chung một danh sách -----
+        val daXem = ArrayList<DaXemMau>()
         val daXemAdapter = DaXemAdapter(daXem)
         val daXemRV = view.findViewById<RecyclerView>(R.id.daXemRV)
         daXemRV.layoutManager =
@@ -103,17 +103,47 @@ class YeuThichFragment : Fragment() {
         luoiAdapter.onClick = daXemAdapter.onClick
 
         val chuaXemTV = view.findViewById<TextView>(R.id.chuaXemTV)
+        val daXemDao = AppDatabase.layDatabase(requireContext()).daXemDao()
+        viewLifecycleOwner.lifecycleScope.launch {
+            // Đổi từng dòng DaXem trong Room thành DaXemMau để dùng lại DaXemAdapter
+            for (dx in daXemDao.layGanDay()) {
+                daXem.add(DaXemMau(dx.maTour, dx.ten, nhanThoiGian(dx.xemLuc)))
+            }
+            daXemAdapter.notifyItemRangeInserted(0, daXem.size)
+            luoiAdapter.notifyItemRangeInserted(0, daXem.size)
+            if (daXem.isEmpty()) {
+                chuaXemTV.visibility = View.VISIBLE
+            }
+        }
+
+        // Xóa lịch sử: xóa trên màn hình và xóa hết bảng da_xem
         view.findViewById<TextView>(R.id.xoaLichSuTV).setOnClickListener {
             val soLuong = daXem.size
             daXem.clear()
             daXemAdapter.notifyItemRangeRemoved(0, soLuong)
             luoiAdapter.notifyItemRangeRemoved(0, soLuong)
             chuaXemTV.visibility = View.VISIBLE
+            viewLifecycleOwner.lifecycleScope.launch { daXemDao.xoaHet() }
         }
 
         // ----- Chuyển tab -----
         view.findViewById<LinearLayout>(R.id.yeuThichTabLL).setOnClickListener { chonTab(true) }
         view.findViewById<LinearLayout>(R.id.daXemTabLL).setOnClickListener { chonTab(false) }
+    }
+
+    // Chữ dưới tên tour đã xem: "Hôm nay", "Hôm qua", còn lại là ngày dạng dd/MM
+    private fun nhanThoiGian(xemLuc: Long): String {
+        val dinhDang = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        val ngayXem = dinhDang.format(Date(xemLuc))
+        val homNay = dinhDang.format(Date())
+        val homQua = dinhDang.format(Date(System.currentTimeMillis() - 24 * 60 * 60 * 1000))
+        if (ngayXem == homNay) {
+            return getString(R.string.a21_hom_nay)
+        }
+        if (ngayXem == homQua) {
+            return getString(R.string.a21_hom_qua)
+        }
+        return SimpleDateFormat("dd/MM", Locale.getDefault()).format(Date(xemLuc))
     }
 
     // Hiện nội dung của tab được chọn, đổi màu chữ và gạch chân
