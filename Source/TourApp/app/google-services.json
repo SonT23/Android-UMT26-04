@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "579558512189",
+    "project_id": "tourapp-934a7",
+    "storage_bucket": "tourapp-934a7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579558512189:android:32f2d041befc2c384e7c54",
+        "android_client_info": {
+          "package_name": "vn.edu.umt.tour"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHmyTMo24pz1Kx1geMl_GBsez_oX7BzhY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
