@@ -21,6 +21,20 @@
     <string name="a12_luu">Lưu</string>
     <string name="a12_loi_ten">Vui lòng nhập tên điểm đến</string>
     <string name="a12_da_luu">Đã lưu điểm đến %1$s</string>
+    <string name="a12_them_tieu_de">Thêm điểm đến</string>
+    <string name="a12_chua_chon_vi_tri">Chưa chọn vị trí</string>
+    <string name="a12_da_them">Đã thêm điểm đến %1$s</string>
+    <string name="a12_loi_trung_ten">Đã có điểm đến cùng tên trong tỉnh này</string>
+
+    <!-- D1 Sửa, xóa điểm đến ở A12 -->
+    <string name="a12_menu_sua">Sửa</string>
+    <string name="a12_menu_xoa">Xóa</string>
+    <string name="a12_xoa_hoi">Xóa điểm đến %1$s?</string>
+    <string name="a12_xoa_giai_thich">Điểm đến bị xóa sẽ không còn trong danh sách chọn khi tạo tour.</string>
+    <string name="a12_xoa_dong_y">Xóa</string>
+    <string name="a12_xoa_khong">Không</string>
+    <string name="a12_da_xoa">Đã xóa điểm đến %1$s</string>
+    <string name="a12_khong_xoa_duoc">%1$s đang có %2$d tour, không xóa được</string>
 
     <!-- A13 Danh sách tour -->
     <string name="a13_tieu_de">Tour</string>
@@ -80,6 +94,20 @@
     <string name="a14_loi_ten">Vui lòng nhập tên tour</string>
     <string name="a14_loi_so_dem">Số đêm không được lớn hơn số ngày</string>
     <string name="a14_da_luu">Đã lưu tour %1$s</string>
+
+    <!-- D5 Lịch trình: sửa, xóa, kéo thả ngày ở A14 -->
+    <string name="a14_menu_sua">Sửa</string>
+    <string name="a14_menu_xoa">Xóa</string>
+    <string name="a14_sua_ngay">Sửa ngày %1$d</string>
+    <string name="a14_tieu_de_ngay">Tiêu đề ngày</string>
+    <string name="a14_loi_tieu_de_ngay">Vui lòng nhập tiêu đề</string>
+    <string name="a14_luu_ngay">Lưu</string>
+    <string name="a14_huy">Hủy</string>
+    <string name="a14_xoa_ngay_hoi">Xóa ngày %1$d?</string>
+    <string name="a14_xoa_ngay_giai_thich">%1$s. Các ngày phía sau sẽ được đánh số lại.</string>
+    <string name="a14_xoa">Xóa</string>
+    <string name="a14_da_xoa_ngay">Đã xóa ngày %1$d</string>
+    <string name="a14_can_mot_ngay">Lịch trình cần ít nhất một ngày</string>
 
     <!-- A24 Chọn vị trí -->
     <string name="a24_quay_lai">Quay lại</string>

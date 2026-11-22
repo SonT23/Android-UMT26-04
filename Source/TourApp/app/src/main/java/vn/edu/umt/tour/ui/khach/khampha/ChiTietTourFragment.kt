@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import vn.edu.umt.tour.data.local.AppDatabase
+import vn.edu.umt.tour.data.local.DaXem
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import vn.edu.umt.tour.R
@@ -40,6 +41,13 @@ class ChiTietTourFragment : Fragment() {
         view.findViewById<TextView>(R.id.diaDiemTV).text = tour.moTa
         view.findViewById<TextView>(R.id.giaTV).text = tour.gia
         view.findViewById<TextView>(R.id.soAnhTV).text = getString(R.string.a03_so_anh, 1, 5)
+
+        // B6: ghi tour này vào bảng da_xem (xem lại thì cập nhật thời điểm), chỉ giữ 20 tour mới nhất
+        val daXemDao = AppDatabase.layDatabase(requireContext()).daXemDao()
+        viewLifecycleOwner.lifecycleScope.launch {
+            daXemDao.them(DaXem(maTour, tour.ten, System.currentTimeMillis()))
+            daXemDao.chiGiu20()
+        }
 
         // Lịch trình từng ngày
         val lichTrinhRV = view.findViewById<RecyclerView>(R.id.lichTrinhRV)

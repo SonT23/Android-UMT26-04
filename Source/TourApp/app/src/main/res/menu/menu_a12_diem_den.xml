@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- D1: menu của nút tùy chọn trên mỗi dòng điểm đến ở A12 -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/suaMenu"
+        android:title="@string/a12_menu_sua" />
+    <item
+        android:id="@+id/xoaMenu"
+        android:title="@string/a12_menu_xoa" />
+</menu>

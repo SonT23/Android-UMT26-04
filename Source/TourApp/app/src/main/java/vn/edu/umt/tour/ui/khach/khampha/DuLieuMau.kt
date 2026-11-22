@@ -1,5 +1,8 @@
 package vn.edu.umt.tour.ui.khach.khampha
 
+import java.text.SimpleDateFormat
+import java.util.Locale
+
 // Dữ liệu mẫu để dựng giao diện module B khi chưa có API.
 // Khi nối API thì thay TourMau bằng lớp Tour trong package model/ (Thịnh làm).
 
@@ -14,7 +17,12 @@ class TourMau(
     // Tim đầy hay rỗng; khi mở màn hình được tô lại theo bảng yeu_thich trong Room (B5)
     var yeuThich: Boolean,
     // true thì nhãn hiện màu xám (vd. "Hết chỗ"), false thì màu cam (vd. "Còn 1 chỗ")
-    val nhanXam: Boolean = false
+    val nhanXam: Boolean = false,
+    // Bốn trường dưới dùng để lọc, sắp xếp ở A02 (B2). Tour của A01, A21 không cần nên để mặc định.
+    val diemDen: String = "",
+    val giaTu: Long = 0,       // giá thấp nhất, đơn vị đồng
+    val soNgay: Int = 0,
+    val ngayDi: Long = 0       // ngày khởi hành gần nhất, mili giây
 )
 
 fun taoTourMau(): ArrayList<TourMau> {
@@ -26,16 +34,48 @@ fun taoTourMau(): ArrayList<TourMau> {
     )
 }
 
-// A02: kết quả tìm "Đà Lạt"
-fun taoKetQuaTimMau(): ArrayList<TourMau> {
+// A02: mọi tour để tìm, lọc, sắp xếp (B2). Tuần 9 thay bằng đọc collection "tour" trên Firestore.
+fun taoTatCaTourMau(): ArrayList<TourMau> {
     return arrayListOf(
-        TourMau("T01", "Đà Lạt 3 ngày 2 đêm", "Đà Lạt · 3 ngày 2 đêm · 20/11", "Từ 2.500.000 ₫", "Còn 1 chỗ", false),
-        TourMau("T05", "Đà Lạt săn mây 2 ngày 1 đêm", "Đà Lạt · 2 ngày 1 đêm · 22/11", "Từ 1.800.000 ₫", "Còn 8 chỗ", false),
-        TourMau("T06", "Đà Lạt mùa hoa 4 ngày", "Đà Lạt · 4 ngày 3 đêm · 27/11", "Từ 3.200.000 ₫", "Hết chỗ", false, true),
-        TourMau("T07", "Đà Lạt, Nha Trang 5 ngày", "Đà Lạt · 5 ngày 4 đêm · 04/12", "Từ 4.600.000 ₫", "Còn 20 chỗ", false),
-        TourMau("T08", "Đà Lạt cắm trại 2 ngày", "Đà Lạt · 2 ngày 1 đêm · 06/12", "Từ 1.500.000 ₫", "Còn 15 chỗ", false),
-        TourMau("T09", "Đà Lạt, Mũi Né 4 ngày", "Đà Lạt · 4 ngày 3 đêm · 11/12", "Từ 4.100.000 ₫", "Còn 3 chỗ", false)
+        tourTim("T01", "Đà Lạt 3 ngày 2 đêm", "Đà Lạt", 3, "20/11/2026", 2500000, 1),
+        tourTim("T02", "Nha Trang biển đảo 4 ngày", "Nha Trang", 4, "25/11/2026", 3900000, 12),
+        tourTim("T03", "Phú Quốc nghỉ dưỡng 4 ngày", "Phú Quốc", 4, "03/12/2026", 5200000, 6),
+        tourTim("T04", "Hạ Long du thuyền 2 ngày", "Hạ Long", 2, "28/11/2026", 3100000, 0),
+        tourTim("T05", "Đà Lạt săn mây 2 ngày 1 đêm", "Đà Lạt", 2, "22/11/2026", 1800000, 8),
+        tourTim("T06", "Đà Lạt mùa hoa 4 ngày", "Đà Lạt", 4, "27/11/2026", 3200000, 0),
+        tourTim("T07", "Đà Lạt, Nha Trang 5 ngày", "Đà Lạt", 5, "04/12/2026", 4600000, 20),
+        tourTim("T08", "Đà Lạt cắm trại 2 ngày", "Đà Lạt", 2, "06/12/2026", 1500000, 15),
+        tourTim("T09", "Đà Lạt, Mũi Né 4 ngày", "Đà Lạt", 4, "11/12/2026", 4100000, 3),
+        tourTim("T10", "Hội An phố cổ 3 ngày", "Hội An", 3, "18/12/2026", 2900000, 9),
+        tourTim("T11", "Sa Pa mùa lúa 3 ngày", "Sa Pa", 3, "08/01/2027", 3300000, 4),
+        tourTim("T12", "Hạ Long, Ninh Bình 4 ngày", "Hạ Long", 4, "15/01/2027", 4800000, 10),
+        tourTim("T13", "Sa Pa đón Tết 4 ngày", "Sa Pa", 4, "05/02/2027", 5900000, 2),
+        tourTim("T14", "Phú Quốc Tết 5 ngày", "Phú Quốc", 5, "12/02/2027", 7500000, 5)
     )
+}
+
+// Tạo một tour cho A02. Chữ mô tả, giá, nhãn chỗ được ghép từ các trường gốc,
+// nên chỉ cần sửa số liệu ở trên là chữ trên thẻ tự đúng theo.
+private fun tourTim(
+    ma: String, ten: String, diemDen: String, soNgay: Int,
+    ngayDi: String, giaTu: Long, conCho: Int
+): TourMau {
+    val moTa = "$diemDen · $soNgay ngày ${soNgay - 1} đêm · ${ngayDi.substring(0, 5)}"
+    val nhanCho = if (conCho == 0) "Hết chỗ" else "Còn $conCho chỗ"
+    return TourMau(
+        ma, ten, moTa, "Từ " + dinhDangTien(giaTu), nhanCho, false, conCho == 0,
+        diemDen = diemDen, giaTu = giaTu, soNgay = soNgay, ngayDi = docNgay(ngayDi)
+    )
+}
+
+// 2500000 → "2.500.000 ₫". Tạm viết ở đây, sau dùng util/DinhDang.kt của Trúc Đào.
+fun dinhDangTien(so: Long): String {
+    return String.format(Locale.US, "%,d", so).replace(',', '.') + " ₫"
+}
+
+// "20/11/2026" → số mili giây, cùng kiểu với ngày trong Firestore (Docs/Firestore.md)
+private fun docNgay(ngay: String): Long {
+    return SimpleDateFormat("dd/MM/yyyy", Locale.US).parse(ngay)!!.time
 }
 
 fun taoDiemDenMau(): ArrayList<String> {
@@ -76,23 +116,13 @@ fun taoDotMau(): ArrayList<DotMau> {
     )
 }
 
-// A21: tour đã xem gần đây
+// A21: một ô tour đã xem. Tạo từ bảng da_xem trong Room (B6), xem YeuThichFragment.
+// thoiGian là chữ hiện dưới tên: "Hôm nay", "Hôm qua" hoặc ngày dạng dd/MM.
 class DaXemMau(
     val ma: String,
     val ten: String,
     val thoiGian: String
 )
-
-fun taoDaXemMau(): ArrayList<DaXemMau> {
-    return arrayListOf(
-        DaXemMau("T02", "Nha Trang biển đảo", "Hôm nay"),
-        DaXemMau("T10", "Hội An phố cổ", "Hôm qua"),
-        DaXemMau("T11", "Sa Pa mùa lúa", "09/11"),
-        DaXemMau("T01", "Đà Lạt 3 ngày 2 đêm", "08/11"),
-        DaXemMau("T03", "Phú Quốc nghỉ dưỡng", "05/11"),
-        DaXemMau("T04", "Hạ Long du thuyền", "02/11")
-    )
-}
 
 // A22: các điểm dừng trên bản đồ, chia theo ngày
 class DiemDungMau(
@@ -135,17 +165,9 @@ fun taoBanDoMau(): ArrayList<NgayBanDoMau> {
     )
 }
 
-// Tour chỉ xuất hiện trong mục "Đã xem gần đây" của A21
-fun taoTourKhacMau(): ArrayList<TourMau> {
-    return arrayListOf(
-        TourMau("T10", "Hội An phố cổ 3 ngày", "Hội An, Quảng Nam · 3 ngày 2 đêm", "Từ 2.900.000 ₫", "Còn 9 chỗ", false),
-        TourMau("T11", "Sa Pa mùa lúa 3 ngày", "Sa Pa, Lào Cai · 3 ngày 2 đêm", "Từ 3.300.000 ₫", "Còn 4 chỗ", false)
-    )
-}
-
 // Tìm tour mẫu theo mã. A03, A22 dùng hàm này sau khi nhận mã qua newInstance.
 // Tuần 9 thay bằng đọc document có mã này trong collection "tour" của Firestore.
 fun timTourMau(ma: String): TourMau {
-    val tatCa = taoTourMau() + taoKetQuaTimMau() + taoTourKhacMau()
+    val tatCa = taoTourMau() + taoTatCaTourMau()
     return tatCa.firstOrNull { it.ma == ma } ?: taoTourMau()[0]
 }

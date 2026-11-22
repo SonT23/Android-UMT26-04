@@ -66,6 +66,9 @@
     <string name="e_qr_nhap_thu_cong">Nhập mã đơn thủ công</string>
     <string name="e_xem_danh_sach_check_in">Xem danh sách đã check-in</string>
     <string name="e_dot_khoi_hanh_title">Đợt khởi hành</string>
+    <string name="a23_nhap_ma_don">Nhập mã đơn</string>
+    <string name="a23_hint_ma_don">Mã đơn, vd. DH00124</string>
+    <string name="a23_ma_don_trong">Nhập mã đơn để xem chi tiết</string>
 
     <!-- A11: nhãn của biểu đồ doanh thu (biểu đồ thật làm ở chức năng E1) -->
     <string name="a11_nam">2026</string>

@@ -12,9 +12,10 @@ import vn.edu.umt.tour.R
 class DiemDenAdapter(private val diemDen: List<DiemDenMau>) :
     RecyclerView.Adapter<DiemDenAdapter.ViewHolder>() {
 
-    // Fragment gán hai hàm này để biết người dùng bấm vào dòng hay bấm nút tùy chọn
+    // Fragment gán hai hàm này để biết người dùng bấm vào dòng nào, hay bấm nút tùy chọn của dòng nào.
+    // nut là nút tùy chọn vừa bấm, để Fragment mở menu Sửa / Xóa ngay dưới nút đó.
     var onDiemDenClick: ((DiemDenMau) -> Unit)? = null
-    var onTuyChonClick: ((DiemDenMau) -> Unit)? = null
+    var onTuyChonClick: ((nut: View, viTri: Int) -> Unit)? = null
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tenTV = itemView.findViewById<TextView>(R.id.tenTV)
@@ -22,11 +23,14 @@ class DiemDenAdapter(private val diemDen: List<DiemDenMau>) :
         val tuyChonIV = itemView.findViewById<ImageView>(R.id.tuyChonIV)
 
         init {
+            // NO_POSITION xảy ra khi bấm đúng lúc dòng đang bị xóa khỏi danh sách: bỏ qua
             itemView.setOnClickListener {
-                onDiemDenClick?.invoke(diemDen[bindingAdapterPosition])
+                val viTri = bindingAdapterPosition
+                if (viTri != RecyclerView.NO_POSITION) onDiemDenClick?.invoke(diemDen[viTri])
             }
             tuyChonIV.setOnClickListener {
-                onTuyChonClick?.invoke(diemDen[bindingAdapterPosition])
+                val viTri = bindingAdapterPosition
+                if (viTri != RecyclerView.NO_POSITION) onTuyChonClick?.invoke(tuyChonIV, viTri)
             }
         }
     }

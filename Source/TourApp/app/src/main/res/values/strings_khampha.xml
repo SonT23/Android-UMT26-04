@@ -16,7 +16,7 @@
     <string name="a02_tieu_de">Tìm tour</string>
     <string name="a02_goi_y_tim">Tìm theo tên tour, điểm đến</string>
     <string name="a02_xoa_chu">Xóa nội dung tìm</string>
-    <string name="a02_bo_loc_2">Bộ lọc (2)</string>
+    <string name="a02_bo_loc_so">Bộ lọc (%1$d)</string>
     <string name="a02_chip_diem_den">Điểm đến</string>
     <string name="a02_chip_thang">Tháng</string>
     <string name="a02_chip_so_ngay">Số ngày</string>
@@ -45,7 +45,9 @@
     <string name="a02_ngay_gan_nhat">Ngày gần nhất</string>
     <string name="a02_xoa_loc">Xóa lọc</string>
     <string name="a02_xem_tour">Xem tour</string>
-    <string name="a02_da_ap_dung">Đã áp dụng bộ lọc</string>
+    <string name="a02_xem_n_tour">Xem %1$d tour</string>
+    <string name="a02_loi_khoang_gia">Giá đến phải lớn hơn giá từ</string>
+    <string name="a02_khong_co_ket_qua">Không có tour phù hợp. Thử đổi từ khóa hoặc bỏ bớt bộ lọc.</string>
 
     <!-- A03 Chi tiết tour -->
     <string name="a03_quay_lai">Quay lại</string>
@@ -73,6 +75,8 @@
     <string name="a21_luu_ngay">Lưu ngày %1$s</string>
     <string name="a21_xoa_lich_su">Xóa lịch sử</string>
     <string name="a21_chua_xem">Chưa xem tour nào.</string>
+    <string name="a21_hom_nay">Hôm nay</string>
+    <string name="a21_hom_qua">Hôm qua</string>
 
     <!-- A22 Bản đồ lịch trình -->
     <string name="a22_ban_do_giu_cho">Bản đồ Google Maps sẽ hiển thị ở đây</string>

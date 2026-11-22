@@ -10,12 +10,23 @@ import androidx.room.RoomDatabase
  * Ai cần thêm bảng: thêm lớp @Entity vào danh sách entities, thêm hàm lấy DAO bên dưới,
  * tăng version lên 1 và báo nhóm (đây là file dùng chung).
  *
- * Bảng hiện có: yeu_thich (Sơn, B5).
+ * Khi version tăng, fallbackToDestructiveMigration xóa các bảng cũ rồi tạo lại,
+ * nên dữ liệu Room trên máy (yêu thích, đã xem…) mất một lần. Chấp nhận được khi đang làm đồ án.
+ *
+ * Bảng hiện có: yeu_thich (Sơn, B5), da_xem (Sơn, B6), lich_su_tim (Sơn, B4).
  */
-@Database(entities = [YeuThich::class], version = 1, exportSchema = false)
+@Database(
+    entities = [YeuThich::class, DaXem::class, LichSuTim::class],
+    version = 3,
+    exportSchema = false
+)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun yeuThichDao(): YeuThichDao
+
+    abstract fun daXemDao(): DaXemDao
+
+    abstract fun lichSuTimDao(): LichSuTimDao
 
     companion object {
         // Chỉ tạo một database cho cả app; @Volatile để các luồng đều thấy giá trị mới nhất
@@ -28,7 +39,7 @@ abstract class AppDatabase : RoomDatabase() {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "tour_app.db"
-                ).build()
+                ).fallbackToDestructiveMigration(true).build()
                 INSTANCE = db
                 db
             }

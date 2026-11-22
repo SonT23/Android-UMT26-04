@@ -17,8 +17,9 @@
         android:paddingStart="12dp"
         android:paddingEnd="@dimen/space_xs">
 
-        <!-- Kéo thả đổi thứ tự (chức năng D5) làm sau, giờ chỉ là biểu tượng -->
+        <!-- D5: chạm giữ biểu tượng này rồi kéo để đổi thứ tự ngày (ItemTouchHelper) -->
         <ImageView
+            android:id="@+id/keoIV"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:contentDescription="@string/a14_keo_doi_thu_tu"

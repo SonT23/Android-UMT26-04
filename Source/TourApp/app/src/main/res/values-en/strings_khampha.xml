@@ -15,7 +15,7 @@
     <string name="a02_tieu_de">Search tours</string>
     <string name="a02_goi_y_tim">Search by tour name, destination</string>
     <string name="a02_xoa_chu">Clear search</string>
-    <string name="a02_bo_loc_2">Filters (2)</string>
+    <string name="a02_bo_loc_so">Filters (%1$d)</string>
     <string name="a02_chip_diem_den">Destination</string>
     <string name="a02_chip_thang">Month</string>
     <string name="a02_chip_so_ngay">Duration</string>
@@ -44,7 +44,9 @@
     <string name="a02_ngay_gan_nhat">Soonest departure</string>
     <string name="a02_xoa_loc">Clear</string>
     <string name="a02_xem_tour">Show tours</string>
-    <string name="a02_da_ap_dung">Filters applied</string>
+    <string name="a02_xem_n_tour">Show %1$d tours</string>
+    <string name="a02_loi_khoang_gia">Max price must be higher than min price</string>
+    <string name="a02_khong_co_ket_qua">No matching tours. Try another keyword or fewer filters.</string>
 
     <!-- A03 Tour details -->
     <string name="a03_quay_lai">Back</string>
@@ -71,6 +73,8 @@
     <string name="a21_luu_ngay">Saved %1$s</string>
     <string name="a21_xoa_lich_su">Clear history</string>
     <string name="a21_chua_xem">No tours viewed yet.</string>
+    <string name="a21_hom_nay">Today</string>
+    <string name="a21_hom_qua">Yesterday</string>
 
     <!-- A22 Itinerary map -->
     <string name="a22_ban_do_giu_cho">Google Maps will be shown here</string>
