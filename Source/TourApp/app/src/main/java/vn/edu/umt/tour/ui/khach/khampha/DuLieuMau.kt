@@ -76,23 +76,13 @@ fun taoDotMau(): ArrayList<DotMau> {
     )
 }
 
-// A21: tour đã xem gần đây
+// A21: một ô tour đã xem. Tạo từ bảng da_xem trong Room (B6), xem YeuThichFragment.
+// thoiGian là chữ hiện dưới tên: "Hôm nay", "Hôm qua" hoặc ngày dạng dd/MM.
 class DaXemMau(
     val ma: String,
     val ten: String,
     val thoiGian: String
 )
-
-fun taoDaXemMau(): ArrayList<DaXemMau> {
-    return arrayListOf(
-        DaXemMau("T02", "Nha Trang biển đảo", "Hôm nay"),
-        DaXemMau("T10", "Hội An phố cổ", "Hôm qua"),
-        DaXemMau("T11", "Sa Pa mùa lúa", "09/11"),
-        DaXemMau("T01", "Đà Lạt 3 ngày 2 đêm", "08/11"),
-        DaXemMau("T03", "Phú Quốc nghỉ dưỡng", "05/11"),
-        DaXemMau("T04", "Hạ Long du thuyền", "02/11")
-    )
-}
 
 // A22: các điểm dừng trên bản đồ, chia theo ngày
 class DiemDungMau(
@@ -135,7 +125,7 @@ fun taoBanDoMau(): ArrayList<NgayBanDoMau> {
     )
 }
 
-// Tour chỉ xuất hiện trong mục "Đã xem gần đây" của A21
+// Tour mẫu Hội An, Sa Pa: chưa nằm trong danh sách nào, nhưng timTourMau vẫn tìm được theo mã
 fun taoTourKhacMau(): ArrayList<TourMau> {
     return arrayListOf(
         TourMau("T10", "Hội An phố cổ 3 ngày", "Hội An, Quảng Nam · 3 ngày 2 đêm", "Từ 2.900.000 ₫", "Còn 9 chỗ", false),

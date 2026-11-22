@@ -71,6 +71,8 @@
     <string name="a21_luu_ngay">Saved %1$s</string>
     <string name="a21_xoa_lich_su">Clear history</string>
     <string name="a21_chua_xem">No tours viewed yet.</string>
+    <string name="a21_hom_nay">Today</string>
+    <string name="a21_hom_qua">Yesterday</string>
 
     <!-- A22 Itinerary map -->
     <string name="a22_ban_do_giu_cho">Google Maps will be shown here</string>
