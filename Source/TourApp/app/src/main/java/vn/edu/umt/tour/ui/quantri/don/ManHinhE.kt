@@ -10,7 +10,7 @@ import vn.edu.umt.tour.xemthu.ManHinh
 val manHinhE: List<ManHinh> = listOf(
     ManHinh("A11", "Tổng quan đơn hàng") { TongQuanFragment() },
     ManHinh("A16", "Danh sách đơn đặt tour") { DanhSachDonFragment() },
-    ManHinh("A17", "Xử lý đơn đặt tour") { XuLyDonFragment() },
+    ManHinh("A17", "Xử lý đơn đặt tour") { XuLyDonFragment.newInstance("DH00124") },
     ManHinh("A18", "Quản lý khách hàng") { KhachHangFragment() },
     ManHinh("A23", "Quét QR Check-in") { QuetQrFragment() },
 )

@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import com.google.android.material.button.MaterialButton
 import vn.edu.umt.tour.R
@@ -22,8 +24,11 @@ class XuLyDonFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val don = taoDanhSachDonMau().first()
+        val maDon = requireArguments().getString(MA_DON)!!
+        val don = taoDanhSachDonMau().firstOrNull { it.maDon == maDon }
+            ?: taoDanhSachDonMau().first().copy(maDon = maDon)
 
+        view.findViewById<ImageView>(R.id.btnBack).setOnClickListener { quayLai() }
         view.findViewById<TextView>(R.id.maDonTV).text = don.maDon
         view.findViewById<TextView>(R.id.ngayDatTV).text = "Tạo lúc ${don.ngayDat}"
         view.findViewById<TextView>(R.id.trangThaiTV).text = don.trangThai
@@ -54,6 +59,14 @@ class XuLyDonFragment : Fragment() {
         view.findViewById<MaterialButton>(R.id.btnGhiNhanThanhToan).setOnClickListener {
             val soTien = view.findViewById<EditText>(R.id.soTienET).text.toString()
             Toast.makeText(requireContext(), "Ghi nhận thanh toán: ${soTien}đ", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    companion object {
+        private const val MA_DON = "ma_don"
+
+        fun newInstance(maDon: String) = XuLyDonFragment().apply {
+            arguments = bundleOf(MA_DON to maDon)
         }
     }
 }
