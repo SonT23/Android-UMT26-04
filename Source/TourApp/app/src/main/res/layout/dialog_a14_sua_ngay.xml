@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- D5: nội dung hộp thoại sửa tiêu đề một ngày trong lịch trình (A14).
+     Bọc FrameLayout có padding vì hộp thoại bỏ qua margin của view gốc. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/space_l"
+    android:paddingTop="@dimen/space_s"
+    android:paddingEnd="@dimen/space_l">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tieuDeTIL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/a14_tieu_de_ngay">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieuDeET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapSentences"
+            android:maxLength="80" />
+    </com.google.android.material.textfield.TextInputLayout>
+</FrameLayout>

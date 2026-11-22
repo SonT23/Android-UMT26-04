@@ -95,6 +95,20 @@
     <string name="a14_loi_so_dem">Số đêm không được lớn hơn số ngày</string>
     <string name="a14_da_luu">Đã lưu tour %1$s</string>
 
+    <!-- D5 Lịch trình: sửa, xóa, kéo thả ngày ở A14 -->
+    <string name="a14_menu_sua">Sửa</string>
+    <string name="a14_menu_xoa">Xóa</string>
+    <string name="a14_sua_ngay">Sửa ngày %1$d</string>
+    <string name="a14_tieu_de_ngay">Tiêu đề ngày</string>
+    <string name="a14_loi_tieu_de_ngay">Vui lòng nhập tiêu đề</string>
+    <string name="a14_luu_ngay">Lưu</string>
+    <string name="a14_huy">Hủy</string>
+    <string name="a14_xoa_ngay_hoi">Xóa ngày %1$d?</string>
+    <string name="a14_xoa_ngay_giai_thich">%1$s. Các ngày phía sau sẽ được đánh số lại.</string>
+    <string name="a14_xoa">Xóa</string>
+    <string name="a14_da_xoa_ngay">Đã xóa ngày %1$d</string>
+    <string name="a14_can_mot_ngay">Lịch trình cần ít nhất một ngày</string>
+
     <!-- A24 Chọn vị trí -->
     <string name="a24_quay_lai">Quay lại</string>
     <string name="a24_tim">Tìm địa chỉ hoặc địa điểm</string>
