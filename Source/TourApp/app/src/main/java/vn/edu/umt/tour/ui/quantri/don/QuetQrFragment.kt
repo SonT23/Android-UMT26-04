@@ -36,9 +36,12 @@ class QuetQrFragment : Fragment() {
                 .setView(maDonET)
                 .setNegativeButton(R.string.e_btn_huy, null)
                 .setPositiveButton(android.R.string.ok) { _, _ ->
-                    val maDon = maDonET.text.toString().trim()
+                    val maDon = maDonET.text.toString().trim().uppercase()
+                    val coDon = taoDanhSachDonMau().any { it.maDon == maDon }
                     if (maDon.isEmpty()) {
                         Toast.makeText(requireContext(), R.string.a23_ma_don_trong, Toast.LENGTH_SHORT).show()
+                    } else if (!coDon) {
+                        Toast.makeText(requireContext(), getString(R.string.a23_khong_tim_thay, maDon), Toast.LENGTH_SHORT).show()
                     } else {
                         moManHinhCon(XuLyDonFragment.newInstance(maDon))
                     }
