@@ -45,7 +45,7 @@
         android:text="@string/a04_xac_nhan_dat_tour"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-    <!-- 3. Form cuộn (Chiều cao 0dp để tự co giãn) -->
+    <!-- 3. Form cuộn -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -87,20 +87,23 @@
                         android:layout_marginStart="12dp">
 
                         <TextView
+                            android:id="@+id/tv_ten_tour"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             tools:text="Khám phá Vịnh Hạ Long"
                             android:textStyle="bold"
-                            android:textAppearance="?attr/textAppearanceTitleMedium"/>
+                            android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                         <TextView
+                            android:id="@+id/tv_ngay_khoi_hanh"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             tools:text="Khởi hành: 20/11/2026"
                             android:textColor="?attr/colorOutline"
-                            android:layout_marginTop="4dp"/>
+                            android:layout_marginTop="4dp" />
 
                         <TextView
+                            android:id="@+id/tv_con_cho"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/a04_con_5_cho"
@@ -108,7 +111,7 @@
                             android:paddingHorizontal="8dp"
                             android:paddingVertical="2dp"
                             android:textSize="12sp"
-                            android:layout_marginTop="8dp"/>
+                            android:layout_marginTop="8dp" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -133,7 +136,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/a04_so_nguoi"
                         android:textStyle="bold"
-                        android:layout_marginBottom="16dp"/>
+                        android:layout_marginBottom="16dp" />
 
                     <!-- Người lớn -->
                     <LinearLayout
@@ -148,13 +151,41 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:orientation="vertical">
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/a04_nguoi_lon" />
-                            <TextView android:id="@+id/tv_gia_nl" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="2,500,000 đ" android:textColor="?attr/colorTertiary" android:textStyle="bold"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/a04_nguoi_lon" />
+                            <TextView
+                                android:id="@+id/tv_gia_nl"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                tools:text="2.500.000 ₫"
+                                android:textColor="?attr/colorTertiary"
+                                android:textStyle="bold" />
                         </LinearLayout>
 
-                        <ImageView android:id="@+id/btn_tru_nl" android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_remove" android:background="@drawable/bg_tron_nhat" android:padding="8dp"/>
-                        <TextView android:id="@+id/tv_sl_nl" android:layout_width="40dp" android:layout_height="wrap_content" tools:text="1" android:gravity="center" android:textStyle="bold" android:textSize="16sp"/>
-                        <ImageView android:id="@+id/btn_cong_nl" android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_add" android:background="@drawable/bg_tron_nhat" android:padding="8dp"/>
+                        <ImageView
+                            android:id="@+id/btn_tru_nl"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_remove"
+                            android:background="@drawable/bg_tron_nhat"
+                            android:padding="8dp" />
+                        <TextView
+                            android:id="@+id/tv_sl_nl"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            tools:text="1"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="16sp" />
+                        <ImageView
+                            android:id="@+id/btn_cong_nl"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_add"
+                            android:background="@drawable/bg_tron_nhat"
+                            android:padding="8dp" />
                     </LinearLayout>
 
                     <!-- Trẻ em -->
@@ -169,13 +200,41 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:orientation="vertical">
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/a04_tre_em" />
-                            <TextView android:id="@+id/tv_gia_te" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="1,500,000 đ" android:textColor="?attr/colorTertiary" android:textStyle="bold"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/a04_tre_em" />
+                            <TextView
+                                android:id="@+id/tv_gia_te"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                tools:text="1.500.000 ₫"
+                                android:textColor="?attr/colorTertiary"
+                                android:textStyle="bold" />
                         </LinearLayout>
 
-                        <ImageView android:id="@+id/btn_tru_te" android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_remove" android:background="@drawable/bg_tron_nhat" android:padding="8dp"/>
-                        <TextView android:id="@+id/tv_sl_te" android:layout_width="40dp" android:layout_height="wrap_content" tools:text="0" android:gravity="center" android:textStyle="bold" android:textSize="16sp"/>
-                        <ImageView android:id="@+id/btn_cong_te" android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_add" android:background="@drawable/bg_tron_nhat" android:padding="8dp"/>
+                        <ImageView
+                            android:id="@+id/btn_tru_te"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_remove"
+                            android:background="@drawable/bg_tron_nhat"
+                            android:padding="8dp" />
+                        <TextView
+                            android:id="@+id/tv_sl_te"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            tools:text="0"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="16sp" />
+                        <ImageView
+                            android:id="@+id/btn_cong_te"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_add"
+                            android:background="@drawable/bg_tron_nhat"
+                            android:padding="8dp" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -200,38 +259,49 @@
                         android:layout_height="wrap_content"
                         android:text="@string/a04_thong_tin_lien_he"
                         android:textStyle="bold"
-                        android:layout_marginBottom="16dp"/>
+                        android:layout_marginBottom="16dp" />
 
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_ho_ten"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/a04_ho_ten"
                         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                         android:layout_marginBottom="12dp">
-                        <com.google.android.material.textfield.TextInputEditText android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPersonName"/>
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_ho_ten"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_so_dien_thoai"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/a04_so_dien_thoai"
                         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                         android:layout_marginBottom="12dp">
-                        <com.google.android.material.textfield.TextInputEditText android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="phone"/>
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_so_dien_thoai"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="phone" />
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <!-- Ô Ghi chú (Nhiều dòng) -->
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_ghi_chu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/a04_ghi_chu_them"
                         style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_ghi_chu"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textMultiLine"
                             android:minLines="3"
-                            android:gravity="top"/>
+                            android:gravity="top" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
@@ -245,21 +315,69 @@
                 android:background="@drawable/bg_anh_trong"
                 android:padding="16dp">
 
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/a04_tam_tinh" android:textColor="?attr/colorOutline"/>
-                    <TextView android:id="@+id/tv_tam_tinh" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="2,500,000 đ" android:textStyle="bold"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/a04_tam_tinh"
+                        android:textColor="?attr/colorOutline" />
+                    <TextView
+                        android:id="@+id/tv_tam_tinh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="2.500.000 ₫"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp">
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/a04_giam_gia" android:textColor="?attr/colorOutline"/>
-                    <TextView android:id="@+id/tv_giam_gia" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="0 đ" android:textStyle="bold"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/a04_giam_gia"
+                        android:textColor="?attr/colorOutline" />
+                    <TextView
+                        android:id="@+id/tv_giam_gia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="0 ₫"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
-                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorOutlineVariant" android:layout_marginBottom="12dp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/colorOutlineVariant"
+                    android:layout_marginBottom="12dp" />
 
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/a04_tong_tien" android:textStyle="bold" android:textSize="16sp"/>
-                    <TextView android:id="@+id/tv_tong_tien" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="2,500,000 đ" android:textColor="?attr/colorTertiary" android:textStyle="bold" android:textSize="18sp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/a04_tong_tien"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/tv_tong_tien"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="2.500.000 ₫"
+                        android:textColor="?attr/colorTertiary"
+                        android:textStyle="bold"
+                        android:textSize="18sp" />
                 </LinearLayout>
             </LinearLayout>
 

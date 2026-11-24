@@ -63,6 +63,7 @@
                 android:padding="24dp">
 
                 <TextView
+                    android:id="@+id/tv_trang_thai"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/a09_Da_xac_nhan"
@@ -81,6 +82,7 @@
                     android:layout_marginBottom="16dp" />
 
                 <TextView
+                    android:id="@+id/tv_ma_don"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="#HD12345"
@@ -96,7 +98,7 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Thẻ 6 dòng thông tin -->
+        <!-- Thẻ thông tin đơn -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -111,49 +113,103 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <!-- Dòng 1 -->
+                <!-- Dòng 1: Tour -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginBottom="12dp">
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/a09_Tour" android:textColor="?attr/colorOutline" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="Khám phá Vịnh Hạ Long" android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/a09_Tour"
+                        android:textColor="?attr/colorOutline" />
+                    <TextView
+                        android:id="@+id/tv_ten_tour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Khám phá Vịnh Hạ Long"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
-                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorOutlineVariant" android:layout_marginBottom="12dp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/colorOutlineVariant"
+                    android:layout_marginBottom="12dp" />
 
-                <!-- Dòng 2 -->
+                <!-- Dòng 2: Ngày khởi hành -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginBottom="12dp">
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/a09_ngay_khoi_hanh" android:textColor="?attr/colorOutline" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="20/11/2026" android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/a09_ngay_khoi_hanh"
+                        android:textColor="?attr/colorOutline" />
+                    <TextView
+                        android:id="@+id/tv_ngay_khoi_hanh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="20/11/2026"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
-                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorOutlineVariant" android:layout_marginBottom="12dp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/colorOutlineVariant"
+                    android:layout_marginBottom="12dp" />
 
-                <!-- Dòng 3 -->
+                <!-- Dòng 3: Số người -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginBottom="12dp">
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/a09_so_nguoi" android:textColor="?attr/colorOutline" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="2 người lớn" android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/a09_so_nguoi"
+                        android:textColor="?attr/colorOutline" />
+                    <TextView
+                        android:id="@+id/tv_so_nguoi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="2 người lớn"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
-                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorOutlineVariant" android:layout_marginBottom="12dp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/colorOutlineVariant"
+                    android:layout_marginBottom="12dp" />
 
-                <!-- Dòng 4 (Tổng tiền) -->
+                <!-- Dòng 4: Tổng tiền -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/a09_tong_thanh_toan" android:textColor="?attr/colorOutline" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="5,000,000 đ" android:textColor="?attr/colorTertiary" android:textStyle="bold" android:textSize="16sp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/a09_tong_thanh_toan"
+                        android:textColor="?attr/colorOutline" />
+                    <TextView
+                        android:id="@+id/tv_tong_tien"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="5.000.000 ₫"
+                        android:textColor="?attr/colorTertiary"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -183,6 +239,6 @@
             android:layout_height="wrap_content"
             android:text="@string/a09_ho_tro"
             android:textColor="?attr/colorOutline"
-            android:layout_marginBottom="32dp"/>
+            android:layout_marginBottom="32dp" />
     </LinearLayout>
 </ScrollView>

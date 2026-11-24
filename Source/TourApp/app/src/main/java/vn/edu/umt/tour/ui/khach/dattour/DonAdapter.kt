@@ -6,18 +6,29 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import vn.edu.umt.tour.R
+import vn.edu.umt.tour.util.dinhDangTien
 
-// Lớp dữ liệu chứa thông tin 1 đơn hàng
 data class DonHang(
     val maDon: String,
     val tenTour: String,
     val ngay: String,
     val soNguoi: String,
     val tongTien: String,
-    val trangThai: Int // 0: Chờ, 1: Đã xác nhận, 2: Hoàn thành, 3: Đã hủy
+    val trangThai: Int, // 0: Chờ, 1: Đã xác nhận, 2: Hoàn thành, 3: Đã hủy
+    val diaDiem: String = "Việt Nam"
 )
 
-class DonAdapter(private val danhSachDon: List<DonHang>) : RecyclerView.Adapter<DonAdapter.DonViewHolder>() {
+val danhSachDonMau = listOf(
+    DonHang("#HD12345", "Khám phá Vịnh Hạ Long", "20/11/2026", "2 người lớn", dinhDangTien(5_000_000), 1, "Quảng Ninh"),
+    DonHang("#HD12346", "Phố cổ Hội An", "25/11/2026", "4 người lớn", dinhDangTien(12_000_000), 0, "Quảng Nam"),
+    DonHang("#HD12347", "Sapa sương mù", "10/10/2026", "2 người lớn", dinhDangTien(4_500_000), 2, "Lào Cai"),
+    DonHang("#HD12348", "Biển Phú Quốc", "01/09/2026", "3 người lớn", dinhDangTien(15_000_000), 3, "Kiên Giang")
+)
+
+class DonAdapter(
+    private val danhSachDon: List<DonHang>,
+    private val onClick: (DonHang) -> Unit
+) : RecyclerView.Adapter<DonAdapter.DonViewHolder>() {
 
     class DonViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvMaDon: TextView = view.findViewById(R.id.tv_ma_don)
@@ -42,7 +53,6 @@ class DonAdapter(private val danhSachDon: List<DonHang>) : RecyclerView.Adapter<
         holder.tvSoNguoi.text = don.soNguoi
         holder.tvTongTien.text = don.tongTien
 
-        // Xử lý đổi màu nhãn trạng thái theo quy định của nhóm
         when (don.trangThai) {
             0 -> {
                 holder.tvTrangThai.text = "Chờ xác nhận"
@@ -61,6 +71,8 @@ class DonAdapter(private val danhSachDon: List<DonHang>) : RecyclerView.Adapter<
                 holder.tvTrangThai.setBackgroundResource(R.drawable.bg_nhan_do)
             }
         }
+
+        holder.itemView.setOnClickListener { onClick(don) }
     }
 
     override fun getItemCount() = danhSachDon.size

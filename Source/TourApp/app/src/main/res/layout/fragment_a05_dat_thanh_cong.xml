@@ -38,6 +38,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/tv_ma_don"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -74,6 +75,7 @@
                     android:text="@string/a05_tour"
                     android:textColor="?attr/colorOutline" />
                 <TextView
+                    android:id="@+id/tv_ten_tour"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/a05_mau_ten_tour"
@@ -93,6 +95,7 @@
                     android:text="@string/a05_Ngay_khoi_hanh"
                     android:textColor="?attr/colorOutline" />
                 <TextView
+                    android:id="@+id/tv_ngay_khoi_hanh"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/a05_mau_ngay_khoi_hanh"
@@ -112,6 +115,7 @@
                     android:text="@string/a05_So_nguoi"
                     android:textColor="?attr/colorOutline" />
                 <TextView
+                    android:id="@+id/tv_so_nguoi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/a05_mau_so_nguoi"
@@ -122,7 +126,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="?attr/colorOutlineVariant"
-                android:layout_marginBottom="12dp"/>
+                android:layout_marginBottom="12dp" />
 
             <!-- Dòng 4: Tổng tiền (Màu Tertiary) -->
             <LinearLayout
@@ -136,6 +140,7 @@
                     android:text="@string/a05_Tong_thanh_toan"
                     android:textColor="?attr/colorOutline" />
                 <TextView
+                    android:id="@+id/tv_tong_tien"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/a05_mau_tong_tien"
