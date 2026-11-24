@@ -82,4 +82,5 @@
     <string name="a11_thang_8">T8</string>
 
     <string name="a16_khong_co_don">Không có đơn phù hợp</string>
+    <string name="a23_khong_tim_thay">Không tìm thấy đơn %1$s</string>
 </resources>

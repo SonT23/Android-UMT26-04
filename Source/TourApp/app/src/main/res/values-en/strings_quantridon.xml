@@ -45,4 +45,5 @@
     <string name="a11_thang_8">Aug</string>
 
     <string name="a16_khong_co_don">No matching orders</string>
+    <string name="a23_khong_tim_thay">Order %1$s not found</string>
 </resources>
