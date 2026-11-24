@@ -1,5 +1,8 @@
 package vn.edu.umt.tour.ui.quantri.don
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -50,15 +53,33 @@ class XuLyDonFragment : Fragment() {
         view.findViewById<MaterialButton>(R.id.btnHuy).setOnClickListener {
             Toast.makeText(requireContext(), "Đã hủy đơn ${don.maDon}", Toast.LENGTH_SHORT).show()
         }
+        // Số điện thoại mẫu có dấu cách ("0905 123 456"), bỏ đi trước khi gọi
+        val sdt = don.sdt.replace(" ", "")
+
+        // E6 Gọi điện: mở màn hình quay số có sẵn số khách, người dùng tự bấm gọi
         view.findViewById<MaterialButton>(R.id.btnGoiDien).setOnClickListener {
-            Toast.makeText(requireContext(), "Đang mở cuộc gọi tới ${don.sdt}", Toast.LENGTH_SHORT).show()
+            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$sdt"))
+            moApp(intent)
         }
+        // E6 Nhắn tin: mở app tin nhắn, điền sẵn số và tin mẫu
         view.findViewById<MaterialButton>(R.id.btnNhanTin).setOnClickListener {
-            Toast.makeText(requireContext(), "Đang nhắn tin tới ${don.sdt}", Toast.LENGTH_SHORT).show()
+            val intent = Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:$sdt"))
+            val tin = getString(R.string.a17_tin_mau, don.tenKhachHang, don.maDon, don.tenTour, don.ngayKhoiHanh)
+            intent.putExtra("sms_body", tin)
+            moApp(intent)
         }
         view.findViewById<MaterialButton>(R.id.btnGhiNhanThanhToan).setOnClickListener {
             val soTien = view.findViewById<EditText>(R.id.soTienET).text.toString()
             Toast.makeText(requireContext(), "Ghi nhận thanh toán: ${soTien}đ", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    // Mở app khác; máy không có app phù hợp (máy tính bảng không gọi được) thì báo thay vì văng
+    private fun moApp(intent: Intent) {
+        try {
+            startActivity(intent)
+        } catch (e: ActivityNotFoundException) {
+            Toast.makeText(requireContext(), R.string.a17_khong_mo_duoc, Toast.LENGTH_SHORT).show()
         }
     }
 

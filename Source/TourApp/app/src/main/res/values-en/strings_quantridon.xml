@@ -46,4 +46,6 @@
 
     <string name="a16_khong_co_don">No matching orders</string>
     <string name="a23_khong_tim_thay">Order %1$s not found</string>
+    <string name="a17_tin_mau">Hello %1$s, TourApp confirms order %2$s, tour %3$s departing %4$s. Thank you!</string>
+    <string name="a17_khong_mo_duoc">No app available for this action</string>
 </resources>

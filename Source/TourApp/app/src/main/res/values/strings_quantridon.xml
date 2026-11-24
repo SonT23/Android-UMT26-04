@@ -83,4 +83,6 @@
 
     <string name="a16_khong_co_don">Không có đơn phù hợp</string>
     <string name="a23_khong_tim_thay">Không tìm thấy đơn %1$s</string>
+    <string name="a17_tin_mau">Chào %1$s, TourApp xác nhận đơn %2$s, tour %3$s khởi hành %4$s. Cảm ơn quý khách!</string>
+    <string name="a17_khong_mo_duoc">Máy không có ứng dụng phù hợp</string>
 </resources>
