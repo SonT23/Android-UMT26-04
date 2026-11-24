@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.TextView
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.chip.Chip
+import com.google.android.material.chip.ChipGroup
 import vn.edu.umt.tour.R
 
 class DanhSachDonFragment : Fragment() {
@@ -44,20 +46,10 @@ class DanhSachDonFragment : Fragment() {
             locDanhSach(text.toString(), layTrangThaiHienTai(view))
         }
 
-        view.findViewById<Chip>(R.id.chipTatCa).setOnClickListener {
-            locDanhSach(timKiemET.text.toString(), null)
-        }
-        view.findViewById<Chip>(R.id.chipChoXacNhan).setOnClickListener {
-            locDanhSach(timKiemET.text.toString(), "Chờ xác nhận")
-        }
-        view.findViewById<Chip>(R.id.chipDaXacNhan).setOnClickListener {
-            locDanhSach(timKiemET.text.toString(), "Đã xác nhận")
-        }
-        view.findViewById<Chip>(R.id.chipHoanThanh).setOnClickListener {
-            locDanhSach(timKiemET.text.toString(), "Hoàn thành")
-        }
-        view.findViewById<Chip>(R.id.chipDaHuy).setOnClickListener {
-            locDanhSach(timKiemET.text.toString(), "Đã hủy")
+        // Đổi chip nào cũng lọc lại. Listener này còn được gọi khi xoay máy
+        // (Android tự chọn lại chip cũ), nên danh sách lọc lại đúng.
+        view.findViewById<ChipGroup>(R.id.chipGroup).setOnCheckedStateChangeListener { _, _ ->
+            locDanhSach(timKiemET.text.toString(), layTrangThaiHienTai(view))
         }
     }
 
@@ -80,5 +72,13 @@ class DanhSachDonFragment : Fragment() {
             matchKeyword && (trangThai == null || don.trangThai == trangThai)
         })
         adapter.notifyDataSetChanged()
+
+        // Không còn đơn nào thì hiện chữ báo
+        val khongCoDonTV = requireView().findViewById<TextView>(R.id.khongCoDonTV)
+        if (danhSachHienThi.isEmpty()) {
+            khongCoDonTV.visibility = View.VISIBLE
+        } else {
+            khongCoDonTV.visibility = View.GONE
+        }
     }
 }

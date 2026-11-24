@@ -43,4 +43,6 @@
     <string name="a11_thang_6">Jun</string>
     <string name="a11_thang_7">Jul</string>
     <string name="a11_thang_8">Aug</string>
+
+    <string name="a16_khong_co_don">No matching orders</string>
 </resources>
